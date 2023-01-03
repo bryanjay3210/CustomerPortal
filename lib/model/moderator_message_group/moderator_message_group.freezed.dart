@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'moderator_message_group.dart';
 
@@ -37,7 +37,8 @@ mixin _$ModeratorMessageGroup {
 abstract class $ModeratorMessageGroupCopyWith<$Res> {
   factory $ModeratorMessageGroupCopyWith(ModeratorMessageGroup value,
           $Res Function(ModeratorMessageGroup) then) =
-      _$ModeratorMessageGroupCopyWithImpl<$Res>;
+      _$ModeratorMessageGroupCopyWithImpl<$Res, ModeratorMessageGroup>;
+  @useResult
   $Res call(
       {dynamic UserID,
       dynamic CustomerID,
@@ -47,14 +48,17 @@ abstract class $ModeratorMessageGroupCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ModeratorMessageGroupCopyWithImpl<$Res>
+class _$ModeratorMessageGroupCopyWithImpl<$Res,
+        $Val extends ModeratorMessageGroup>
     implements $ModeratorMessageGroupCopyWith<$Res> {
   _$ModeratorMessageGroupCopyWithImpl(this._value, this._then);
 
-  final ModeratorMessageGroup _value;
   // ignore: unused_field
-  final $Res Function(ModeratorMessageGroup) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? UserID = freezed,
@@ -64,27 +68,27 @@ class _$ModeratorMessageGroupCopyWithImpl<$Res>
     Object? Status = freezed,
   }) {
     return _then(_value.copyWith(
-      UserID: UserID == freezed
+      UserID: freezed == UserID
           ? _value.UserID
           : UserID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserName: UserName == freezed
+      UserName: freezed == UserName
           ? _value.UserName
           : UserName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserEmail: UserEmail == freezed
+      UserEmail: freezed == UserEmail
           ? _value.UserEmail
           : UserEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Status: Status == freezed
+      Status: freezed == Status
           ? _value.Status
           : Status // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -95,6 +99,7 @@ abstract class _$$_ModeratorMessageGroupCopyWith<$Res>
           $Res Function(_$_ModeratorMessageGroup) then) =
       __$$_ModeratorMessageGroupCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic UserID,
       dynamic CustomerID,
@@ -105,16 +110,13 @@ abstract class _$$_ModeratorMessageGroupCopyWith<$Res>
 
 /// @nodoc
 class __$$_ModeratorMessageGroupCopyWithImpl<$Res>
-    extends _$ModeratorMessageGroupCopyWithImpl<$Res>
+    extends _$ModeratorMessageGroupCopyWithImpl<$Res, _$_ModeratorMessageGroup>
     implements _$$_ModeratorMessageGroupCopyWith<$Res> {
   __$$_ModeratorMessageGroupCopyWithImpl(_$_ModeratorMessageGroup _value,
       $Res Function(_$_ModeratorMessageGroup) _then)
-      : super(_value, (v) => _then(v as _$_ModeratorMessageGroup));
+      : super(_value, _then);
 
-  @override
-  _$_ModeratorMessageGroup get _value =>
-      super._value as _$_ModeratorMessageGroup;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? UserID = freezed,
@@ -124,23 +126,23 @@ class __$$_ModeratorMessageGroupCopyWithImpl<$Res>
     Object? Status = freezed,
   }) {
     return _then(_$_ModeratorMessageGroup(
-      UserID: UserID == freezed
+      UserID: freezed == UserID
           ? _value.UserID
           : UserID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserName: UserName == freezed
+      UserName: freezed == UserName
           ? _value.UserName
           : UserName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserEmail: UserEmail == freezed
+      UserEmail: freezed == UserEmail
           ? _value.UserEmail
           : UserEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Status: Status == freezed
+      Status: freezed == Status
           ? _value.Status
           : Status // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -207,6 +209,7 @@ class _$_ModeratorMessageGroup implements _ModeratorMessageGroup {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ModeratorMessageGroupCopyWith<_$_ModeratorMessageGroup> get copyWith =>
       __$$_ModeratorMessageGroupCopyWithImpl<_$_ModeratorMessageGroup>(
           this, _$identity);

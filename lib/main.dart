@@ -1,5 +1,8 @@
+import 'package:cp/provider/account/message_group_provider.dart';
 import 'package:cp/provider/account/message_manager/message_group.dart';
 import 'package:cp/provider/manager/contact_option_provider.dart';
+import 'package:cp/provider/iot/door_lock/door_lock_password_provider.dart';
+import 'package:cp/provider/iot/door_lock/door_lock_provider.dart';
 import 'package:cp/utils/utils/theme/global_theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -124,6 +127,12 @@ List<SingleChildWidget> providers() {
     Provider<AddressBookProvider>(create: (_) => AddressBookProvider()),
     Provider<MessageProvider>(create: (_) => MessageProvider()),
     Provider<TvProvider>(create: (_) => TvProvider()),
+    Provider<MessageGroupListProvider>(
+        create: (_) => MessageGroupListProvider()),
+    Provider<DoorLockProvider>(create: (_) => DoorLockProvider()),
+    Provider<DoorLockProvider>(create: (_) => DoorLockProvider()),
+    Provider<DoorLockPasswordProvider>(
+        create: (_) => DoorLockPasswordProvider()),
 
     //manager providers
     Provider<CustomerProvider>(create: (_) => CustomerProvider()),

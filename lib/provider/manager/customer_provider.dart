@@ -21,6 +21,7 @@ class CustomerProvider {
   var selectedProductBundles = ProductGroup();
   var units = <Unit>[];
   var selectedUnits = Unit();
+  var selectedBed = '';
   final customers$ = BehaviorSubject<DataState>.seeded(DataState.initial);
   final customerInfo$ = BehaviorSubject<DataState>.seeded(DataState.initial);
   final suspend$ = BehaviorSubject<bool>.seeded(false);
@@ -384,6 +385,7 @@ class CustomerProvider {
           BuildingName: info.BuildingName,
         );
         selectedCustomer = newCustomer;
+        selectedBed = newCustomer.BedName;
       } else {
         final newCustomer = selectedCustomer.copyWith(
             BuildingName: info.BuildingName,
@@ -392,14 +394,14 @@ class CustomerProvider {
             UserPhoneMobile: info.UserPhoneMobile);
 
         selectedCustomer = newCustomer;
+        selectedBed = newCustomer.BedName;
       }
       await getUnits(map, context);
     }
     if (keywordSearch.isNotEmpty) {
       filterCustomers(keywordSearch);
-    } else {
-      customerInfo$.add(DataState.success);
-    }
+    } else {}
+    customerInfo$.add(DataState.success);
   }
 
   getProductBundles(Map<String, dynamic> map, BuildContext context) async {
@@ -430,6 +432,7 @@ class CustomerProvider {
               .add(ProductGroup.fromJson(element).copyWith(Products: newItem2));
         });
       }
+
       productBundles = newItems;
     }
   }
@@ -453,5 +456,27 @@ class CustomerProvider {
       units = newItems;
       populateDropDowns();
     }
+  }
+
+  // bool isAvailableInCustomers() {
+  //   productBundles.where((element) {
+  //       return element.CustomerAvailable.toString() == 'Y' ||
+  //           element.CustomerAvailable.toString() != '' ||
+  //           element.CustomerAvailable != null;
+  //     })
+  //   return true;
+  // }
+
+  List<ProductGroup> getFilteredProductGroup(bool isAvailableInCustomers) {
+    return [
+      ProductGroup(Products: <Product>[]),
+      ...productBundles.where((element) {
+        return (isAvailableInCustomers
+                ? element.CustomerAvailable.toString() == 'Y'
+                : element.CustomerAvailable.toString() == 'N') &&
+            element.CustomerAvailable.toString() != '' &&
+            element.CustomerAvailable != null;
+      }),
+    ];
   }
 }

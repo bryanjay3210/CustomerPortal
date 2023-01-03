@@ -25,3 +25,4 @@ const cpDivOnLightColor = Color(0xFFE6E7E8);
 const cpChipColor = Color(0xFFFBEAC0);
 
 const messageIconColor = Color(0xFFFFF7E5);
+const messageIconAvatarColor = Color(0xFF3E404E);

@@ -48,15 +48,10 @@ class CreditCardProvider {
         await CreditCardRepository(map['server']).deleteCard(map);
     var res = data['Status'];
     if (data['Status'] == 'Success') {
-      const snackBar = SnackBar(
-        content: Text('Delete credit card successfully!'),
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      showToast('Delete credit card successfully!');
+    } else {
+      showToast('Error updating credit card! [$res]');
     }
-    var snackBar = SnackBar(
-      content: Text('Error updating credit card! [$res]'),
-    );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
     creditCardListState.add(DataState.success);
   }
 
@@ -66,16 +61,9 @@ class CreditCardProvider {
         await CreditCardRepository(map['server']).updateCCInfo(map);
     var res = data['Status'];
     if (data['Status'] == 'Success') {
-      const snackBar = SnackBar(
-        content: Text('Update credit card successfully!'),
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    }
-    if (res.toString().contains('Fail')) {
-      var snackBar = SnackBar(
-        content: Text('Error updating credit card! [$res]'),
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      showToast('Update credit card successfully!');
+    } else {
+      showToast('Error updating credit card! [$res]');
     }
     creditCardListState.add(DataState.success);
   }

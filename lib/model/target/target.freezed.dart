@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'target.dart';
 
@@ -32,18 +32,22 @@ mixin _$Target {
 /// @nodoc
 abstract class $TargetCopyWith<$Res> {
   factory $TargetCopyWith(Target value, $Res Function(Target) then) =
-      _$TargetCopyWithImpl<$Res>;
+      _$TargetCopyWithImpl<$Res, Target>;
+  @useResult
   $Res call({dynamic TargetID, dynamic TargetEmail, dynamic ResidentName});
 }
 
 /// @nodoc
-class _$TargetCopyWithImpl<$Res> implements $TargetCopyWith<$Res> {
+class _$TargetCopyWithImpl<$Res, $Val extends Target>
+    implements $TargetCopyWith<$Res> {
   _$TargetCopyWithImpl(this._value, this._then);
 
-  final Target _value;
   // ignore: unused_field
-  final $Res Function(Target) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? TargetID = freezed,
@@ -51,19 +55,19 @@ class _$TargetCopyWithImpl<$Res> implements $TargetCopyWith<$Res> {
     Object? ResidentName = freezed,
   }) {
     return _then(_value.copyWith(
-      TargetID: TargetID == freezed
+      TargetID: freezed == TargetID
           ? _value.TargetID
           : TargetID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TargetEmail: TargetEmail == freezed
+      TargetEmail: freezed == TargetEmail
           ? _value.TargetEmail
           : TargetEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ResidentName: ResidentName == freezed
+      ResidentName: freezed == ResidentName
           ? _value.ResidentName
           : ResidentName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -72,18 +76,18 @@ abstract class _$$_TargetCopyWith<$Res> implements $TargetCopyWith<$Res> {
   factory _$$_TargetCopyWith(_$_Target value, $Res Function(_$_Target) then) =
       __$$_TargetCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({dynamic TargetID, dynamic TargetEmail, dynamic ResidentName});
 }
 
 /// @nodoc
-class __$$_TargetCopyWithImpl<$Res> extends _$TargetCopyWithImpl<$Res>
+class __$$_TargetCopyWithImpl<$Res>
+    extends _$TargetCopyWithImpl<$Res, _$_Target>
     implements _$$_TargetCopyWith<$Res> {
   __$$_TargetCopyWithImpl(_$_Target _value, $Res Function(_$_Target) _then)
-      : super(_value, (v) => _then(v as _$_Target));
+      : super(_value, _then);
 
-  @override
-  _$_Target get _value => super._value as _$_Target;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? TargetID = freezed,
@@ -91,15 +95,15 @@ class __$$_TargetCopyWithImpl<$Res> extends _$TargetCopyWithImpl<$Res>
     Object? ResidentName = freezed,
   }) {
     return _then(_$_Target(
-      TargetID: TargetID == freezed
+      TargetID: freezed == TargetID
           ? _value.TargetID
           : TargetID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TargetEmail: TargetEmail == freezed
+      TargetEmail: freezed == TargetEmail
           ? _value.TargetEmail
           : TargetEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ResidentName: ResidentName == freezed
+      ResidentName: freezed == ResidentName
           ? _value.ResidentName
           : ResidentName // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -153,6 +157,7 @@ class _$_Target implements _Target {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TargetCopyWith<_$_Target> get copyWith =>
       __$$_TargetCopyWithImpl<_$_Target>(this, _$identity);
 

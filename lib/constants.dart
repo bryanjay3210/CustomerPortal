@@ -8,8 +8,6 @@ final currentDate =
 final mqHeight = (BuildContext context) => MediaQuery.of(context).size.height;
 final mqWidth = (BuildContext context) => MediaQuery.of(context).size.width;
 
-String versionNum = 'v1.2.17';
-
 bool isDarkMode(BuildContext context) {
   return MediaQuery.of(context).platformBrightness == Brightness.dark;
 }
@@ -30,7 +28,7 @@ const servers = [
   {
     'name': 'pre-prod',
     'label': 'Pre-Production',
-    'server': 'http://pre-prod1.acebill.net/'
+    'server': 'http://pre-prod1.acebill.net:443/'
   },
   {
     'name': 'prod',
@@ -46,6 +44,16 @@ const servers = [
     'name': 'dvr-prod',
     'labe': 'DVR Production',
     'server': 'https://api.iptv.safepayhost.com:8088/'
+  },
+  {
+    'name': 'lock-dev',
+    'labe': 'DVR Development',
+    'server': 'http://devnyc001.acebill.net:8088/'
+  },
+  {
+    'name': 'lock-prod',
+    'labe': 'DVR Production',
+    'server': 'https://devnyc001.acebill.net:8088/'
   },
 ];
 

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'customer.dart';
 
@@ -34,7 +34,8 @@ mixin _$Customer {
 /// @nodoc
 abstract class $CustomerCopyWith<$Res> {
   factory $CustomerCopyWith(Customer value, $Res Function(Customer) then) =
-      _$CustomerCopyWithImpl<$Res>;
+      _$CustomerCopyWithImpl<$Res, Customer>;
+  @useResult
   $Res call(
       {dynamic CustomerName,
       dynamic CustomerID,
@@ -43,13 +44,16 @@ abstract class $CustomerCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CustomerCopyWithImpl<$Res> implements $CustomerCopyWith<$Res> {
+class _$CustomerCopyWithImpl<$Res, $Val extends Customer>
+    implements $CustomerCopyWith<$Res> {
   _$CustomerCopyWithImpl(this._value, this._then);
 
-  final Customer _value;
   // ignore: unused_field
-  final $Res Function(Customer) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? CustomerName = freezed,
@@ -58,23 +62,23 @@ class _$CustomerCopyWithImpl<$Res> implements $CustomerCopyWith<$Res> {
     Object? CustomerTargetEmail = freezed,
   }) {
     return _then(_value.copyWith(
-      CustomerName: CustomerName == freezed
+      CustomerName: freezed == CustomerName
           ? _value.CustomerName
           : CustomerName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerTargetID: CustomerTargetID == freezed
+      CustomerTargetID: freezed == CustomerTargetID
           ? _value.CustomerTargetID
           : CustomerTargetID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerTargetEmail: CustomerTargetEmail == freezed
+      CustomerTargetEmail: freezed == CustomerTargetEmail
           ? _value.CustomerTargetEmail
           : CustomerTargetEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -84,6 +88,7 @@ abstract class _$$_CustomerCopyWith<$Res> implements $CustomerCopyWith<$Res> {
           _$_Customer value, $Res Function(_$_Customer) then) =
       __$$_CustomerCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic CustomerName,
       dynamic CustomerID,
@@ -92,15 +97,14 @@ abstract class _$$_CustomerCopyWith<$Res> implements $CustomerCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_CustomerCopyWithImpl<$Res> extends _$CustomerCopyWithImpl<$Res>
+class __$$_CustomerCopyWithImpl<$Res>
+    extends _$CustomerCopyWithImpl<$Res, _$_Customer>
     implements _$$_CustomerCopyWith<$Res> {
   __$$_CustomerCopyWithImpl(
       _$_Customer _value, $Res Function(_$_Customer) _then)
-      : super(_value, (v) => _then(v as _$_Customer));
+      : super(_value, _then);
 
-  @override
-  _$_Customer get _value => super._value as _$_Customer;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? CustomerName = freezed,
@@ -109,19 +113,19 @@ class __$$_CustomerCopyWithImpl<$Res> extends _$CustomerCopyWithImpl<$Res>
     Object? CustomerTargetEmail = freezed,
   }) {
     return _then(_$_Customer(
-      CustomerName: CustomerName == freezed
+      CustomerName: freezed == CustomerName
           ? _value.CustomerName
           : CustomerName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerTargetID: CustomerTargetID == freezed
+      CustomerTargetID: freezed == CustomerTargetID
           ? _value.CustomerTargetID
           : CustomerTargetID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerTargetEmail: CustomerTargetEmail == freezed
+      CustomerTargetEmail: freezed == CustomerTargetEmail
           ? _value.CustomerTargetEmail
           : CustomerTargetEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -185,6 +189,7 @@ class _$_Customer implements _Customer {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CustomerCopyWith<_$_Customer> get copyWith =>
       __$$_CustomerCopyWithImpl<_$_Customer>(this, _$identity);
 

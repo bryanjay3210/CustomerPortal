@@ -164,46 +164,59 @@ class _CommonAreaTvDetailsPageState extends State<CommonAreaTvDetailsPage> {
                       ],
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () => showToast('Currently not available'),
-                    child: AbsorbPointer(
-                      absorbing: true,
-                      child: cpSwitchThingWidget(
-                          commonTvProvider,
-                          'Caption',
-                          const Icon(Icons.closed_caption),
-                          deviceTv.CC == '1', () {
-                        setState(() {
-                          final status = deviceTv.OnOff == '1';
-
-                          commonTvProvider.selectedDeviceTv = commonTvProvider
-                              .selectedDeviceTv
-                              .copyWith(CC: deviceTv.CC == '1' ? '0' : '1');
-                          commonTvProvider.onCaptionChange({
-                            'status': status ? 'Off' : 'On',
-                            'mac': deviceTv.MAC
-                          }, context);
-                        });
-                      }),
-                    ),
-                  ),
                   AbsorbPointer(
                     absorbing: true,
-                    child: cpSwitchThingWidget(commonTvProvider, 'Community',
-                        const Icon(Icons.groups_rounded), true, () {
-                      // setState(() {
-                      //   final status = deviceTv.OnOff == '1';
+                    child: cpSwitchThingWidget(
+                        commonTvProvider,
+                        'Caption',
+                        const Icon(Icons.closed_caption),
+                        deviceTv.CC == '1', () {
+                      setState(() {
+                        final status = deviceTv.OnOff == '1';
 
-                      //   commonTvProvider.selectedDeviceTv = commonTvProvider
-                      //       .selectedDeviceTv
-                      //       .copyWith(CC: deviceTv.CC == '1' ? '0' : '1');
-                      //   commonTvProvider.onCaptionChange({
-                      //     'status': status ? 'Off' : 'On',
-                      //     'mac': deviceTv.MAC
-                      //   }, context);
-                      // });
+                        commonTvProvider.selectedDeviceTv = commonTvProvider
+                            .selectedDeviceTv
+                            .copyWith(CC: deviceTv.CC == '1' ? '0' : '1');
+                        commonTvProvider.onCaptionChange({
+                          'status': status ? 'Off' : 'On',
+                          'mac': deviceTv.MAC
+                        }, context);
+                      });
                     }),
                   ),
+                  cpSwitchThingWidget(commonTvProvider, 'Community',
+                      const Icon(Icons.groups_rounded), true, () async {
+                    setState(() {});
+                    showToast('This widget is read only');
+                  }),
+                  // cpSwitchThingWidget(
+                  //     commonTvProvider,
+                  //     'Community',
+                  //     const Icon(Icons.groups_rounded),
+                  //     deviceTv.is_community == 'Y', () async {
+                  //   final status = deviceTv.is_community == 'Y';
+
+                  //   if (status) {
+                  //     final canRemove = await showConfirmDialog(context,
+                  //         'The data will be removed from this list. Do you still want to continue?');
+
+                  //     if (!canRemove) {
+                  //       setState(() {});
+                  //       return;
+                  //     }
+                  //   }
+                  //   setState(() {
+                  //     commonTvProvider.selectedDeviceTv = commonTvProvider
+                  //         .selectedDeviceTv
+                  //         .copyWith(is_community: status ? 'N' : 'Y');
+
+                  //     commonTvProvider.onCommunityChanged({
+                  //       'community': status ? 'N' : 'Y',
+                  //       'id': deviceTv.TVID,
+                  //       'device': deviceTv.Location
+                  //     }, context);
+                  //   });
+                  // }),
                   cpSwitchThingWidget(
                       commonTvProvider,
                       'Power',
@@ -221,21 +234,21 @@ class _CommonAreaTvDetailsPageState extends State<CommonAreaTvDetailsPage> {
                       }, context);
                     });
                   }),
-                  const SizedBox(height: 30),
-                  ElevatedButton(
-                      style: TextButton.styleFrom(backgroundColor: Colors.red),
-                      onPressed: () async {
-                        if (await showConfirmDialog(context,
-                            'Are you sure you want to delete this tv?')) {
-                          await commonTvProvider.removeTv({
-                            'device': locationCtrler.text,
-                          }, context, () {
-                            showToast('Tv/Device Successfully Removed');
-                            Navigator.of(context).pop();
-                          });
-                        }
-                      },
-                      child: const Text('Remove this TV'))
+                  // const SizedBox(height: 30),
+                  // ElevatedButton(
+                  //     style: TextButton.styleFrom(backgroundColor: Colors.red),
+                  //     onPressed: () async {
+                  //       if (await showConfirmDialog(context,
+                  //           'Are you sure you want to delete this tv?')) {
+                  //         await commonTvProvider.removeTv({
+                  //           'device': locationCtrler.text,
+                  //         }, context, () {
+                  //           showToast('Tv/Device Successfully Removed');
+                  //           Navigator.of(context).pop();
+                  //         });
+                  //       }
+                  //     },
+                  //     child: const Text('Remove this TV'))
                 ],
               ),
             ),

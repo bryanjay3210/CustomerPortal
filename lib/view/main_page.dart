@@ -9,11 +9,13 @@ import '../provider/iot/home_provider.dart';
 import '../provider/login_provider.dart';
 import '../provider/main_provider.dart';
 import '../shared_widgets/shared_widget.dart';
+import '../utils/utils/on_type_functions/debouncer.dart';
 import 'account/account.dart';
 import 'iot/tv/tv_page.dart';
 import 'shared_widgets/loading_screen.dart';
 import 'iot/home/home_page.dart';
 import 'iot/setting_page.dart';
+import 'dart:developer' as dev;
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -23,44 +25,60 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  final _debouncer = Debouncer(delay: const Duration(milliseconds: 500));
+
   @override
   void initState() {
     //main
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      final homeProvider = Provider.of<HomeProvider>(context, listen: false);
-      final mainProvider = Provider.of<MainProvider>(context, listen: false);
-      final hasLocalData =
-          await Provider.of<LoginProvider>(context, listen: false)
-              .getLocalCredential();
-
-      refresh() async {
-        homeProvider.things$.add(false);
-        if (hasLocalData != null) {
-          await Provider.of<LoginProvider>(context, listen: false).onLogin({
-            'username': hasLocalData['username'],
-            'password': hasLocalData['password'],
-            'server': mainProvider.server,
-          }, context, () async {
-            await homeProvider.refreshHome(context);
-          });
-        } else {
-          await homeProvider.refreshHome(context);
-        }
-        homeProvider.things$.add(true);
-        setState(() {});
-      }
-
       if (kIsWeb) {
         refresh();
       } else {
         await Provider.of<MainProvider>(context, listen: false)
             .checkConnectivity(() async {
-          refresh();
+          _debouncer.run(
+            () {
+              final isLogin =
+                  Provider.of<LoginProvider>(context, listen: false).isLogin;
+              dev.log('DEBOUNCE DEBOUNCE RUN RUN RUN RUN RUN RUN');
+              if (isLogin) {
+                return;
+              }
+              refresh();
+            },
+          );
         });
       }
     });
 
     super.initState();
+  }
+
+  refresh() async {
+    final homeProvider = Provider.of<HomeProvider>(context, listen: false);
+    final mainProvider = Provider.of<MainProvider>(context, listen: false);
+    final hasLocalData =
+        await Provider.of<LoginProvider>(context, listen: false)
+            .getLocalCredential();
+    final loginProvider = Provider.of<LoginProvider>(context, listen: false);
+    homeProvider.things$.add(false);
+    if (hasLocalData != null) {
+      await Provider.of<LoginProvider>(context, listen: false).onLogin({
+        'username': hasLocalData['username'],
+        'password': hasLocalData['password'],
+        'server': await loginProvider.getServer() ?? mainProvider.server,
+      }, context, () async {
+        if (mainProvider.isManager()) {
+          return;
+        }
+        await homeProvider.refreshHome(context);
+      });
+    } else {
+      await homeProvider.refreshHome(context);
+    }
+    homeProvider.things$.add(true);
+    loginProvider.isLogin = false;
+    setState(() {});
   }
 
   static final List<Widget> _pageIot = <Widget>[
@@ -80,6 +98,12 @@ class _MainPageState extends State<MainPage> {
     const CustomerPage(),
     const BuildingPage(),
     const CommonAreaTvPage(),
+    const AccountScreen(),
+    const SettingPage(),
+  ];
+
+  static final List<Widget> _pageNonIotIsManager = <Widget>[
+    const CustomerPage(),
     const AccountScreen(),
     const SettingPage(),
   ];
@@ -105,6 +129,24 @@ class _MainPageState extends State<MainPage> {
       ),
       BottomNavigationBarItem(
         icon: badge('settings_icon', 'Settings', 4 == selected, isDarkTheme),
+        label: '',
+      ),
+    ];
+  }
+
+  List<BottomNavigationBarItem> _bottomNavigationBarItemsManagerNonIOT(
+      int selected, bool isDarkTheme) {
+    return <BottomNavigationBarItem>[
+      BottomNavigationBarItem(
+        icon: badge('account_icon', 'Customer', 0 == selected, isDarkTheme),
+        label: '',
+      ),
+      BottomNavigationBarItem(
+        icon: badge('account_icon', 'Account', 1 == selected, isDarkTheme),
+        label: '',
+      ),
+      BottomNavigationBarItem(
+        icon: badge('settings_icon', 'Settings', 2 == selected, isDarkTheme),
         label: '',
       ),
     ];
@@ -196,17 +238,20 @@ class _MainPageState extends State<MainPage> {
                             elevation: 20,
                             items: isNoIOT
                                 ? isManager
-                                    ? _bottomNavigationBarItemsManager(
+                                    ? _bottomNavigationBarItemsManagerNonIOT(
                                         selected!, mainProvider.darkTheme)
                                     : _bottomNavigationBarItemsNonIOT(
                                         selected!, mainProvider.darkTheme)
-                                : _bottomNavigationBarItemsIOT(
-                                    selected!, mainProvider.darkTheme),
+                                : isManager
+                                    ? _bottomNavigationBarItemsManager(
+                                        selected!, mainProvider.darkTheme)
+                                    : _bottomNavigationBarItemsIOT(
+                                        selected!, mainProvider.darkTheme),
                             currentIndex: navSelected.value,
                             unselectedItemColor: Colors.grey,
                             onTap: (idx) {
                               if (isNoIOT) {
-                                if (isManager) {
+                                if (isManager && !isNoIOT) {
                                 } else {}
                               } else {}
                               mainProvider.bottomNavSelected$.add(idx);
@@ -216,9 +261,12 @@ class _MainPageState extends State<MainPage> {
                         body: Center(
                           child: isNoIOT
                               ? isManager
-                                  ? _pageIsManager.elementAt(navSelected.value)
+                                  ? _pageNonIotIsManager
+                                      .elementAt(navSelected.value)
                                   : _pageNonIot.elementAt(navSelected.value)
-                              : _pageIot.elementAt(navSelected.value),
+                              : isManager
+                                  ? _pageIsManager.elementAt(navSelected.value)
+                                  : _pageIot.elementAt(navSelected.value),
                         ),
                       );
                     }),

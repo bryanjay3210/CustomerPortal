@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'address_book.dart';
 
@@ -33,33 +33,37 @@ mixin _$AddressBook {
 abstract class $AddressBookCopyWith<$Res> {
   factory $AddressBookCopyWith(
           AddressBook value, $Res Function(AddressBook) then) =
-      _$AddressBookCopyWithImpl<$Res>;
+      _$AddressBookCopyWithImpl<$Res, AddressBook>;
+  @useResult
   $Res call({dynamic Recipient, dynamic TargetID});
 }
 
 /// @nodoc
-class _$AddressBookCopyWithImpl<$Res> implements $AddressBookCopyWith<$Res> {
+class _$AddressBookCopyWithImpl<$Res, $Val extends AddressBook>
+    implements $AddressBookCopyWith<$Res> {
   _$AddressBookCopyWithImpl(this._value, this._then);
 
-  final AddressBook _value;
   // ignore: unused_field
-  final $Res Function(AddressBook) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? Recipient = freezed,
     Object? TargetID = freezed,
   }) {
     return _then(_value.copyWith(
-      Recipient: Recipient == freezed
+      Recipient: freezed == Recipient
           ? _value.Recipient
           : Recipient // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TargetID: TargetID == freezed
+      TargetID: freezed == TargetID
           ? _value.TargetID
           : TargetID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -70,30 +74,30 @@ abstract class _$$_AddressBookCopyWith<$Res>
           _$_AddressBook value, $Res Function(_$_AddressBook) then) =
       __$$_AddressBookCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({dynamic Recipient, dynamic TargetID});
 }
 
 /// @nodoc
-class __$$_AddressBookCopyWithImpl<$Res> extends _$AddressBookCopyWithImpl<$Res>
+class __$$_AddressBookCopyWithImpl<$Res>
+    extends _$AddressBookCopyWithImpl<$Res, _$_AddressBook>
     implements _$$_AddressBookCopyWith<$Res> {
   __$$_AddressBookCopyWithImpl(
       _$_AddressBook _value, $Res Function(_$_AddressBook) _then)
-      : super(_value, (v) => _then(v as _$_AddressBook));
+      : super(_value, _then);
 
-  @override
-  _$_AddressBook get _value => super._value as _$_AddressBook;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? Recipient = freezed,
     Object? TargetID = freezed,
   }) {
     return _then(_$_AddressBook(
-      Recipient: Recipient == freezed
+      Recipient: freezed == Recipient
           ? _value.Recipient
           : Recipient // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TargetID: TargetID == freezed
+      TargetID: freezed == TargetID
           ? _value.TargetID
           : TargetID // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -103,7 +107,7 @@ class __$$_AddressBookCopyWithImpl<$Res> extends _$AddressBookCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AddressBook implements _AddressBook {
+class _$_AddressBook with DiagnosticableTreeMixin implements _AddressBook {
   _$_AddressBook({this.Recipient = '', this.TargetID = ''});
 
   factory _$_AddressBook.fromJson(Map<String, dynamic> json) =>
@@ -117,8 +121,17 @@ class _$_AddressBook implements _AddressBook {
   final dynamic TargetID;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AddressBook(Recipient: $Recipient, TargetID: $TargetID)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AddressBook'))
+      ..add(DiagnosticsProperty('Recipient', Recipient))
+      ..add(DiagnosticsProperty('TargetID', TargetID));
   }
 
   @override
@@ -139,6 +152,7 @@ class _$_AddressBook implements _AddressBook {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AddressBookCopyWith<_$_AddressBook> get copyWith =>
       __$$_AddressBookCopyWithImpl<_$_AddressBook>(this, _$identity);
 

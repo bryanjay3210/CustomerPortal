@@ -2,6 +2,7 @@ import 'package:cp/view/account/components/message/address_book.dart';
 import 'package:cp/view/account/components/billing_address.dart';
 import 'package:cp/view/account/components/credit_card.dart';
 import 'package:cp/view/account/components/invoices/invoice.dart';
+import 'package:cp/view/account/components/message/message_container.dart';
 import 'package:cp/view/account/components/message/message_detail.dart';
 import 'package:cp/view/account/components/message/message_manager/canned_message_page.dart';
 import 'package:cp/view/account/components/message/message_manager/contact_option_page.dart';
@@ -14,9 +15,11 @@ import 'package:cp/view/account/components/payment.dart';
 import 'package:cp/view/account/components/product.dart';
 import 'package:cp/view/account/components/transaction.dart';
 import 'package:cp/view/account/profile.dart';
+import 'package:cp/view/manager/building/door_lock/door_lock_details/door_lock_details_page.dart';
 import 'package:cp/view/manager/tv/common_area_tv_details_page.dart';
 import 'package:cp/view/manager/tv/common_area_tv_page.dart';
 import 'package:cp/view/manager/customer/wifi_user_list_page.dart';
+import '../view/account/components/message/main_message.dart';
 import '../view/account/components/message/message_manager/message_group.dart';
 import '../view/account/components/message/message_manager/message_template.dart';
 import '../view/account/components/message/message_manager/message_template_details_page.dart';
@@ -57,8 +60,10 @@ dynamic routes() {
     'billing_address': (context) => const BillingAddress(),
     'address_book': (context) => const AddressBook(),
     'messages': (context) => const Messages(),
+    'message_container': (context) => const MessageContainer(),
     'message_detail': (context) => const MessageDetailPage(),
     'new_message': (context) => const NewMessage(),
+    'main_message': (context) => const MainMessageScreen(),
 
     //screens for managers
     'customer': (context) => const CustomerPage(),
@@ -75,5 +80,6 @@ dynamic routes() {
     'canned_message': (context) => const CannedMessagePage(),
     'canned_message_detail': (context) => const CannedMessageDetailsPage(),
     'contact_option': (context) => const ContactOptionPage(),
+    'door_lock_details_manager': (context) => const DoorLockDetailsPage(),
   };
 }

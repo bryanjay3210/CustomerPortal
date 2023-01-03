@@ -19,7 +19,7 @@ class Messages extends StatefulWidget {
 class _MessagesState extends State<Messages> {
   @override
   void initState() {
-   loadMessages();
+    loadMessages();
     super.initState();
   }
 
@@ -28,39 +28,38 @@ class _MessagesState extends State<Messages> {
     final mainProvider = Provider.of<MainProvider>(context, listen: false);
     final messageProvider =
         Provider.of<MessageProvider>(context, listen: false);
-    bool isEmpty = false;
     return Scaffold(
       backgroundColor: const Color(0xff30313A),
       body: Column(
         children: [
-          Container(
-            color: const Color(0xff30313A),
-            width: double.infinity,
-            height: 130,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20, top: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  GestureDetector(
-                      onTap: () => Navigator.of(context).pop(),
-                      child: const Icon(Icons.arrow_back_ios,
-                          color: cpWhiteColor)),
-                  const SizedBox(height: 30),
-                  const Text(
-                    'Messages',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                        color: cpWhiteColor),
-                  )
-                ],
-              ),
-            ),
-          ),
+          // Container(
+          //   color: const Color(0xff30313A),
+          //   width: double.infinity,
+          //   height: 130,
+          //   child: Padding(
+          //     padding: const EdgeInsets.only(left: 20, top: 20),
+          //     child: Column(
+          //       crossAxisAlignment: CrossAxisAlignment.start,
+          //       children: [
+          //         const SizedBox(
+          //           height: 20,
+          //         ),
+          //         GestureDetector(
+          //             onTap: () => Navigator.of(context).pop(),
+          //             child: const Icon(Icons.arrow_back_ios,
+          //                 color: cpWhiteColor)),
+          //         const SizedBox(height: 30),
+          //         const Text(
+          //           'Messages',
+          //           style: TextStyle(
+          //               fontWeight: FontWeight.bold,
+          //               fontSize: 25,
+          //               color: cpWhiteColor),
+          //         )
+          //       ],
+          //     ),
+          //   ),
+          // ),
           Expanded(
               child: Container(
                   color: mainProvider.darkTheme ? cpDarkBgColor : cpWhiteColor,
@@ -90,12 +89,15 @@ class _MessagesState extends State<Messages> {
                           messageProvider.messageList.isNotEmpty) {
                         return Scrollbar(
                           child: ListView.builder(
+                            shrinkWrap: true,
                             itemCount: messageProvider.messageList.length,
                             itemBuilder: (context, index) {
                               var message = messageProvider.messageList[index];
                               String subject = message.Subject;
-                              String date = jsDateTimeToDateDay(message.MessageDate);
-                              String time = jsTimeToTimehhmmaa(message.MessageDate);
+                              String date =
+                                  jsDateTimeToDateDay(message.MessageDate);
+                              String time =
+                                  jsTimeToTimehhmmaa(message.MessageDate);
                               String messageData = message.Message.toString();
                               return Padding(
                                 padding: const EdgeInsets.symmetric(
@@ -103,9 +105,9 @@ class _MessagesState extends State<Messages> {
                                 child: Column(
                                   children: [
                                     GestureDetector(
-                                      onTap: () async{
-                                        Navigator.of(context)
-                                            .pushNamed('message_detail',
+                                      onTap: () async {
+                                        Navigator.of(context).pushNamed(
+                                            'message_detail',
                                             arguments: {
                                               'subject': subject,
                                               'date': date,
@@ -113,7 +115,7 @@ class _MessagesState extends State<Messages> {
                                               'message': messageData,
                                               'messageId': message.MessageID,
                                             }).then((value) => loadMessages());
-                                      } ,
+                                      },
                                       child: Container(
                                         padding: const EdgeInsets.all(10),
                                         decoration: BoxDecoration(
@@ -137,24 +139,35 @@ class _MessagesState extends State<Messages> {
                                                 children: [
                                                   Row(
                                                     children: [
-                                                      message.Ack == 'N' ? Container(
+                                                      message.Ack == 'N'
+                                                          ? Container(
+                                                              width: 5,
+                                                              height: 5,
+                                                              decoration: const BoxDecoration(
+                                                                  color: Colors
+                                                                      .red,
+                                                                  shape: BoxShape
+                                                                      .circle),
+                                                            )
+                                                          : const SizedBox(
+                                                              width: 5,
+                                                            ),
+                                                      const SizedBox(
                                                         width: 5,
-                                                        height: 5,
-                                                        decoration: const BoxDecoration(
-                                                            color: Colors.red,
-                                                            shape: BoxShape.circle
-                                                        ),) : const SizedBox(width: 5,),
-                                                      const SizedBox(width: 5,),
+                                                      ),
                                                       Text(subject,
                                                           style: const TextStyle(
                                                               fontSize: 13,
                                                               fontWeight:
-                                                                  FontWeight.bold)),
+                                                                  FontWeight
+                                                                      .bold)),
                                                     ],
                                                   ),
                                                   const SizedBox(height: 10),
                                                   Padding(
-                                                    padding: const EdgeInsets.only(left: 10),
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 10),
                                                     child: Text(messageData,
                                                         style: const TextStyle(
                                                             fontSize: 13),
@@ -225,9 +238,10 @@ class _MessagesState extends State<Messages> {
       ),
     );
   }
+
   void loadMessages() {
     final messageProvider =
-    Provider.of<MessageProvider>(context, listen: false);
+        Provider.of<MessageProvider>(context, listen: false);
     final mainProvider = Provider.of<MainProvider>(context, listen: false);
     messageProvider.getMessage({
       'pollType': 'A',

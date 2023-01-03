@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'wifi_user.dart';
 
@@ -33,18 +33,22 @@ mixin _$WifiUser {
 /// @nodoc
 abstract class $WifiUserCopyWith<$Res> {
   factory $WifiUserCopyWith(WifiUser value, $Res Function(WifiUser) then) =
-      _$WifiUserCopyWithImpl<$Res>;
+      _$WifiUserCopyWithImpl<$Res, WifiUser>;
+  @useResult
   $Res call({dynamic WifiUserID, dynamic WifiUserName, dynamic WifiPassword});
 }
 
 /// @nodoc
-class _$WifiUserCopyWithImpl<$Res> implements $WifiUserCopyWith<$Res> {
+class _$WifiUserCopyWithImpl<$Res, $Val extends WifiUser>
+    implements $WifiUserCopyWith<$Res> {
   _$WifiUserCopyWithImpl(this._value, this._then);
 
-  final WifiUser _value;
   // ignore: unused_field
-  final $Res Function(WifiUser) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? WifiUserID = freezed,
@@ -52,19 +56,19 @@ class _$WifiUserCopyWithImpl<$Res> implements $WifiUserCopyWith<$Res> {
     Object? WifiPassword = freezed,
   }) {
     return _then(_value.copyWith(
-      WifiUserID: WifiUserID == freezed
+      WifiUserID: freezed == WifiUserID
           ? _value.WifiUserID
           : WifiUserID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      WifiUserName: WifiUserName == freezed
+      WifiUserName: freezed == WifiUserName
           ? _value.WifiUserName
           : WifiUserName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      WifiPassword: WifiPassword == freezed
+      WifiPassword: freezed == WifiPassword
           ? _value.WifiPassword
           : WifiPassword // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -74,19 +78,19 @@ abstract class _$$_WifiUserCopyWith<$Res> implements $WifiUserCopyWith<$Res> {
           _$_WifiUser value, $Res Function(_$_WifiUser) then) =
       __$$_WifiUserCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({dynamic WifiUserID, dynamic WifiUserName, dynamic WifiPassword});
 }
 
 /// @nodoc
-class __$$_WifiUserCopyWithImpl<$Res> extends _$WifiUserCopyWithImpl<$Res>
+class __$$_WifiUserCopyWithImpl<$Res>
+    extends _$WifiUserCopyWithImpl<$Res, _$_WifiUser>
     implements _$$_WifiUserCopyWith<$Res> {
   __$$_WifiUserCopyWithImpl(
       _$_WifiUser _value, $Res Function(_$_WifiUser) _then)
-      : super(_value, (v) => _then(v as _$_WifiUser));
+      : super(_value, _then);
 
-  @override
-  _$_WifiUser get _value => super._value as _$_WifiUser;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? WifiUserID = freezed,
@@ -94,15 +98,15 @@ class __$$_WifiUserCopyWithImpl<$Res> extends _$WifiUserCopyWithImpl<$Res>
     Object? WifiPassword = freezed,
   }) {
     return _then(_$_WifiUser(
-      WifiUserID: WifiUserID == freezed
+      WifiUserID: freezed == WifiUserID
           ? _value.WifiUserID
           : WifiUserID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      WifiUserName: WifiUserName == freezed
+      WifiUserName: freezed == WifiUserName
           ? _value.WifiUserName
           : WifiUserName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      WifiPassword: WifiPassword == freezed
+      WifiPassword: freezed == WifiPassword
           ? _value.WifiPassword
           : WifiPassword // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -157,6 +161,7 @@ class _$_WifiUser implements _WifiUser {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_WifiUserCopyWith<_$_WifiUser> get copyWith =>
       __$$_WifiUserCopyWithImpl<_$_WifiUser>(this, _$identity);
 

@@ -19,6 +19,7 @@ class LoginProvider {
 //stream
   final loginState$ = BehaviorSubject<ButtonState>.seeded(ButtonState.loaded);
   final hive = Hive.box('user_pass');
+  var isLogin = false;
   onLogin(Map<String, dynamic> map, BuildContext context,
       VoidCallback callback) async {
     final fName = map.values.elementAt(0);
@@ -28,6 +29,8 @@ class LoginProvider {
     Map<String, dynamic> data =
         await LoginRepository(server).getLoginPost(context, fName, lName);
     if (data['Status'] == 'Success') {
+      final msgGroupProvider =
+          Provider.of<MessageGroupProvider>(context, listen: false);
       final user = User.fromJson(data);
       final mainProvider = Provider.of<MainProvider>(context, listen: false);
       mainProvider.user = user;
@@ -40,6 +43,7 @@ class LoginProvider {
         await customerProvider.getProductBundles(map, context);
       }
       mainProvider.server = server;
+      saveServer({'server': server});
       final remember = map['rememberMe'];
       if (remember == null) {
       } else {
@@ -53,22 +57,37 @@ class LoginProvider {
       await saveLocalCredential(map);
       Map<String, dynamic> iotInfo =
           await LoginRepository(server).getIOT(user.UserID);
-      if (iotInfo['Status'] == 'Success') {
-        mainProvider.iot = Iot.fromJson(iotInfo);
-        Provider.of<MainProvider>(context, listen: false)
-            .bottomNavSelected$
-            .add(0);
-      } else if (iotInfo['Status'] == 'NoIOT') {
-        mainProvider.iot = mainProvider.iot.copyWith(Status: 'NoIOT');
-        Provider.of<MainProvider>(context, listen: false)
-            .bottomNavSelected$
-            .add(mainProvider.isManager() ? 3 : 0);
+      if (mainProvider.isManager()) {
+        if (msgGroupProvider.isManagerIot()) {
+          mainProvider.iot = mainProvider.iot.copyWith(Status: 'Success');
+          Provider.of<MainProvider>(context, listen: false)
+              .bottomNavSelected$
+              .add(3);
+        } else {
+          mainProvider.iot = mainProvider.iot.copyWith(Status: 'NoIOT');
+          Provider.of<MainProvider>(context, listen: false)
+              .bottomNavSelected$
+              .add(1);
+        }
       } else {
-        mainProvider.iot = mainProvider.iot.copyWith(Status: 'NoIOT');
-        Provider.of<MainProvider>(context, listen: false)
-            .bottomNavSelected$
-            .add(mainProvider.isManager() ? 3 : 0);
+        if (iotInfo['Status'] == 'Success') {
+          mainProvider.iot = Iot.fromJson(iotInfo);
+          Provider.of<MainProvider>(context, listen: false)
+              .bottomNavSelected$
+              .add(0);
+        } else if (iotInfo['Status'] == 'NoIOT') {
+          mainProvider.iot = mainProvider.iot.copyWith(Status: 'NoIOT');
+          Provider.of<MainProvider>(context, listen: false)
+              .bottomNavSelected$
+              .add(0);
+        } else {
+          mainProvider.iot = mainProvider.iot.copyWith(Status: 'NoIOT');
+          Provider.of<MainProvider>(context, listen: false)
+              .bottomNavSelected$
+              .add(0);
+        }
       }
+
       if (callback != null) {
         callback();
       }
@@ -123,5 +142,17 @@ class LoginProvider {
 
   removeRememberMe() async {
     return await hive.delete('remember_me');
+  }
+
+  saveServer(Map<String, dynamic> val) async {
+    await hive.put('server', val);
+  }
+
+  getServer() async {
+    return await hive.get('server')['server'];
+  }
+
+  removeServer() async {
+    return await hive.delete('server');
   }
 }

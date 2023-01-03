@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'product_group.dart';
 
@@ -35,7 +35,8 @@ mixin _$ProductGroup {
 abstract class $ProductGroupCopyWith<$Res> {
   factory $ProductGroupCopyWith(
           ProductGroup value, $Res Function(ProductGroup) then) =
-      _$ProductGroupCopyWithImpl<$Res>;
+      _$ProductGroupCopyWithImpl<$Res, ProductGroup>;
+  @useResult
   $Res call(
       {dynamic GroupID,
       dynamic GroupName,
@@ -44,13 +45,16 @@ abstract class $ProductGroupCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProductGroupCopyWithImpl<$Res> implements $ProductGroupCopyWith<$Res> {
+class _$ProductGroupCopyWithImpl<$Res, $Val extends ProductGroup>
+    implements $ProductGroupCopyWith<$Res> {
   _$ProductGroupCopyWithImpl(this._value, this._then);
 
-  final ProductGroup _value;
   // ignore: unused_field
-  final $Res Function(ProductGroup) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? GroupID = freezed,
@@ -59,23 +63,23 @@ class _$ProductGroupCopyWithImpl<$Res> implements $ProductGroupCopyWith<$Res> {
     Object? Products = freezed,
   }) {
     return _then(_value.copyWith(
-      GroupID: GroupID == freezed
+      GroupID: freezed == GroupID
           ? _value.GroupID
           : GroupID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      GroupName: GroupName == freezed
+      GroupName: freezed == GroupName
           ? _value.GroupName
           : GroupName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerAvailable: CustomerAvailable == freezed
+      CustomerAvailable: freezed == CustomerAvailable
           ? _value.CustomerAvailable
           : CustomerAvailable // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Products: Products == freezed
+      Products: freezed == Products
           ? _value.Products
           : Products // ignore: cast_nullable_to_non_nullable
               as List<Product>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -86,6 +90,7 @@ abstract class _$$_ProductGroupCopyWith<$Res>
           _$_ProductGroup value, $Res Function(_$_ProductGroup) then) =
       __$$_ProductGroupCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic GroupID,
       dynamic GroupName,
@@ -95,15 +100,13 @@ abstract class _$$_ProductGroupCopyWith<$Res>
 
 /// @nodoc
 class __$$_ProductGroupCopyWithImpl<$Res>
-    extends _$ProductGroupCopyWithImpl<$Res>
+    extends _$ProductGroupCopyWithImpl<$Res, _$_ProductGroup>
     implements _$$_ProductGroupCopyWith<$Res> {
   __$$_ProductGroupCopyWithImpl(
       _$_ProductGroup _value, $Res Function(_$_ProductGroup) _then)
-      : super(_value, (v) => _then(v as _$_ProductGroup));
+      : super(_value, _then);
 
-  @override
-  _$_ProductGroup get _value => super._value as _$_ProductGroup;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? GroupID = freezed,
@@ -112,19 +115,19 @@ class __$$_ProductGroupCopyWithImpl<$Res>
     Object? Products = freezed,
   }) {
     return _then(_$_ProductGroup(
-      GroupID: GroupID == freezed
+      GroupID: freezed == GroupID
           ? _value.GroupID
           : GroupID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      GroupName: GroupName == freezed
+      GroupName: freezed == GroupName
           ? _value.GroupName
           : GroupName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerAvailable: CustomerAvailable == freezed
+      CustomerAvailable: freezed == CustomerAvailable
           ? _value.CustomerAvailable
           : CustomerAvailable // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Products: Products == freezed
+      Products: freezed == Products
           ? _value._Products
           : Products // ignore: cast_nullable_to_non_nullable
               as List<Product>?,
@@ -134,7 +137,7 @@ class __$$_ProductGroupCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ProductGroup implements _ProductGroup {
+class _$_ProductGroup with DiagnosticableTreeMixin implements _ProductGroup {
   _$_ProductGroup(
       {this.GroupID = '',
       this.GroupName = '',
@@ -159,13 +162,25 @@ class _$_ProductGroup implements _ProductGroup {
   List<Product>? get Products {
     final value = _Products;
     if (value == null) return null;
+    if (_Products is EqualUnmodifiableListView) return _Products;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ProductGroup(GroupID: $GroupID, GroupName: $GroupName, CustomerAvailable: $CustomerAvailable, Products: $Products)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProductGroup'))
+      ..add(DiagnosticsProperty('GroupID', GroupID))
+      ..add(DiagnosticsProperty('GroupName', GroupName))
+      ..add(DiagnosticsProperty('CustomerAvailable', CustomerAvailable))
+      ..add(DiagnosticsProperty('Products', Products));
   }
 
   @override
@@ -191,6 +206,7 @@ class _$_ProductGroup implements _ProductGroup {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProductGroupCopyWith<_$_ProductGroup> get copyWith =>
       __$$_ProductGroupCopyWithImpl<_$_ProductGroup>(this, _$identity);
 

@@ -284,101 +284,109 @@ class _MessageGroupDetailsPageState extends State<MessageGroupDetailsPage> {
                               );
                             }),
                         const SizedBox(height: 20),
-                        const Text('*Select Customers'),
-                        const SizedBox(height: 10),
-                        StreamBuilder<List<CustomerMessageGroup>>(
-                            stream: messageGroupProvider.customerPopupSearch$,
-                            builder: (context, snapshot) {
-                              if (snapshot.data == null) {
-                                return const SizedBox();
-                              }
-                              if (snapshot.data!.isEmpty) {
-                                return const SizedBox();
-                              }
-                              final customers = snapshot.data;
-                              return DropdownSearch<
-                                      CustomerMessageGroup>.multiSelection(
-                                  popupProps: PopupPropsMultiSelection.menu(
-                                    showSearchBox: true,
-                                    containerBuilder: (context, popupWidget) =>
-                                        Column(
-                                      children: [
-                                        Expanded(child: popupWidget),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            ElevatedButton(
-                                                style: TextButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.red),
-                                                onPressed: () {
-                                                  Navigator.of(context).pop();
-                                                  messageGroupProvider
-                                                      .currentCustomers = [];
-                                                  messageGroupProvider
-                                                      .customerPopupSearch$
-                                                      .add(messageGroupProvider
-                                                          .customerPopupSearch);
-                                                  Future.delayed(
-                                                      const Duration(
-                                                          milliseconds: 100),
-                                                      () {
-                                                    messageGroupProvider
-                                                        .customerPopupSearch$
-                                                        .add(messageGroupProvider
-                                                            .customerPopupSearch);
-                                                  });
-                                                },
-                                                child: const Text(
-                                                  'Unselect All',
-                                                )),
-                                            const SizedBox(width: 25),
-                                            ElevatedButton(
-                                                style: TextButton.styleFrom(
-                                                    backgroundColor:
-                                                        cpPrimaryColor),
-                                                onPressed: () {
-                                                  Navigator.of(context).pop();
-                                                  messageGroupProvider
-                                                          .currentCustomers =
-                                                      messageGroupProvider
-                                                          .customerPopupSearch;
-                                                  messageGroupProvider
-                                                      .customerPopupSearch$
-                                                      .add(messageGroupProvider
-                                                          .customerPopupSearch);
-                                                  Future.delayed(
-                                                      const Duration(
-                                                          milliseconds: 100),
-                                                      () {
-                                                    messageGroupProvider
-                                                        .customerPopupSearch$
-                                                        .add(messageGroupProvider
-                                                            .customerPopupSearch);
-                                                  });
-                                                },
-                                                child:
-                                                    const Text('Select All')),
-                                            const SizedBox(width: 10)
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  itemAsString: (CustomerMessageGroup b) =>
-                                      b.Name,
-                                  items: customers!,
-                                  onChanged: ((value) {
-                                    if (value == null) {
-                                      return;
+                        Visibility(
+                          visible: !isRequired,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('*Select Customers'),
+                              const SizedBox(height: 10),
+                              StreamBuilder<List<CustomerMessageGroup>>(
+                                  stream: messageGroupProvider.customerPopupSearch$,
+                                  builder: (context, snapshot) {
+                                    if (snapshot.data == null) {
+                                      return const SizedBox();
                                     }
-                                    messageGroupProvider.currentCustomers =
-                                        value;
+                                    if (snapshot.data!.isEmpty) {
+                                      return const SizedBox();
+                                    }
+                                    final customers = snapshot.data;
+                                    return DropdownSearch<
+                                        CustomerMessageGroup>.multiSelection(
+                                        popupProps: PopupPropsMultiSelection.menu(
+                                          showSearchBox: true,
+                                          containerBuilder: (context, popupWidget) =>
+                                              Column(
+                                                children: [
+                                                  Expanded(child: popupWidget),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                    children: [
+                                                      ElevatedButton(
+                                                          style: TextButton.styleFrom(
+                                                              backgroundColor:
+                                                              Colors.red),
+                                                          onPressed: () {
+                                                            Navigator.of(context).pop();
+                                                            messageGroupProvider
+                                                                .currentCustomers = [];
+                                                            messageGroupProvider
+                                                                .customerPopupSearch$
+                                                                .add(messageGroupProvider
+                                                                .customerPopupSearch);
+                                                            Future.delayed(
+                                                                const Duration(
+                                                                    milliseconds: 100),
+                                                                    () {
+                                                                  messageGroupProvider
+                                                                      .customerPopupSearch$
+                                                                      .add(messageGroupProvider
+                                                                      .customerPopupSearch);
+                                                                });
+                                                          },
+                                                          child: const Text(
+                                                            'Unselect All',
+                                                          )),
+                                                      const SizedBox(width: 25),
+                                                      ElevatedButton(
+                                                          style: TextButton.styleFrom(
+                                                              backgroundColor:
+                                                              cpPrimaryColor),
+                                                          onPressed: () {
+                                                            Navigator.of(context).pop();
+                                                            messageGroupProvider
+                                                                .currentCustomers =
+                                                                messageGroupProvider
+                                                                    .customerPopupSearch;
+                                                            messageGroupProvider
+                                                                .customerPopupSearch$
+                                                                .add(messageGroupProvider
+                                                                .customerPopupSearch);
+                                                            Future.delayed(
+                                                                const Duration(
+                                                                    milliseconds: 100),
+                                                                    () {
+                                                                  messageGroupProvider
+                                                                      .customerPopupSearch$
+                                                                      .add(messageGroupProvider
+                                                                      .customerPopupSearch);
+                                                                });
+                                                          },
+                                                          child:
+                                                          const Text('Select All')),
+                                                      const SizedBox(width: 10)
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                        ),
+                                        itemAsString: (CustomerMessageGroup b) =>
+                                        b.Name,
+                                        items: customers!,
+                                        onChanged: ((value) {
+                                          if (value == null) {
+                                            return;
+                                          }
+                                          messageGroupProvider.currentCustomers =
+                                              value;
+                                        }),
+                                        selectedItems:
+                                        messageGroupProvider.currentCustomers);
                                   }),
-                                  selectedItems:
-                                      messageGroupProvider.currentCustomers);
-                            }),
+                            ],
+                          ),
+                        ),
                         const SizedBox(height: 40),
                         StretchableButton(
                           text: 'Save',

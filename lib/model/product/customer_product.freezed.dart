@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'customer_product.dart';
 
@@ -42,7 +42,8 @@ mixin _$CustomerProduct {
 abstract class $CustomerProductCopyWith<$Res> {
   factory $CustomerProductCopyWith(
           CustomerProduct value, $Res Function(CustomerProduct) then) =
-      _$CustomerProductCopyWithImpl<$Res>;
+      _$CustomerProductCopyWithImpl<$Res, CustomerProduct>;
+  @useResult
   $Res call(
       {dynamic ProductID,
       dynamic ProductName,
@@ -58,14 +59,16 @@ abstract class $CustomerProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CustomerProductCopyWithImpl<$Res>
+class _$CustomerProductCopyWithImpl<$Res, $Val extends CustomerProduct>
     implements $CustomerProductCopyWith<$Res> {
   _$CustomerProductCopyWithImpl(this._value, this._then);
 
-  final CustomerProduct _value;
   // ignore: unused_field
-  final $Res Function(CustomerProduct) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ProductID = freezed,
@@ -81,51 +84,51 @@ class _$CustomerProductCopyWithImpl<$Res>
     Object? ProductInstance = freezed,
   }) {
     return _then(_value.copyWith(
-      ProductID: ProductID == freezed
+      ProductID: freezed == ProductID
           ? _value.ProductID
           : ProductID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductName: ProductName == freezed
+      ProductName: freezed == ProductName
           ? _value.ProductName
           : ProductName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      IsProductActive: IsProductActive == freezed
+      IsProductActive: freezed == IsProductActive
           ? _value.IsProductActive
           : IsProductActive // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductActivationCharge: ProductActivationCharge == freezed
+      ProductActivationCharge: freezed == ProductActivationCharge
           ? _value.ProductActivationCharge
           : ProductActivationCharge // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductUOM: ProductUOM == freezed
+      ProductUOM: freezed == ProductUOM
           ? _value.ProductUOM
           : ProductUOM // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductCyclePrice: ProductCyclePrice == freezed
+      ProductCyclePrice: freezed == ProductCyclePrice
           ? _value.ProductCyclePrice
           : ProductCyclePrice // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductBillCycle: ProductBillCycle == freezed
+      ProductBillCycle: freezed == ProductBillCycle
           ? _value.ProductBillCycle
           : ProductBillCycle // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductProratable: ProductProratable == freezed
+      ProductProratable: freezed == ProductProratable
           ? _value.ProductProratable
           : ProductProratable // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductStartDate: ProductStartDate == freezed
+      ProductStartDate: freezed == ProductStartDate
           ? _value.ProductStartDate
           : ProductStartDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductEndDate: ProductEndDate == freezed
+      ProductEndDate: freezed == ProductEndDate
           ? _value.ProductEndDate
           : ProductEndDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductInstance: ProductInstance == freezed
+      ProductInstance: freezed == ProductInstance
           ? _value.ProductInstance
           : ProductInstance // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -136,6 +139,7 @@ abstract class _$$_CustomerProductCopyWith<$Res>
           _$_CustomerProduct value, $Res Function(_$_CustomerProduct) then) =
       __$$_CustomerProductCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic ProductID,
       dynamic ProductName,
@@ -152,15 +156,13 @@ abstract class _$$_CustomerProductCopyWith<$Res>
 
 /// @nodoc
 class __$$_CustomerProductCopyWithImpl<$Res>
-    extends _$CustomerProductCopyWithImpl<$Res>
+    extends _$CustomerProductCopyWithImpl<$Res, _$_CustomerProduct>
     implements _$$_CustomerProductCopyWith<$Res> {
   __$$_CustomerProductCopyWithImpl(
       _$_CustomerProduct _value, $Res Function(_$_CustomerProduct) _then)
-      : super(_value, (v) => _then(v as _$_CustomerProduct));
+      : super(_value, _then);
 
-  @override
-  _$_CustomerProduct get _value => super._value as _$_CustomerProduct;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ProductID = freezed,
@@ -176,47 +178,47 @@ class __$$_CustomerProductCopyWithImpl<$Res>
     Object? ProductInstance = freezed,
   }) {
     return _then(_$_CustomerProduct(
-      ProductID: ProductID == freezed
+      ProductID: freezed == ProductID
           ? _value.ProductID
           : ProductID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductName: ProductName == freezed
+      ProductName: freezed == ProductName
           ? _value.ProductName
           : ProductName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      IsProductActive: IsProductActive == freezed
+      IsProductActive: freezed == IsProductActive
           ? _value.IsProductActive
           : IsProductActive // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductActivationCharge: ProductActivationCharge == freezed
+      ProductActivationCharge: freezed == ProductActivationCharge
           ? _value.ProductActivationCharge
           : ProductActivationCharge // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductUOM: ProductUOM == freezed
+      ProductUOM: freezed == ProductUOM
           ? _value.ProductUOM
           : ProductUOM // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductCyclePrice: ProductCyclePrice == freezed
+      ProductCyclePrice: freezed == ProductCyclePrice
           ? _value.ProductCyclePrice
           : ProductCyclePrice // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductBillCycle: ProductBillCycle == freezed
+      ProductBillCycle: freezed == ProductBillCycle
           ? _value.ProductBillCycle
           : ProductBillCycle // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductProratable: ProductProratable == freezed
+      ProductProratable: freezed == ProductProratable
           ? _value.ProductProratable
           : ProductProratable // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductStartDate: ProductStartDate == freezed
+      ProductStartDate: freezed == ProductStartDate
           ? _value.ProductStartDate
           : ProductStartDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductEndDate: ProductEndDate == freezed
+      ProductEndDate: freezed == ProductEndDate
           ? _value.ProductEndDate
           : ProductEndDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProductInstance: ProductInstance == freezed
+      ProductInstance: freezed == ProductInstance
           ? _value.ProductInstance
           : ProductInstance // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -226,7 +228,9 @@ class __$$_CustomerProductCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CustomerProduct implements _CustomerProduct {
+class _$_CustomerProduct
+    with DiagnosticableTreeMixin
+    implements _CustomerProduct {
   _$_CustomerProduct(
       {this.ProductID = '',
       this.ProductName = '',
@@ -278,8 +282,27 @@ class _$_CustomerProduct implements _CustomerProduct {
   final dynamic ProductInstance;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'CustomerProduct(ProductID: $ProductID, ProductName: $ProductName, IsProductActive: $IsProductActive, ProductActivationCharge: $ProductActivationCharge, ProductUOM: $ProductUOM, ProductCyclePrice: $ProductCyclePrice, ProductBillCycle: $ProductBillCycle, ProductProratable: $ProductProratable, ProductStartDate: $ProductStartDate, ProductEndDate: $ProductEndDate, ProductInstance: $ProductInstance)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'CustomerProduct'))
+      ..add(DiagnosticsProperty('ProductID', ProductID))
+      ..add(DiagnosticsProperty('ProductName', ProductName))
+      ..add(DiagnosticsProperty('IsProductActive', IsProductActive))
+      ..add(DiagnosticsProperty(
+          'ProductActivationCharge', ProductActivationCharge))
+      ..add(DiagnosticsProperty('ProductUOM', ProductUOM))
+      ..add(DiagnosticsProperty('ProductCyclePrice', ProductCyclePrice))
+      ..add(DiagnosticsProperty('ProductBillCycle', ProductBillCycle))
+      ..add(DiagnosticsProperty('ProductProratable', ProductProratable))
+      ..add(DiagnosticsProperty('ProductStartDate', ProductStartDate))
+      ..add(DiagnosticsProperty('ProductEndDate', ProductEndDate))
+      ..add(DiagnosticsProperty('ProductInstance', ProductInstance));
   }
 
   @override
@@ -328,6 +351,7 @@ class _$_CustomerProduct implements _CustomerProduct {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CustomerProductCopyWith<_$_CustomerProduct> get copyWith =>
       __$$_CustomerProductCopyWithImpl<_$_CustomerProduct>(this, _$identity);
 

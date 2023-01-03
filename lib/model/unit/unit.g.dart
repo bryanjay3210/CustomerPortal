@@ -11,6 +11,7 @@ _$_Unit _$$_UnitFromJson(Map<String, dynamic> json) => _$_Unit(
       UnitID: json['UnitID'] ?? '',
       UnitType: json['UnitType'] ?? '',
       Occupied: json['Occupied'] ?? '',
+      Beds: json['Beds'] ?? '',
     );
 
 Map<String, dynamic> _$$_UnitToJson(_$_Unit instance) => <String, dynamic>{
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$_UnitToJson(_$_Unit instance) => <String, dynamic>{
       'UnitID': instance.UnitID,
       'UnitType': instance.UnitType,
       'Occupied': instance.Occupied,
+      'Beds': instance.Beds,
     };

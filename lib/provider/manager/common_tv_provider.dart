@@ -85,6 +85,9 @@ class CommonTvProvider {
         newItems.add(DeviceTv.fromJson(data['Devices']));
       } else {
         data['Devices'].forEach((element) {
+          if (element['Location'] is Map) {
+            element['Location'] = '';
+          }
           newItems.add(DeviceTv.fromJson(element));
         });
       }
@@ -133,9 +136,16 @@ class CommonTvProvider {
   }
 
   Channel getChannel(DeviceTv device) {
-    return allChannels.isNotEmpty
-        ? allChannels.firstWhere((element) => device.Channel == element.Number)
-        : Channel(Name: 'No Channel Name', Number: '0');
+    if (allChannels.isNotEmpty) {
+      var channel = Channel();
+      try {
+        channel = allChannels
+            .firstWhere((element) => device.Channel == element.Number);
+      } catch (ex) {}
+      return channel;
+    }
+
+    return Channel(Name: 'No Channel Name', Number: '0');
   }
 
   onPowerChange(Map<String, dynamic> map, BuildContext ctx) async {
@@ -245,6 +255,29 @@ class CommonTvProvider {
         deviceTv$.add(DataState.success);
       }
     });
+  }
+
+  onCommunityChanged(Map<String, dynamic> map, BuildContext ctx) async {
+    final mainProvider = Provider.of<MainProvider>(ctx, listen: false);
+    map['server'] = mainProvider.server;
+    map['loggedUser'] = mainProvider.user.UserID;
+    Map<String, dynamic> data =
+        await CommonTvRepository(map['server']).onCommunityChanged(map, ctx);
+    if (data['rc'] == "E-0000 ok") {
+      deviceTv$.add(DataState.loading);
+      // final allIdx = allDeviceTvs
+      //     .indexWhere((element) => element.TVID == selectedDeviceTv.TVID);
+      // allDeviceTvs[allIdx] = selectedDeviceTv;
+      // final idx = deviceTvs
+      //     .indexWhere((element) => element.TVID == selectedDeviceTv.TVID);
+      // deviceTvs[idx] = selectedDeviceTv;
+
+      // deviceTvs.removeWhere((element) => element.TVID == selectedDeviceTv.TVID);
+      allDeviceTvs
+          .removeWhere((element) => element.TVID == selectedDeviceTv.TVID);
+      filterDeviceTvs(currentSearchKeyword);
+      // deviceTv$.add(DataState.success);
+    }
   }
 
   addDevice(Map<String, dynamic> map, BuildContext context,

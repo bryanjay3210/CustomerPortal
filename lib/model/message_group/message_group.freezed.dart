@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'message_group.dart';
 
@@ -45,7 +45,8 @@ mixin _$MessageGroup {
 abstract class $MessageGroupCopyWith<$Res> {
   factory $MessageGroupCopyWith(
           MessageGroup value, $Res Function(MessageGroup) then) =
-      _$MessageGroupCopyWithImpl<$Res>;
+      _$MessageGroupCopyWithImpl<$Res, MessageGroup>;
+  @useResult
   $Res call(
       {dynamic GroupID,
       dynamic GroupName,
@@ -64,13 +65,16 @@ abstract class $MessageGroupCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MessageGroupCopyWithImpl<$Res> implements $MessageGroupCopyWith<$Res> {
+class _$MessageGroupCopyWithImpl<$Res, $Val extends MessageGroup>
+    implements $MessageGroupCopyWith<$Res> {
   _$MessageGroupCopyWithImpl(this._value, this._then);
 
-  final MessageGroup _value;
   // ignore: unused_field
-  final $Res Function(MessageGroup) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? GroupID = freezed,
@@ -86,66 +90,66 @@ class _$MessageGroupCopyWithImpl<$Res> implements $MessageGroupCopyWith<$Res> {
     Object? ModeratorCustomerID = freezed,
     Object? ModeratorUserID = freezed,
     Object? ModeratorUsername = freezed,
-    Object? CustomerList = freezed,
+    Object? CustomerList = null,
   }) {
     return _then(_value.copyWith(
-      GroupID: GroupID == freezed
+      GroupID: freezed == GroupID
           ? _value.GroupID
           : GroupID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      GroupName: GroupName == freezed
+      GroupName: freezed == GroupName
           ? _value.GroupName
           : GroupName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      GroupType: GroupType == freezed
+      GroupType: freezed == GroupType
           ? _value.GroupType
           : GroupType // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      GroupAccess: GroupAccess == freezed
+      GroupAccess: freezed == GroupAccess
           ? _value.GroupAccess
           : GroupAccess // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      GroupDesc: GroupDesc == freezed
+      GroupDesc: freezed == GroupDesc
           ? _value.GroupDesc
           : GroupDesc // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DefaultAcceptMessage: DefaultAcceptMessage == freezed
+      DefaultAcceptMessage: freezed == DefaultAcceptMessage
           ? _value.DefaultAcceptMessage
           : DefaultAcceptMessage // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DefaultRejectMessage: DefaultRejectMessage == freezed
+      DefaultRejectMessage: freezed == DefaultRejectMessage
           ? _value.DefaultRejectMessage
           : DefaultRejectMessage // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ModeratorsEmail: ModeratorsEmail == freezed
+      ModeratorsEmail: freezed == ModeratorsEmail
           ? _value.ModeratorsEmail
           : ModeratorsEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ReplyEmail: ReplyEmail == freezed
+      ReplyEmail: freezed == ReplyEmail
           ? _value.ReplyEmail
           : ReplyEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CanReply: CanReply == freezed
+      CanReply: freezed == CanReply
           ? _value.CanReply
           : CanReply // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ModeratorCustomerID: ModeratorCustomerID == freezed
+      ModeratorCustomerID: freezed == ModeratorCustomerID
           ? _value.ModeratorCustomerID
           : ModeratorCustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ModeratorUserID: ModeratorUserID == freezed
+      ModeratorUserID: freezed == ModeratorUserID
           ? _value.ModeratorUserID
           : ModeratorUserID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ModeratorUsername: ModeratorUsername == freezed
+      ModeratorUsername: freezed == ModeratorUsername
           ? _value.ModeratorUsername
           : ModeratorUsername // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerList: CustomerList == freezed
+      CustomerList: null == CustomerList
           ? _value.CustomerList
           : CustomerList // ignore: cast_nullable_to_non_nullable
               as List<Customer>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -156,6 +160,7 @@ abstract class _$$_MessageGroupCopyWith<$Res>
           _$_MessageGroup value, $Res Function(_$_MessageGroup) then) =
       __$$_MessageGroupCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic GroupID,
       dynamic GroupName,
@@ -175,15 +180,13 @@ abstract class _$$_MessageGroupCopyWith<$Res>
 
 /// @nodoc
 class __$$_MessageGroupCopyWithImpl<$Res>
-    extends _$MessageGroupCopyWithImpl<$Res>
+    extends _$MessageGroupCopyWithImpl<$Res, _$_MessageGroup>
     implements _$$_MessageGroupCopyWith<$Res> {
   __$$_MessageGroupCopyWithImpl(
       _$_MessageGroup _value, $Res Function(_$_MessageGroup) _then)
-      : super(_value, (v) => _then(v as _$_MessageGroup));
+      : super(_value, _then);
 
-  @override
-  _$_MessageGroup get _value => super._value as _$_MessageGroup;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? GroupID = freezed,
@@ -199,62 +202,62 @@ class __$$_MessageGroupCopyWithImpl<$Res>
     Object? ModeratorCustomerID = freezed,
     Object? ModeratorUserID = freezed,
     Object? ModeratorUsername = freezed,
-    Object? CustomerList = freezed,
+    Object? CustomerList = null,
   }) {
     return _then(_$_MessageGroup(
-      GroupID: GroupID == freezed
+      GroupID: freezed == GroupID
           ? _value.GroupID
           : GroupID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      GroupName: GroupName == freezed
+      GroupName: freezed == GroupName
           ? _value.GroupName
           : GroupName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      GroupType: GroupType == freezed
+      GroupType: freezed == GroupType
           ? _value.GroupType
           : GroupType // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      GroupAccess: GroupAccess == freezed
+      GroupAccess: freezed == GroupAccess
           ? _value.GroupAccess
           : GroupAccess // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      GroupDesc: GroupDesc == freezed
+      GroupDesc: freezed == GroupDesc
           ? _value.GroupDesc
           : GroupDesc // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DefaultAcceptMessage: DefaultAcceptMessage == freezed
+      DefaultAcceptMessage: freezed == DefaultAcceptMessage
           ? _value.DefaultAcceptMessage
           : DefaultAcceptMessage // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DefaultRejectMessage: DefaultRejectMessage == freezed
+      DefaultRejectMessage: freezed == DefaultRejectMessage
           ? _value.DefaultRejectMessage
           : DefaultRejectMessage // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ModeratorsEmail: ModeratorsEmail == freezed
+      ModeratorsEmail: freezed == ModeratorsEmail
           ? _value.ModeratorsEmail
           : ModeratorsEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ReplyEmail: ReplyEmail == freezed
+      ReplyEmail: freezed == ReplyEmail
           ? _value.ReplyEmail
           : ReplyEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CanReply: CanReply == freezed
+      CanReply: freezed == CanReply
           ? _value.CanReply
           : CanReply // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ModeratorCustomerID: ModeratorCustomerID == freezed
+      ModeratorCustomerID: freezed == ModeratorCustomerID
           ? _value.ModeratorCustomerID
           : ModeratorCustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ModeratorUserID: ModeratorUserID == freezed
+      ModeratorUserID: freezed == ModeratorUserID
           ? _value.ModeratorUserID
           : ModeratorUserID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ModeratorUsername: ModeratorUsername == freezed
+      ModeratorUsername: freezed == ModeratorUsername
           ? _value.ModeratorUsername
           : ModeratorUsername // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerList: CustomerList == freezed
+      CustomerList: null == CustomerList
           ? _value._CustomerList
           : CustomerList // ignore: cast_nullable_to_non_nullable
               as List<Customer>,
@@ -327,6 +330,7 @@ class _$_MessageGroup implements _MessageGroup {
   final List<Customer> _CustomerList;
   @override
   List<Customer> get CustomerList {
+    if (_CustomerList is EqualUnmodifiableListView) return _CustomerList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_CustomerList);
   }
@@ -387,6 +391,7 @@ class _$_MessageGroup implements _MessageGroup {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_MessageGroupCopyWith<_$_MessageGroup> get copyWith =>
       __$$_MessageGroupCopyWithImpl<_$_MessageGroup>(this, _$identity);
 

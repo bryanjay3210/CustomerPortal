@@ -30,6 +30,7 @@ class CustomerRepository extends RequestApi {
       "Command": "SignupPortal",
       "Subcommand1": "UnitList",
       "BuildingID": map["buildingId"],
+      "LoggedUser": map["loggedUser"],
     };
     return await getApi(dataUrl, context: context);
   }

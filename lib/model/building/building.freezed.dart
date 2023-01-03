@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'building.dart';
 
@@ -36,7 +36,8 @@ mixin _$Building {
 /// @nodoc
 abstract class $BuildingCopyWith<$Res> {
   factory $BuildingCopyWith(Building value, $Res Function(Building) then) =
-      _$BuildingCopyWithImpl<$Res>;
+      _$BuildingCopyWithImpl<$Res, Building>;
+  @useResult
   $Res call(
       {dynamic BuildingName,
       dynamic BuildingID,
@@ -47,13 +48,16 @@ abstract class $BuildingCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BuildingCopyWithImpl<$Res> implements $BuildingCopyWith<$Res> {
+class _$BuildingCopyWithImpl<$Res, $Val extends Building>
+    implements $BuildingCopyWith<$Res> {
   _$BuildingCopyWithImpl(this._value, this._then);
 
-  final Building _value;
   // ignore: unused_field
-  final $Res Function(Building) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? BuildingName = freezed,
@@ -64,31 +68,31 @@ class _$BuildingCopyWithImpl<$Res> implements $BuildingCopyWith<$Res> {
     Object? Type = freezed,
   }) {
     return _then(_value.copyWith(
-      BuildingName: BuildingName == freezed
+      BuildingName: freezed == BuildingName
           ? _value.BuildingName
           : BuildingName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      BuildingID: BuildingID == freezed
+      BuildingID: freezed == BuildingID
           ? _value.BuildingID
           : BuildingID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RegionID: RegionID == freezed
+      RegionID: freezed == RegionID
           ? _value.RegionID
           : RegionID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      IOTBuilding: IOTBuilding == freezed
+      IOTBuilding: freezed == IOTBuilding
           ? _value.IOTBuilding
           : IOTBuilding // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ResidenceHall: ResidenceHall == freezed
+      ResidenceHall: freezed == ResidenceHall
           ? _value.ResidenceHall
           : ResidenceHall // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Type: Type == freezed
+      Type: freezed == Type
           ? _value.Type
           : Type // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -98,6 +102,7 @@ abstract class _$$_BuildingCopyWith<$Res> implements $BuildingCopyWith<$Res> {
           _$_Building value, $Res Function(_$_Building) then) =
       __$$_BuildingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic BuildingName,
       dynamic BuildingID,
@@ -108,15 +113,14 @@ abstract class _$$_BuildingCopyWith<$Res> implements $BuildingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_BuildingCopyWithImpl<$Res> extends _$BuildingCopyWithImpl<$Res>
+class __$$_BuildingCopyWithImpl<$Res>
+    extends _$BuildingCopyWithImpl<$Res, _$_Building>
     implements _$$_BuildingCopyWith<$Res> {
   __$$_BuildingCopyWithImpl(
       _$_Building _value, $Res Function(_$_Building) _then)
-      : super(_value, (v) => _then(v as _$_Building));
+      : super(_value, _then);
 
-  @override
-  _$_Building get _value => super._value as _$_Building;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? BuildingName = freezed,
@@ -127,27 +131,27 @@ class __$$_BuildingCopyWithImpl<$Res> extends _$BuildingCopyWithImpl<$Res>
     Object? Type = freezed,
   }) {
     return _then(_$_Building(
-      BuildingName: BuildingName == freezed
+      BuildingName: freezed == BuildingName
           ? _value.BuildingName
           : BuildingName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      BuildingID: BuildingID == freezed
+      BuildingID: freezed == BuildingID
           ? _value.BuildingID
           : BuildingID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RegionID: RegionID == freezed
+      RegionID: freezed == RegionID
           ? _value.RegionID
           : RegionID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      IOTBuilding: IOTBuilding == freezed
+      IOTBuilding: freezed == IOTBuilding
           ? _value.IOTBuilding
           : IOTBuilding // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ResidenceHall: ResidenceHall == freezed
+      ResidenceHall: freezed == ResidenceHall
           ? _value.ResidenceHall
           : ResidenceHall // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Type: Type == freezed
+      Type: freezed == Type
           ? _value.Type
           : Type // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -223,6 +227,7 @@ class _$_Building implements _Building {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_BuildingCopyWith<_$_Building> get copyWith =>
       __$$_BuildingCopyWithImpl<_$_Building>(this, _$identity);
 

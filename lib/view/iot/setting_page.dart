@@ -1,14 +1,18 @@
+import 'dart:async';
+
 import 'package:cp/utils/utils/theme/global_colors.dart';
+import 'package:cp/utils/utils/version/version.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
-import '../../constants.dart';
+import 'package:rxdart/subjects.dart';
+import 'package:slide_action/slide_action.dart';
 import '../../provider/iot/home_provider.dart';
 import '../../provider/login_provider.dart';
 import '../../provider/main_provider.dart';
 import '../../shared_widgets/shared_dialog.dart';
+import '../../shared_widgets/toasts.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -23,6 +27,8 @@ class _SettingPageState extends State<SettingPage> {
     final loginProvider = Provider.of<LoginProvider>(context, listen: false);
     final mainProvider = Provider.of<MainProvider>(context, listen: false);
     final isNoIOT = mainProvider.iot.Status == 'NoIOT';
+    final holdToUnlock = BehaviorSubject.seeded(false);
+    final swipeToUnlock = BehaviorSubject.seeded(false);
     return Scaffold(
         appBar: AppBar(
             systemOverlayStyle:
@@ -34,7 +40,7 @@ class _SettingPageState extends State<SettingPage> {
             backgroundColor: cpGreyDarkColor),
         body: Column(
           children: [
-            if (!isNoIOT)
+            if (!isNoIOT && !mainProvider.isManager())
               Column(
                 children: [
                   ListTile(
@@ -62,7 +68,7 @@ class _SettingPageState extends State<SettingPage> {
                   ),
                 ],
               ),
-            if (!isNoIOT)
+            if (!isNoIOT && !mainProvider.isManager())
               ListTile(
                 tileColor: mainProvider.darkTheme
                     ? cpDarkContainerColor
@@ -164,7 +170,11 @@ class _SettingPageState extends State<SettingPage> {
                     const SizedBox(
                       height: 15,
                     ),
-                    Text(versionNum)
+                    FutureBuilder(
+                      future: getVersion(),
+                      builder: (context, snapshot) =>
+                          Text(snapshot.data.toString()),
+                    ),
                   ],
                 ),
               ),

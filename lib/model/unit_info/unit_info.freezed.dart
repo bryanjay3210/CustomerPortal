@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'unit_info.dart';
 
@@ -43,7 +43,8 @@ mixin _$UnitInfo {
 /// @nodoc
 abstract class $UnitInfoCopyWith<$Res> {
   factory $UnitInfoCopyWith(UnitInfo value, $Res Function(UnitInfo) then) =
-      _$UnitInfoCopyWithImpl<$Res>;
+      _$UnitInfoCopyWithImpl<$Res, UnitInfo>;
+  @useResult
   $Res call(
       {dynamic BedName,
       dynamic CustomerName,
@@ -61,13 +62,16 @@ abstract class $UnitInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UnitInfoCopyWithImpl<$Res> implements $UnitInfoCopyWith<$Res> {
+class _$UnitInfoCopyWithImpl<$Res, $Val extends UnitInfo>
+    implements $UnitInfoCopyWith<$Res> {
   _$UnitInfoCopyWithImpl(this._value, this._then);
 
-  final UnitInfo _value;
   // ignore: unused_field
-  final $Res Function(UnitInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? BedName = freezed,
@@ -85,59 +89,59 @@ class _$UnitInfoCopyWithImpl<$Res> implements $UnitInfoCopyWith<$Res> {
     Object? UserEmail = freezed,
   }) {
     return _then(_value.copyWith(
-      BedName: BedName == freezed
+      BedName: freezed == BedName
           ? _value.BedName
           : BedName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerName: CustomerName == freezed
+      CustomerName: freezed == CustomerName
           ? _value.CustomerName
           : CustomerName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserFname: UserFname == freezed
+      UserFname: freezed == UserFname
           ? _value.UserFname
           : UserFname // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserLname: UserLname == freezed
+      UserLname: freezed == UserLname
           ? _value.UserLname
           : UserLname // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitID: UnitID == freezed
+      UnitID: freezed == UnitID
           ? _value.UnitID
           : UnitID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitName: UnitName == freezed
+      UnitName: freezed == UnitName
           ? _value.UnitName
           : UnitName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserID: UserID == freezed
+      UserID: freezed == UserID
           ? _value.UserID
           : UserID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Suspended: Suspended == freezed
+      Suspended: freezed == Suspended
           ? _value.Suspended
           : Suspended // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      BuildingName: BuildingName == freezed
+      BuildingName: freezed == BuildingName
           ? _value.BuildingName
           : BuildingName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPhoneMobile: UserPhoneMobile == freezed
+      UserPhoneMobile: freezed == UserPhoneMobile
           ? _value.UserPhoneMobile
           : UserPhoneMobile // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerPin: CustomerPin == freezed
+      CustomerPin: freezed == CustomerPin
           ? _value.CustomerPin
           : CustomerPin // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserEmail: UserEmail == freezed
+      UserEmail: freezed == UserEmail
           ? _value.UserEmail
           : UserEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -147,6 +151,7 @@ abstract class _$$_UnitInfoCopyWith<$Res> implements $UnitInfoCopyWith<$Res> {
           _$_UnitInfo value, $Res Function(_$_UnitInfo) then) =
       __$$_UnitInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic BedName,
       dynamic CustomerName,
@@ -164,15 +169,14 @@ abstract class _$$_UnitInfoCopyWith<$Res> implements $UnitInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UnitInfoCopyWithImpl<$Res> extends _$UnitInfoCopyWithImpl<$Res>
+class __$$_UnitInfoCopyWithImpl<$Res>
+    extends _$UnitInfoCopyWithImpl<$Res, _$_UnitInfo>
     implements _$$_UnitInfoCopyWith<$Res> {
   __$$_UnitInfoCopyWithImpl(
       _$_UnitInfo _value, $Res Function(_$_UnitInfo) _then)
-      : super(_value, (v) => _then(v as _$_UnitInfo));
+      : super(_value, _then);
 
-  @override
-  _$_UnitInfo get _value => super._value as _$_UnitInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? BedName = freezed,
@@ -190,55 +194,55 @@ class __$$_UnitInfoCopyWithImpl<$Res> extends _$UnitInfoCopyWithImpl<$Res>
     Object? UserEmail = freezed,
   }) {
     return _then(_$_UnitInfo(
-      BedName: BedName == freezed
+      BedName: freezed == BedName
           ? _value.BedName
           : BedName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerName: CustomerName == freezed
+      CustomerName: freezed == CustomerName
           ? _value.CustomerName
           : CustomerName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserFname: UserFname == freezed
+      UserFname: freezed == UserFname
           ? _value.UserFname
           : UserFname // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserLname: UserLname == freezed
+      UserLname: freezed == UserLname
           ? _value.UserLname
           : UserLname // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitID: UnitID == freezed
+      UnitID: freezed == UnitID
           ? _value.UnitID
           : UnitID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitName: UnitName == freezed
+      UnitName: freezed == UnitName
           ? _value.UnitName
           : UnitName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserID: UserID == freezed
+      UserID: freezed == UserID
           ? _value.UserID
           : UserID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Suspended: Suspended == freezed
+      Suspended: freezed == Suspended
           ? _value.Suspended
           : Suspended // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      BuildingName: BuildingName == freezed
+      BuildingName: freezed == BuildingName
           ? _value.BuildingName
           : BuildingName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPhoneMobile: UserPhoneMobile == freezed
+      UserPhoneMobile: freezed == UserPhoneMobile
           ? _value.UserPhoneMobile
           : UserPhoneMobile // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerPin: CustomerPin == freezed
+      CustomerPin: freezed == CustomerPin
           ? _value.CustomerPin
           : CustomerPin // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserEmail: UserEmail == freezed
+      UserEmail: freezed == UserEmail
           ? _value.UserEmail
           : UserEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -248,7 +252,7 @@ class __$$_UnitInfoCopyWithImpl<$Res> extends _$UnitInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UnitInfo implements _UnitInfo {
+class _$_UnitInfo with DiagnosticableTreeMixin implements _UnitInfo {
   _$_UnitInfo(
       {this.BedName = '',
       this.CustomerName = '',
@@ -308,8 +312,28 @@ class _$_UnitInfo implements _UnitInfo {
   final dynamic UserEmail;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'UnitInfo(BedName: $BedName, CustomerName: $CustomerName, UserFname: $UserFname, UserLname: $UserLname, UnitID: $UnitID, UnitName: $UnitName, CustomerID: $CustomerID, UserID: $UserID, Suspended: $Suspended, BuildingName: $BuildingName, UserPhoneMobile: $UserPhoneMobile, CustomerPin: $CustomerPin, UserEmail: $UserEmail)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UnitInfo'))
+      ..add(DiagnosticsProperty('BedName', BedName))
+      ..add(DiagnosticsProperty('CustomerName', CustomerName))
+      ..add(DiagnosticsProperty('UserFname', UserFname))
+      ..add(DiagnosticsProperty('UserLname', UserLname))
+      ..add(DiagnosticsProperty('UnitID', UnitID))
+      ..add(DiagnosticsProperty('UnitName', UnitName))
+      ..add(DiagnosticsProperty('CustomerID', CustomerID))
+      ..add(DiagnosticsProperty('UserID', UserID))
+      ..add(DiagnosticsProperty('Suspended', Suspended))
+      ..add(DiagnosticsProperty('BuildingName', BuildingName))
+      ..add(DiagnosticsProperty('UserPhoneMobile', UserPhoneMobile))
+      ..add(DiagnosticsProperty('CustomerPin', CustomerPin))
+      ..add(DiagnosticsProperty('UserEmail', UserEmail));
   }
 
   @override
@@ -357,6 +381,7 @@ class _$_UnitInfo implements _UnitInfo {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UnitInfoCopyWith<_$_UnitInfo> get copyWith =>
       __$$_UnitInfoCopyWithImpl<_$_UnitInfo>(this, _$identity);
 

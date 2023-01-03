@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'message_template_widget.dart';
 
@@ -36,7 +36,8 @@ mixin _$MessageTemplateWidget {
 abstract class $MessageTemplateWidgetCopyWith<$Res> {
   factory $MessageTemplateWidgetCopyWith(MessageTemplateWidget value,
           $Res Function(MessageTemplateWidget) then) =
-      _$MessageTemplateWidgetCopyWithImpl<$Res>;
+      _$MessageTemplateWidgetCopyWithImpl<$Res, MessageTemplateWidget>;
+  @useResult
   $Res call(
       {String TemplateID,
       String TemplateName,
@@ -45,39 +46,42 @@ abstract class $MessageTemplateWidgetCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MessageTemplateWidgetCopyWithImpl<$Res>
+class _$MessageTemplateWidgetCopyWithImpl<$Res,
+        $Val extends MessageTemplateWidget>
     implements $MessageTemplateWidgetCopyWith<$Res> {
   _$MessageTemplateWidgetCopyWithImpl(this._value, this._then);
 
-  final MessageTemplateWidget _value;
   // ignore: unused_field
-  final $Res Function(MessageTemplateWidget) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? TemplateID = freezed,
-    Object? TemplateName = freezed,
-    Object? TemplateText = freezed,
-    Object? isSelected = freezed,
+    Object? TemplateID = null,
+    Object? TemplateName = null,
+    Object? TemplateText = null,
+    Object? isSelected = null,
   }) {
     return _then(_value.copyWith(
-      TemplateID: TemplateID == freezed
+      TemplateID: null == TemplateID
           ? _value.TemplateID
           : TemplateID // ignore: cast_nullable_to_non_nullable
               as String,
-      TemplateName: TemplateName == freezed
+      TemplateName: null == TemplateName
           ? _value.TemplateName
           : TemplateName // ignore: cast_nullable_to_non_nullable
               as String,
-      TemplateText: TemplateText == freezed
+      TemplateText: null == TemplateText
           ? _value.TemplateText
           : TemplateText // ignore: cast_nullable_to_non_nullable
               as String,
-      isSelected: isSelected == freezed
+      isSelected: null == isSelected
           ? _value.isSelected
           : isSelected // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -88,6 +92,7 @@ abstract class _$$_MessageTemplateWidgetCopyWith<$Res>
           $Res Function(_$_MessageTemplateWidget) then) =
       __$$_MessageTemplateWidgetCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String TemplateID,
       String TemplateName,
@@ -97,37 +102,34 @@ abstract class _$$_MessageTemplateWidgetCopyWith<$Res>
 
 /// @nodoc
 class __$$_MessageTemplateWidgetCopyWithImpl<$Res>
-    extends _$MessageTemplateWidgetCopyWithImpl<$Res>
+    extends _$MessageTemplateWidgetCopyWithImpl<$Res, _$_MessageTemplateWidget>
     implements _$$_MessageTemplateWidgetCopyWith<$Res> {
   __$$_MessageTemplateWidgetCopyWithImpl(_$_MessageTemplateWidget _value,
       $Res Function(_$_MessageTemplateWidget) _then)
-      : super(_value, (v) => _then(v as _$_MessageTemplateWidget));
+      : super(_value, _then);
 
-  @override
-  _$_MessageTemplateWidget get _value =>
-      super._value as _$_MessageTemplateWidget;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? TemplateID = freezed,
-    Object? TemplateName = freezed,
-    Object? TemplateText = freezed,
-    Object? isSelected = freezed,
+    Object? TemplateID = null,
+    Object? TemplateName = null,
+    Object? TemplateText = null,
+    Object? isSelected = null,
   }) {
     return _then(_$_MessageTemplateWidget(
-      TemplateID: TemplateID == freezed
+      TemplateID: null == TemplateID
           ? _value.TemplateID
           : TemplateID // ignore: cast_nullable_to_non_nullable
               as String,
-      TemplateName: TemplateName == freezed
+      TemplateName: null == TemplateName
           ? _value.TemplateName
           : TemplateName // ignore: cast_nullable_to_non_nullable
               as String,
-      TemplateText: TemplateText == freezed
+      TemplateText: null == TemplateText
           ? _value.TemplateText
           : TemplateText // ignore: cast_nullable_to_non_nullable
               as String,
-      isSelected: isSelected == freezed
+      isSelected: null == isSelected
           ? _value.isSelected
           : isSelected // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -169,27 +171,24 @@ class _$_MessageTemplateWidget implements _MessageTemplateWidget {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MessageTemplateWidget &&
-            const DeepCollectionEquality()
-                .equals(other.TemplateID, TemplateID) &&
-            const DeepCollectionEquality()
-                .equals(other.TemplateName, TemplateName) &&
-            const DeepCollectionEquality()
-                .equals(other.TemplateText, TemplateText) &&
-            const DeepCollectionEquality()
-                .equals(other.isSelected, isSelected));
+            (identical(other.TemplateID, TemplateID) ||
+                other.TemplateID == TemplateID) &&
+            (identical(other.TemplateName, TemplateName) ||
+                other.TemplateName == TemplateName) &&
+            (identical(other.TemplateText, TemplateText) ||
+                other.TemplateText == TemplateText) &&
+            (identical(other.isSelected, isSelected) ||
+                other.isSelected == isSelected));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(TemplateID),
-      const DeepCollectionEquality().hash(TemplateName),
-      const DeepCollectionEquality().hash(TemplateText),
-      const DeepCollectionEquality().hash(isSelected));
+      runtimeType, TemplateID, TemplateName, TemplateText, isSelected);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_MessageTemplateWidgetCopyWith<_$_MessageTemplateWidget> get copyWith =>
       __$$_MessageTemplateWidgetCopyWithImpl<_$_MessageTemplateWidget>(
           this, _$identity);

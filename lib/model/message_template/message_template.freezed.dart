@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'message_template.dart';
 
@@ -34,19 +34,22 @@ mixin _$MessageTemplate {
 abstract class $MessageTemplateCopyWith<$Res> {
   factory $MessageTemplateCopyWith(
           MessageTemplate value, $Res Function(MessageTemplate) then) =
-      _$MessageTemplateCopyWithImpl<$Res>;
+      _$MessageTemplateCopyWithImpl<$Res, MessageTemplate>;
+  @useResult
   $Res call({dynamic TemplateID, dynamic TemplateName, dynamic TemplateText});
 }
 
 /// @nodoc
-class _$MessageTemplateCopyWithImpl<$Res>
+class _$MessageTemplateCopyWithImpl<$Res, $Val extends MessageTemplate>
     implements $MessageTemplateCopyWith<$Res> {
   _$MessageTemplateCopyWithImpl(this._value, this._then);
 
-  final MessageTemplate _value;
   // ignore: unused_field
-  final $Res Function(MessageTemplate) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? TemplateID = freezed,
@@ -54,19 +57,19 @@ class _$MessageTemplateCopyWithImpl<$Res>
     Object? TemplateText = freezed,
   }) {
     return _then(_value.copyWith(
-      TemplateID: TemplateID == freezed
+      TemplateID: freezed == TemplateID
           ? _value.TemplateID
           : TemplateID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TemplateName: TemplateName == freezed
+      TemplateName: freezed == TemplateName
           ? _value.TemplateName
           : TemplateName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TemplateText: TemplateText == freezed
+      TemplateText: freezed == TemplateText
           ? _value.TemplateText
           : TemplateText // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -77,20 +80,19 @@ abstract class _$$_MessageTemplateCopyWith<$Res>
           _$_MessageTemplate value, $Res Function(_$_MessageTemplate) then) =
       __$$_MessageTemplateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({dynamic TemplateID, dynamic TemplateName, dynamic TemplateText});
 }
 
 /// @nodoc
 class __$$_MessageTemplateCopyWithImpl<$Res>
-    extends _$MessageTemplateCopyWithImpl<$Res>
+    extends _$MessageTemplateCopyWithImpl<$Res, _$_MessageTemplate>
     implements _$$_MessageTemplateCopyWith<$Res> {
   __$$_MessageTemplateCopyWithImpl(
       _$_MessageTemplate _value, $Res Function(_$_MessageTemplate) _then)
-      : super(_value, (v) => _then(v as _$_MessageTemplate));
+      : super(_value, _then);
 
-  @override
-  _$_MessageTemplate get _value => super._value as _$_MessageTemplate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? TemplateID = freezed,
@@ -98,15 +100,15 @@ class __$$_MessageTemplateCopyWithImpl<$Res>
     Object? TemplateText = freezed,
   }) {
     return _then(_$_MessageTemplate(
-      TemplateID: TemplateID == freezed
+      TemplateID: freezed == TemplateID
           ? _value.TemplateID
           : TemplateID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TemplateName: TemplateName == freezed
+      TemplateName: freezed == TemplateName
           ? _value.TemplateName
           : TemplateName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TemplateText: TemplateText == freezed
+      TemplateText: freezed == TemplateText
           ? _value.TemplateText
           : TemplateText // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -161,6 +163,7 @@ class _$_MessageTemplate implements _MessageTemplate {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_MessageTemplateCopyWith<_$_MessageTemplate> get copyWith =>
       __$$_MessageTemplateCopyWithImpl<_$_MessageTemplate>(this, _$identity);
 

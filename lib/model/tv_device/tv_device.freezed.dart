@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tv_device.dart';
 
@@ -42,7 +42,8 @@ mixin _$TvDevice {
 /// @nodoc
 abstract class $TvDeviceCopyWith<$Res> {
   factory $TvDeviceCopyWith(TvDevice value, $Res Function(TvDevice) then) =
-      _$TvDeviceCopyWithImpl<$Res>;
+      _$TvDeviceCopyWithImpl<$Res, TvDevice>;
+  @useResult
   $Res call(
       {dynamic id,
       dynamic device_name,
@@ -59,13 +60,16 @@ abstract class $TvDeviceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TvDeviceCopyWithImpl<$Res> implements $TvDeviceCopyWith<$Res> {
+class _$TvDeviceCopyWithImpl<$Res, $Val extends TvDevice>
+    implements $TvDeviceCopyWith<$Res> {
   _$TvDeviceCopyWithImpl(this._value, this._then);
 
-  final TvDevice _value;
   // ignore: unused_field
-  final $Res Function(TvDevice) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -82,55 +86,55 @@ class _$TvDeviceCopyWithImpl<$Res> implements $TvDeviceCopyWith<$Res> {
     Object? is_community = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      device_name: device_name == freezed
+      device_name: freezed == device_name
           ? _value.device_name
           : device_name // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      mac: mac == freezed
+      mac: freezed == mac
           ? _value.mac
           : mac // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PublicIP: PublicIP == freezed
+      PublicIP: freezed == PublicIP
           ? _value.PublicIP
           : PublicIP // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PrivateIP: PrivateIP == freezed
+      PrivateIP: freezed == PrivateIP
           ? _value.PrivateIP
           : PrivateIP // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Interface: Interface == freezed
+      Interface: freezed == Interface
           ? _value.Interface
           : Interface // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ClientType: ClientType == freezed
+      ClientType: freezed == ClientType
           ? _value.ClientType
           : ClientType // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ClientStatus: ClientStatus == freezed
+      ClientStatus: freezed == ClientStatus
           ? _value.ClientStatus
           : ClientStatus // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SoftwareVersion: SoftwareVersion == freezed
+      SoftwareVersion: freezed == SoftwareVersion
           ? _value.SoftwareVersion
           : SoftwareVersion // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Storage: Storage == freezed
+      Storage: freezed == Storage
           ? _value.Storage
           : Storage // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Chan: Chan == freezed
+      Chan: freezed == Chan
           ? _value.Chan
           : Chan // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      is_community: is_community == freezed
+      is_community: freezed == is_community
           ? _value.is_community
           : is_community // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -140,6 +144,7 @@ abstract class _$$_TvDeviceCopyWith<$Res> implements $TvDeviceCopyWith<$Res> {
           _$_TvDevice value, $Res Function(_$_TvDevice) then) =
       __$$_TvDeviceCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic id,
       dynamic device_name,
@@ -156,15 +161,14 @@ abstract class _$$_TvDeviceCopyWith<$Res> implements $TvDeviceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TvDeviceCopyWithImpl<$Res> extends _$TvDeviceCopyWithImpl<$Res>
+class __$$_TvDeviceCopyWithImpl<$Res>
+    extends _$TvDeviceCopyWithImpl<$Res, _$_TvDevice>
     implements _$$_TvDeviceCopyWith<$Res> {
   __$$_TvDeviceCopyWithImpl(
       _$_TvDevice _value, $Res Function(_$_TvDevice) _then)
-      : super(_value, (v) => _then(v as _$_TvDevice));
+      : super(_value, _then);
 
-  @override
-  _$_TvDevice get _value => super._value as _$_TvDevice;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -181,51 +185,51 @@ class __$$_TvDeviceCopyWithImpl<$Res> extends _$TvDeviceCopyWithImpl<$Res>
     Object? is_community = freezed,
   }) {
     return _then(_$_TvDevice(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      device_name: device_name == freezed
+      device_name: freezed == device_name
           ? _value.device_name
           : device_name // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      mac: mac == freezed
+      mac: freezed == mac
           ? _value.mac
           : mac // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PublicIP: PublicIP == freezed
+      PublicIP: freezed == PublicIP
           ? _value.PublicIP
           : PublicIP // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PrivateIP: PrivateIP == freezed
+      PrivateIP: freezed == PrivateIP
           ? _value.PrivateIP
           : PrivateIP // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Interface: Interface == freezed
+      Interface: freezed == Interface
           ? _value.Interface
           : Interface // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ClientType: ClientType == freezed
+      ClientType: freezed == ClientType
           ? _value.ClientType
           : ClientType // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ClientStatus: ClientStatus == freezed
+      ClientStatus: freezed == ClientStatus
           ? _value.ClientStatus
           : ClientStatus // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SoftwareVersion: SoftwareVersion == freezed
+      SoftwareVersion: freezed == SoftwareVersion
           ? _value.SoftwareVersion
           : SoftwareVersion // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Storage: Storage == freezed
+      Storage: freezed == Storage
           ? _value.Storage
           : Storage // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Chan: Chan == freezed
+      Chan: freezed == Chan
           ? _value.Chan
           : Chan // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      is_community: is_community == freezed
+      is_community: freezed == is_community
           ? _value.is_community
           : is_community // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -338,6 +342,7 @@ class _$_TvDevice implements _TvDevice {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TvDeviceCopyWith<_$_TvDevice> get copyWith =>
       __$$_TvDeviceCopyWithImpl<_$_TvDevice>(this, _$identity);
 

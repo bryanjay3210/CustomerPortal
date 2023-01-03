@@ -1,4 +1,4 @@
-package customer.portal.mdu1.dev
+package com.myinternetsupport.cp
 
 import io.flutter.embedding.android.FlutterActivity
 

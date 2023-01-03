@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction.dart';
 
@@ -43,7 +43,8 @@ mixin _$Transaction {
 abstract class $TransactionCopyWith<$Res> {
   factory $TransactionCopyWith(
           Transaction value, $Res Function(Transaction) then) =
-      _$TransactionCopyWithImpl<$Res>;
+      _$TransactionCopyWithImpl<$Res, Transaction>;
+  @useResult
   $Res call(
       {dynamic TXNID,
       dynamic CustomerID,
@@ -60,13 +61,16 @@ abstract class $TransactionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransactionCopyWithImpl<$Res> implements $TransactionCopyWith<$Res> {
+class _$TransactionCopyWithImpl<$Res, $Val extends Transaction>
+    implements $TransactionCopyWith<$Res> {
   _$TransactionCopyWithImpl(this._value, this._then);
 
-  final Transaction _value;
   // ignore: unused_field
-  final $Res Function(Transaction) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? TXNID = freezed,
@@ -83,55 +87,55 @@ class _$TransactionCopyWithImpl<$Res> implements $TransactionCopyWith<$Res> {
     Object? TXNReference = freezed,
   }) {
     return _then(_value.copyWith(
-      TXNID: TXNID == freezed
+      TXNID: freezed == TXNID
           ? _value.TXNID
           : TXNID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerName: CustomerName == freezed
+      CustomerName: freezed == CustomerName
           ? _value.CustomerName
           : CustomerName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNDate: TXNDate == freezed
+      TXNDate: freezed == TXNDate
           ? _value.TXNDate
           : TXNDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNStatus: TXNStatus == freezed
+      TXNStatus: freezed == TXNStatus
           ? _value.TXNStatus
           : TXNStatus // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNCategory: TXNCategory == freezed
+      TXNCategory: freezed == TXNCategory
           ? _value.TXNCategory
           : TXNCategory // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNDescription: TXNDescription == freezed
+      TXNDescription: freezed == TXNDescription
           ? _value.TXNDescription
           : TXNDescription // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNAmount: TXNAmount == freezed
+      TXNAmount: freezed == TXNAmount
           ? _value.TXNAmount
           : TXNAmount // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNAcctBalance: TXNAcctBalance == freezed
+      TXNAcctBalance: freezed == TXNAcctBalance
           ? _value.TXNAcctBalance
           : TXNAcctBalance // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNAcctPrepaid: TXNAcctPrepaid == freezed
+      TXNAcctPrepaid: freezed == TXNAcctPrepaid
           ? _value.TXNAcctPrepaid
           : TXNAcctPrepaid // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNInvoice: TXNInvoice == freezed
+      TXNInvoice: freezed == TXNInvoice
           ? _value.TXNInvoice
           : TXNInvoice // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNReference: TXNReference == freezed
+      TXNReference: freezed == TXNReference
           ? _value.TXNReference
           : TXNReference // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -142,6 +146,7 @@ abstract class _$$_TransactionCopyWith<$Res>
           _$_Transaction value, $Res Function(_$_Transaction) then) =
       __$$_TransactionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic TXNID,
       dynamic CustomerID,
@@ -158,15 +163,14 @@ abstract class _$$_TransactionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TransactionCopyWithImpl<$Res> extends _$TransactionCopyWithImpl<$Res>
+class __$$_TransactionCopyWithImpl<$Res>
+    extends _$TransactionCopyWithImpl<$Res, _$_Transaction>
     implements _$$_TransactionCopyWith<$Res> {
   __$$_TransactionCopyWithImpl(
       _$_Transaction _value, $Res Function(_$_Transaction) _then)
-      : super(_value, (v) => _then(v as _$_Transaction));
+      : super(_value, _then);
 
-  @override
-  _$_Transaction get _value => super._value as _$_Transaction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? TXNID = freezed,
@@ -183,51 +187,51 @@ class __$$_TransactionCopyWithImpl<$Res> extends _$TransactionCopyWithImpl<$Res>
     Object? TXNReference = freezed,
   }) {
     return _then(_$_Transaction(
-      TXNID: TXNID == freezed
+      TXNID: freezed == TXNID
           ? _value.TXNID
           : TXNID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerName: CustomerName == freezed
+      CustomerName: freezed == CustomerName
           ? _value.CustomerName
           : CustomerName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNDate: TXNDate == freezed
+      TXNDate: freezed == TXNDate
           ? _value.TXNDate
           : TXNDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNStatus: TXNStatus == freezed
+      TXNStatus: freezed == TXNStatus
           ? _value.TXNStatus
           : TXNStatus // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNCategory: TXNCategory == freezed
+      TXNCategory: freezed == TXNCategory
           ? _value.TXNCategory
           : TXNCategory // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNDescription: TXNDescription == freezed
+      TXNDescription: freezed == TXNDescription
           ? _value.TXNDescription
           : TXNDescription // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNAmount: TXNAmount == freezed
+      TXNAmount: freezed == TXNAmount
           ? _value.TXNAmount
           : TXNAmount // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNAcctBalance: TXNAcctBalance == freezed
+      TXNAcctBalance: freezed == TXNAcctBalance
           ? _value.TXNAcctBalance
           : TXNAcctBalance // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNAcctPrepaid: TXNAcctPrepaid == freezed
+      TXNAcctPrepaid: freezed == TXNAcctPrepaid
           ? _value.TXNAcctPrepaid
           : TXNAcctPrepaid // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNInvoice: TXNInvoice == freezed
+      TXNInvoice: freezed == TXNInvoice
           ? _value.TXNInvoice
           : TXNInvoice // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      TXNReference: TXNReference == freezed
+      TXNReference: freezed == TXNReference
           ? _value.TXNReference
           : TXNReference // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -237,7 +241,7 @@ class __$$_TransactionCopyWithImpl<$Res> extends _$TransactionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Transaction implements _Transaction {
+class _$_Transaction with DiagnosticableTreeMixin implements _Transaction {
   _$_Transaction(
       {this.TXNID = '',
       this.CustomerID = '',
@@ -293,8 +297,27 @@ class _$_Transaction implements _Transaction {
   final dynamic TXNReference;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Transaction(TXNID: $TXNID, CustomerID: $CustomerID, CustomerName: $CustomerName, TXNDate: $TXNDate, TXNStatus: $TXNStatus, TXNCategory: $TXNCategory, TXNDescription: $TXNDescription, TXNAmount: $TXNAmount, TXNAcctBalance: $TXNAcctBalance, TXNAcctPrepaid: $TXNAcctPrepaid, TXNInvoice: $TXNInvoice, TXNReference: $TXNReference)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Transaction'))
+      ..add(DiagnosticsProperty('TXNID', TXNID))
+      ..add(DiagnosticsProperty('CustomerID', CustomerID))
+      ..add(DiagnosticsProperty('CustomerName', CustomerName))
+      ..add(DiagnosticsProperty('TXNDate', TXNDate))
+      ..add(DiagnosticsProperty('TXNStatus', TXNStatus))
+      ..add(DiagnosticsProperty('TXNCategory', TXNCategory))
+      ..add(DiagnosticsProperty('TXNDescription', TXNDescription))
+      ..add(DiagnosticsProperty('TXNAmount', TXNAmount))
+      ..add(DiagnosticsProperty('TXNAcctBalance', TXNAcctBalance))
+      ..add(DiagnosticsProperty('TXNAcctPrepaid', TXNAcctPrepaid))
+      ..add(DiagnosticsProperty('TXNInvoice', TXNInvoice))
+      ..add(DiagnosticsProperty('TXNReference', TXNReference));
   }
 
   @override
@@ -343,6 +366,7 @@ class _$_Transaction implements _Transaction {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TransactionCopyWith<_$_Transaction> get copyWith =>
       __$$_TransactionCopyWithImpl<_$_Transaction>(this, _$identity);
 

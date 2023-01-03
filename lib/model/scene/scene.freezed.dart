@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'scene.dart';
 
@@ -32,38 +32,42 @@ mixin _$Scene {
 /// @nodoc
 abstract class $SceneCopyWith<$Res> {
   factory $SceneCopyWith(Scene value, $Res Function(Scene) then) =
-      _$SceneCopyWithImpl<$Res>;
+      _$SceneCopyWithImpl<$Res, Scene>;
+  @useResult
   $Res call({dynamic SceneID, dynamic SceneName, List<SceneItem> Items});
 }
 
 /// @nodoc
-class _$SceneCopyWithImpl<$Res> implements $SceneCopyWith<$Res> {
+class _$SceneCopyWithImpl<$Res, $Val extends Scene>
+    implements $SceneCopyWith<$Res> {
   _$SceneCopyWithImpl(this._value, this._then);
 
-  final Scene _value;
   // ignore: unused_field
-  final $Res Function(Scene) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? SceneID = freezed,
     Object? SceneName = freezed,
-    Object? Items = freezed,
+    Object? Items = null,
   }) {
     return _then(_value.copyWith(
-      SceneID: SceneID == freezed
+      SceneID: freezed == SceneID
           ? _value.SceneID
           : SceneID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SceneName: SceneName == freezed
+      SceneName: freezed == SceneName
           ? _value.SceneName
           : SceneName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Items: Items == freezed
+      Items: null == Items
           ? _value.Items
           : Items // ignore: cast_nullable_to_non_nullable
               as List<SceneItem>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -72,34 +76,33 @@ abstract class _$$_SceneCopyWith<$Res> implements $SceneCopyWith<$Res> {
   factory _$$_SceneCopyWith(_$_Scene value, $Res Function(_$_Scene) then) =
       __$$_SceneCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({dynamic SceneID, dynamic SceneName, List<SceneItem> Items});
 }
 
 /// @nodoc
-class __$$_SceneCopyWithImpl<$Res> extends _$SceneCopyWithImpl<$Res>
+class __$$_SceneCopyWithImpl<$Res> extends _$SceneCopyWithImpl<$Res, _$_Scene>
     implements _$$_SceneCopyWith<$Res> {
   __$$_SceneCopyWithImpl(_$_Scene _value, $Res Function(_$_Scene) _then)
-      : super(_value, (v) => _then(v as _$_Scene));
+      : super(_value, _then);
 
-  @override
-  _$_Scene get _value => super._value as _$_Scene;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? SceneID = freezed,
     Object? SceneName = freezed,
-    Object? Items = freezed,
+    Object? Items = null,
   }) {
     return _then(_$_Scene(
-      SceneID: SceneID == freezed
+      SceneID: freezed == SceneID
           ? _value.SceneID
           : SceneID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SceneName: SceneName == freezed
+      SceneName: freezed == SceneName
           ? _value.SceneName
           : SceneName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Items: Items == freezed
+      Items: null == Items
           ? _value._Items
           : Items // ignore: cast_nullable_to_non_nullable
               as List<SceneItem>,
@@ -109,7 +112,7 @@ class __$$_SceneCopyWithImpl<$Res> extends _$SceneCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Scene implements _Scene {
+class _$_Scene with DiagnosticableTreeMixin implements _Scene {
   _$_Scene(
       {this.SceneID = '',
       this.SceneName = '',
@@ -128,13 +131,24 @@ class _$_Scene implements _Scene {
   final List<SceneItem> _Items;
   @override
   List<SceneItem> get Items {
+    if (_Items is EqualUnmodifiableListView) return _Items;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_Items);
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Scene(SceneID: $SceneID, SceneName: $SceneName, Items: $Items)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Scene'))
+      ..add(DiagnosticsProperty('SceneID', SceneID))
+      ..add(DiagnosticsProperty('SceneName', SceneName))
+      ..add(DiagnosticsProperty('Items', Items));
   }
 
   @override
@@ -157,6 +171,7 @@ class _$_Scene implements _Scene {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SceneCopyWith<_$_Scene> get copyWith =>
       __$$_SceneCopyWithImpl<_$_Scene>(this, _$identity);
 

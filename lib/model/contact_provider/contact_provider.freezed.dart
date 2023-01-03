@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'contact_provider.dart';
 
@@ -40,7 +40,8 @@ mixin _$ContactProvider {
 abstract class $ContactProviderCopyWith<$Res> {
   factory $ContactProviderCopyWith(
           ContactProvider value, $Res Function(ContactProvider) then) =
-      _$ContactProviderCopyWithImpl<$Res>;
+      _$ContactProviderCopyWithImpl<$Res, ContactProvider>;
+  @useResult
   $Res call(
       {dynamic ProviderID,
       dynamic ProviderName,
@@ -54,14 +55,16 @@ abstract class $ContactProviderCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ContactProviderCopyWithImpl<$Res>
+class _$ContactProviderCopyWithImpl<$Res, $Val extends ContactProvider>
     implements $ContactProviderCopyWith<$Res> {
   _$ContactProviderCopyWithImpl(this._value, this._then);
 
-  final ContactProvider _value;
   // ignore: unused_field
-  final $Res Function(ContactProvider) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ProviderID = freezed,
@@ -75,43 +78,43 @@ class _$ContactProviderCopyWithImpl<$Res>
     Object? MessageSMS = freezed,
   }) {
     return _then(_value.copyWith(
-      ProviderID: ProviderID == freezed
+      ProviderID: freezed == ProviderID
           ? _value.ProviderID
           : ProviderID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProviderName: ProviderName == freezed
+      ProviderName: freezed == ProviderName
           ? _value.ProviderName
           : ProviderName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProviderSMSEmail: ProviderSMSEmail == freezed
+      ProviderSMSEmail: freezed == ProviderSMSEmail
           ? _value.ProviderSMSEmail
           : ProviderSMSEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      OptionID: OptionID == freezed
+      OptionID: freezed == OptionID
           ? _value.OptionID
           : OptionID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      OptionEmail: OptionEmail == freezed
+      OptionEmail: freezed == OptionEmail
           ? _value.OptionEmail
           : OptionEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      OptionSMS: OptionSMS == freezed
+      OptionSMS: freezed == OptionSMS
           ? _value.OptionSMS
           : OptionSMS // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      MessageApp: MessageApp == freezed
+      MessageApp: freezed == MessageApp
           ? _value.MessageApp
           : MessageApp // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      MessageEmail: MessageEmail == freezed
+      MessageEmail: freezed == MessageEmail
           ? _value.MessageEmail
           : MessageEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      MessageSMS: MessageSMS == freezed
+      MessageSMS: freezed == MessageSMS
           ? _value.MessageSMS
           : MessageSMS // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -122,6 +125,7 @@ abstract class _$$_ContactProviderCopyWith<$Res>
           _$_ContactProvider value, $Res Function(_$_ContactProvider) then) =
       __$$_ContactProviderCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic ProviderID,
       dynamic ProviderName,
@@ -136,15 +140,13 @@ abstract class _$$_ContactProviderCopyWith<$Res>
 
 /// @nodoc
 class __$$_ContactProviderCopyWithImpl<$Res>
-    extends _$ContactProviderCopyWithImpl<$Res>
+    extends _$ContactProviderCopyWithImpl<$Res, _$_ContactProvider>
     implements _$$_ContactProviderCopyWith<$Res> {
   __$$_ContactProviderCopyWithImpl(
       _$_ContactProvider _value, $Res Function(_$_ContactProvider) _then)
-      : super(_value, (v) => _then(v as _$_ContactProvider));
+      : super(_value, _then);
 
-  @override
-  _$_ContactProvider get _value => super._value as _$_ContactProvider;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ProviderID = freezed,
@@ -158,39 +160,39 @@ class __$$_ContactProviderCopyWithImpl<$Res>
     Object? MessageSMS = freezed,
   }) {
     return _then(_$_ContactProvider(
-      ProviderID: ProviderID == freezed
+      ProviderID: freezed == ProviderID
           ? _value.ProviderID
           : ProviderID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProviderName: ProviderName == freezed
+      ProviderName: freezed == ProviderName
           ? _value.ProviderName
           : ProviderName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ProviderSMSEmail: ProviderSMSEmail == freezed
+      ProviderSMSEmail: freezed == ProviderSMSEmail
           ? _value.ProviderSMSEmail
           : ProviderSMSEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      OptionID: OptionID == freezed
+      OptionID: freezed == OptionID
           ? _value.OptionID
           : OptionID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      OptionEmail: OptionEmail == freezed
+      OptionEmail: freezed == OptionEmail
           ? _value.OptionEmail
           : OptionEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      OptionSMS: OptionSMS == freezed
+      OptionSMS: freezed == OptionSMS
           ? _value.OptionSMS
           : OptionSMS // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      MessageApp: MessageApp == freezed
+      MessageApp: freezed == MessageApp
           ? _value.MessageApp
           : MessageApp // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      MessageEmail: MessageEmail == freezed
+      MessageEmail: freezed == MessageEmail
           ? _value.MessageEmail
           : MessageEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      MessageSMS: MessageSMS == freezed
+      MessageSMS: freezed == MessageSMS
           ? _value.MessageSMS
           : MessageSMS // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -287,6 +289,7 @@ class _$_ContactProvider implements _ContactProvider {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ContactProviderCopyWith<_$_ContactProvider> get copyWith =>
       __$$_ContactProviderCopyWithImpl<_$_ContactProvider>(this, _$identity);
 

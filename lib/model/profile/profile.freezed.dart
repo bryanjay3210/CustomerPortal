@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'profile.dart';
 
@@ -41,7 +41,8 @@ mixin _$Profile {
 /// @nodoc
 abstract class $ProfileCopyWith<$Res> {
   factory $ProfileCopyWith(Profile value, $Res Function(Profile) then) =
-      _$ProfileCopyWithImpl<$Res>;
+      _$ProfileCopyWithImpl<$Res, Profile>;
+  @useResult
   $Res call(
       {dynamic UserType,
       dynamic UserFirstName,
@@ -58,13 +59,16 @@ abstract class $ProfileCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProfileCopyWithImpl<$Res> implements $ProfileCopyWith<$Res> {
+class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
+    implements $ProfileCopyWith<$Res> {
   _$ProfileCopyWithImpl(this._value, this._then);
 
-  final Profile _value;
   // ignore: unused_field
-  final $Res Function(Profile) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? UserType = freezed,
@@ -81,55 +85,55 @@ class _$ProfileCopyWithImpl<$Res> implements $ProfileCopyWith<$Res> {
     Object? UserPin = freezed,
   }) {
     return _then(_value.copyWith(
-      UserType: UserType == freezed
+      UserType: freezed == UserType
           ? _value.UserType
           : UserType // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserFirstName: UserFirstName == freezed
+      UserFirstName: freezed == UserFirstName
           ? _value.UserFirstName
           : UserFirstName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserLastName: UserLastName == freezed
+      UserLastName: freezed == UserLastName
           ? _value.UserLastName
           : UserLastName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserName: UserName == freezed
+      UserName: freezed == UserName
           ? _value.UserName
           : UserName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPassword: UserPassword == freezed
+      UserPassword: freezed == UserPassword
           ? _value.UserPassword
           : UserPassword // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPhoneHome: UserPhoneHome == freezed
+      UserPhoneHome: freezed == UserPhoneHome
           ? _value.UserPhoneHome
           : UserPhoneHome // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPhoneWork: UserPhoneWork == freezed
+      UserPhoneWork: freezed == UserPhoneWork
           ? _value.UserPhoneWork
           : UserPhoneWork // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPhoneMobile: UserPhoneMobile == freezed
+      UserPhoneMobile: freezed == UserPhoneMobile
           ? _value.UserPhoneMobile
           : UserPhoneMobile // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserEmail: UserEmail == freezed
+      UserEmail: freezed == UserEmail
           ? _value.UserEmail
           : UserEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserTimeZone: UserTimeZone == freezed
+      UserTimeZone: freezed == UserTimeZone
           ? _value.UserTimeZone
           : UserTimeZone // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserInfo: UserInfo == freezed
+      UserInfo: freezed == UserInfo
           ? _value.UserInfo
           : UserInfo // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPin: UserPin == freezed
+      UserPin: freezed == UserPin
           ? _value.UserPin
           : UserPin // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -139,6 +143,7 @@ abstract class _$$_ProfileCopyWith<$Res> implements $ProfileCopyWith<$Res> {
           _$_Profile value, $Res Function(_$_Profile) then) =
       __$$_ProfileCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic UserType,
       dynamic UserFirstName,
@@ -155,14 +160,13 @@ abstract class _$$_ProfileCopyWith<$Res> implements $ProfileCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ProfileCopyWithImpl<$Res> extends _$ProfileCopyWithImpl<$Res>
+class __$$_ProfileCopyWithImpl<$Res>
+    extends _$ProfileCopyWithImpl<$Res, _$_Profile>
     implements _$$_ProfileCopyWith<$Res> {
   __$$_ProfileCopyWithImpl(_$_Profile _value, $Res Function(_$_Profile) _then)
-      : super(_value, (v) => _then(v as _$_Profile));
+      : super(_value, _then);
 
-  @override
-  _$_Profile get _value => super._value as _$_Profile;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? UserType = freezed,
@@ -179,51 +183,51 @@ class __$$_ProfileCopyWithImpl<$Res> extends _$ProfileCopyWithImpl<$Res>
     Object? UserPin = freezed,
   }) {
     return _then(_$_Profile(
-      UserType: UserType == freezed
+      UserType: freezed == UserType
           ? _value.UserType
           : UserType // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserFirstName: UserFirstName == freezed
+      UserFirstName: freezed == UserFirstName
           ? _value.UserFirstName
           : UserFirstName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserLastName: UserLastName == freezed
+      UserLastName: freezed == UserLastName
           ? _value.UserLastName
           : UserLastName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserName: UserName == freezed
+      UserName: freezed == UserName
           ? _value.UserName
           : UserName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPassword: UserPassword == freezed
+      UserPassword: freezed == UserPassword
           ? _value.UserPassword
           : UserPassword // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPhoneHome: UserPhoneHome == freezed
+      UserPhoneHome: freezed == UserPhoneHome
           ? _value.UserPhoneHome
           : UserPhoneHome // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPhoneWork: UserPhoneWork == freezed
+      UserPhoneWork: freezed == UserPhoneWork
           ? _value.UserPhoneWork
           : UserPhoneWork // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPhoneMobile: UserPhoneMobile == freezed
+      UserPhoneMobile: freezed == UserPhoneMobile
           ? _value.UserPhoneMobile
           : UserPhoneMobile // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserEmail: UserEmail == freezed
+      UserEmail: freezed == UserEmail
           ? _value.UserEmail
           : UserEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserTimeZone: UserTimeZone == freezed
+      UserTimeZone: freezed == UserTimeZone
           ? _value.UserTimeZone
           : UserTimeZone // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserInfo: UserInfo == freezed
+      UserInfo: freezed == UserInfo
           ? _value.UserInfo
           : UserInfo // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserPin: UserPin == freezed
+      UserPin: freezed == UserPin
           ? _value.UserPin
           : UserPin // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -233,7 +237,7 @@ class __$$_ProfileCopyWithImpl<$Res> extends _$ProfileCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Profile implements _Profile {
+class _$_Profile with DiagnosticableTreeMixin implements _Profile {
   _$_Profile(
       {this.UserType = '',
       this.UserFirstName = '',
@@ -289,8 +293,27 @@ class _$_Profile implements _Profile {
   final dynamic UserPin;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Profile(UserType: $UserType, UserFirstName: $UserFirstName, UserLastName: $UserLastName, UserName: $UserName, UserPassword: $UserPassword, UserPhoneHome: $UserPhoneHome, UserPhoneWork: $UserPhoneWork, UserPhoneMobile: $UserPhoneMobile, UserEmail: $UserEmail, UserTimeZone: $UserTimeZone, UserInfo: $UserInfo, UserPin: $UserPin)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Profile'))
+      ..add(DiagnosticsProperty('UserType', UserType))
+      ..add(DiagnosticsProperty('UserFirstName', UserFirstName))
+      ..add(DiagnosticsProperty('UserLastName', UserLastName))
+      ..add(DiagnosticsProperty('UserName', UserName))
+      ..add(DiagnosticsProperty('UserPassword', UserPassword))
+      ..add(DiagnosticsProperty('UserPhoneHome', UserPhoneHome))
+      ..add(DiagnosticsProperty('UserPhoneWork', UserPhoneWork))
+      ..add(DiagnosticsProperty('UserPhoneMobile', UserPhoneMobile))
+      ..add(DiagnosticsProperty('UserEmail', UserEmail))
+      ..add(DiagnosticsProperty('UserTimeZone', UserTimeZone))
+      ..add(DiagnosticsProperty('UserInfo', UserInfo))
+      ..add(DiagnosticsProperty('UserPin', UserPin));
   }
 
   @override
@@ -338,6 +361,7 @@ class _$_Profile implements _Profile {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProfileCopyWith<_$_Profile> get copyWith =>
       __$$_ProfileCopyWithImpl<_$_Profile>(this, _$identity);
 

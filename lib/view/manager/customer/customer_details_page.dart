@@ -1,3 +1,5 @@
+import 'package:cp/provider/account/message_manager/message_group.dart';
+import 'package:cp/provider/account/message_provider.dart';
 import 'package:cp/provider/main_provider.dart';
 import 'package:cp/shared_widgets/shared_text_field.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +11,7 @@ import '../../../provider/manager/customer_provider.dart';
 import '../../../shared_widgets/shared_dialog.dart';
 import '../../../shared_widgets/toasts.dart';
 import '../../shared_widgets/common_widgets.dart';
+import 'dart:developer' as dev;
 
 class CustomerDetailsPage extends StatefulWidget {
   const CustomerDetailsPage({Key? key}) : super(key: key);
@@ -27,12 +30,13 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
   final confirmPasswordCtrler = TextEditingController();
   var isCreate = false;
   var willPop = true;
+  var isAvailableInCustomers = true;
+  final bedList = ['A', 'B', 'C', 'D', 'E'];
 
   @override
   void initState() {
     final customerProvider =
         Provider.of<CustomerProvider>(context, listen: false);
-
     final mainProvider = Provider.of<MainProvider>(context, listen: false);
     final customer = customerProvider.selectedCustomer;
     if (customer.UnitID == '' || customer.UserID == '') {
@@ -47,6 +51,7 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
     }
     WidgetsBinding.instance.addPostFrameCallback((_) {
       isCreate = false;
+
       customerProvider.canWifiUser(
           {'userId': mainProvider.user.UserID, 'server': mainProvider.server},
           context);
@@ -57,9 +62,11 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
         'buildingId': mainProvider.user.BuildingID
       }, context, false);
 
+// customerProvider.selectedBed = customer.
       firstNameCtrler.text = customer.UserFname;
       lastNameCtrler.text = customer.UserLname;
     });
+
     super.initState();
   }
 
@@ -77,6 +84,8 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final messageGroupProvider =
+        Provider.of<MessageGroupProvider>(context, listen: false);
     final mainProvider = Provider.of<MainProvider>(context, listen: false);
     final customerProvider =
         Provider.of<CustomerProvider>(context, listen: false);
@@ -186,6 +195,38 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
                                           dropDownUnit(customerProvider)
                                         ],
                                       ),
+                                    if (messageGroupProvider.isResidentHall() &&
+                                        isCreate)
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const SizedBox(height: 10),
+                                          const Text(
+                                            'Bed:',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          dropDownBed(customerProvider)
+                                        ],
+                                      ),
+                                    if (messageGroupProvider.isResidentHall() &&
+                                        !isCreate)
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const SizedBox(height: 10),
+                                          const Text(
+                                            'Bed',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          Text(
+                                            customerProvider.selectedBed,
+                                          ),
+                                        ],
+                                      ),
                                   ],
                                 ),
                               ),
@@ -204,7 +245,30 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
                                       ),
                                       const SizedBox(height: 15),
                                       dropDownAvailableProducts(
-                                          customerProvider)
+                                          customerProvider, true),
+                                      // Row(
+                                      //   children: [
+                                      //     Checkbox(
+                                      //       onChanged: (bool? newValue) {
+                                      //         isAvailableInCustomers =
+                                      //             !isAvailableInCustomers;
+                                      //         setState(
+                                      //           () {
+                                      //             customerProvider
+                                      //                     .selectedProductBundles =
+                                      //                 customerProvider
+                                      //                     .productBundles[0];
+                                      //           },
+                                      //         );
+                                      //         // setState(() {
+                                      //         //   canReply = !canReply;
+                                      //         // });
+                                      //       },
+                                      //       value: isAvailableInCustomers,
+                                      //     ),
+                                      //     const Text('Available in customers'),
+                                      //   ],
+                                      // ),
                                     ],
                                   )),
                             if (isCreate)
@@ -352,10 +416,30 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
                                   GestureDetector(
                                     onTap: () async {
                                       if (isCreate) {
+                                        final bedCount = customerProvider
+                                                .selectedUnits.Beds
+                                                .toString()
+                                                .length >=
+                                            26;
+                                        if (messageGroupProvider
+                                                .isResidentHall() &&
+                                            bedCount) {
+                                          showToast(
+                                              'All beds are already occupied');
+                                          return;
+                                        }
                                         if (customerProvider
                                                 .selectedUnits.UnitName ==
                                             '') {
                                           showToast('Please select a unit no.');
+                                          return;
+                                        }
+
+                                        if (messageGroupProvider
+                                                .isResidentHall() &&
+                                            customerProvider.selectedBed ==
+                                                '') {
+                                          showToast('Please select a bed');
                                           return;
                                         }
 
@@ -403,7 +487,12 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
                                         'ctPassword': passwordCtrler.text,
                                         'email': emailCtrler.text,
                                         'pin': pinCtrler.text,
-                                        'bedName': initialCustomerData.BedName,
+                                        'bedName': isCreate
+                                            ? messageGroupProvider
+                                                    .isResidentHall()
+                                                ? customerProvider.selectedBed
+                                                : ''
+                                            : initialCustomerData.BedName,
                                         'unitName':
                                             initialCustomerData.UnitName,
                                         'productGroupId': customerProvider
@@ -417,7 +506,7 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
                                             .createCustomer(json, context, () {
                                           willPop = true;
                                         });
-                                        //
+
                                         return;
                                       }
                                       customerProvider
@@ -507,9 +596,10 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
     );
   }
 
-  Widget dropDownAvailableProducts(CustomerProvider provider) {
+  Widget dropDownAvailableProducts(
+      CustomerProvider provider, bool isAvailableInCustomers) {
     final selected = provider.selectedProductBundles;
-    final list = provider.productBundles;
+    final list = provider.getFilteredProductGroup(isAvailableInCustomers);
     return PopupMenuButton(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -543,6 +633,77 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
     );
   }
 
+  Widget dropDownBed(CustomerProvider provider) {
+    final selectedUnit = provider.selectedUnits;
+    if (selectedUnit.Beds == '') {
+      return const SizedBox();
+    }
+    final list = selectedUnit.Beds;
+    final selectedBed = provider.selectedBed;
+    return PopupMenuButton(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                selectedBed,
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                overflow: TextOverflow.fade,
+              ),
+            ),
+            const Icon(
+              Icons.arrow_drop_down,
+              color: Colors.grey,
+            ),
+          ],
+        ),
+        itemBuilder: (context) {
+          if (list.isEmpty) {
+            showToast('No bed/s available');
+            return [];
+          }
+          // if (!(list['BedName'] is List)) {
+          //   return [
+          //     PopupMenuItem(
+          //         onTap: () => setState(() {}),
+          //         value: list['BedName'],
+          //         child: Text(list['BedName']))
+          //   ];
+          // }
+          final currentBedList = list['BedName'] as List;
+          final copyBedList = ['A', 'B', 'C', 'D', 'E'];
+          copyBedList
+              .removeWhere((element) => currentBedList.contains(element));
+          return [
+            ...copyBedList
+                .map((e) => PopupMenuItem(
+                    onTap: () => setState(() {
+                          provider.selectedBed = e;
+                          // if (e.Occupied == '1') {
+                          //   provider.selectedUnits = Unit();
+                          //   showToast('The unit cannot be selected');
+                          //   return;
+                          // }
+                          // provider.selectedUnits = e;
+                        }),
+                    value: e,
+                    child: Text(e)
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   children: [
+                    //     Text(e.UnitName),
+                    //     e.Occupied == '0'
+                    //         ? const Icon(Icons.circle, color: Colors.green)
+                    //         : const Icon(Icons.lock, color: Colors.red)
+                    //   ],
+                    // ),
+                    ))
+                .toList()
+          ];
+        });
+  }
+
   Widget dropDownUnit(CustomerProvider provider) {
     final selected = provider.selectedUnits;
     final list = provider.units;
@@ -565,28 +726,34 @@ class _CustomerDetailsPageState extends State<CustomerDetailsPage> {
       ),
       itemBuilder: (context) {
         return [
-          ...list
-              .map((e) => PopupMenuItem(
-                    onTap: () => setState(() {
-                      if (e.Occupied == '1') {
-                        provider.selectedUnits = Unit();
-                        showToast('The unit cannot be selected');
-                        return;
-                      }
-                      provider.selectedUnits = e;
-                    }),
-                    value: e.UnitName,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(e.UnitName),
-                        e.Occupied == '0'
-                            ? const Icon(Icons.circle, color: Colors.green)
-                            : const Icon(Icons.lock, color: Colors.red)
-                      ],
-                    ),
-                  ))
-              .toList()
+          ...list.map((e) {
+            final isAvaialble =
+                Provider.of<MessageGroupProvider>(context, listen: false)
+                        .isResidentHall()
+                    ? e.Beds.toString().length < 26
+                    : e.Occupied == '1';
+            return PopupMenuItem(
+              onTap: () => setState(() {
+                if (!isAvaialble) {
+                  provider.selectedUnits = Unit();
+                  showToast('The unit cannot be selected');
+                  return;
+                }
+                provider.selectedUnits = e;
+                provider.selectedBed = '';
+              }),
+              value: e.UnitName,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(e.UnitName),
+                  isAvaialble
+                      ? const Icon(Icons.circle, color: Colors.green)
+                      : const Icon(Icons.lock, color: Colors.red)
+                ],
+              ),
+            );
+          }).toList()
         ];
       },
     );

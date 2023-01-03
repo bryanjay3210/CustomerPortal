@@ -81,35 +81,35 @@ class _ContactOptionPageState extends State<ContactOptionPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      color: const Color(0xff30313A),
-                      width: double.infinity,
-                      height: 130,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            GestureDetector(
-                                onTap: () => Navigator.of(context).pop(),
-                                child: const Icon(Icons.arrow_back_ios,
-                                    color: cpWhiteColor)),
-                            const SizedBox(height: 30),
-                            const Text(
-                              'Contact Option',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 25,
-                                  color: cpWhiteColor),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    if (isManager) const SizedBox(height: 15),
+                    // // Container(
+                    // //   color: const Color(0xff30313A),
+                    // //   width: double.infinity,
+                    // //   height: 130,
+                    // //   child: Padding(
+                    // //     padding: const EdgeInsets.only(left: 20, top: 20),
+                    // //     child: Column(
+                    // //       crossAxisAlignment: CrossAxisAlignment.start,
+                    // //       children: [
+                    // //         const SizedBox(
+                    // //           height: 20,
+                    // //         ),
+                    // //         GestureDetector(
+                    // //             onTap: () => Navigator.of(context).pop(),
+                    // //             child: const Icon(Icons.arrow_back_ios,
+                    // //                 color: cpWhiteColor)),
+                    // //         const SizedBox(height: 30),
+                    // //         const Text(
+                    // //           'Contact Option',
+                    // //           style: TextStyle(
+                    // //               fontWeight: FontWeight.bold,
+                    // //               fontSize: 25,
+                    // //               color: cpWhiteColor),
+                    // //         ),
+                    // //       ],
+                    // //     ),
+                    // //   ),
+                    // // ),
+                    // if (isManager) const SizedBox(height: 15),
                     if (isManager)
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -192,31 +192,6 @@ class _ContactOptionPageState extends State<ContactOptionPage> {
                                 return Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text('Select Cell Provider'),
-                                    const SizedBox(height: 5),
-                                    if (isSmsDelivery)
-                                      DropdownSearch<ContactProvider>(
-                                          popupProps:
-                                              const PopupPropsMultiSelection
-                                                  .menu(
-                                            showSearchBox: true,
-                                          ),
-                                          itemAsString: (ContactProvider b) =>
-                                              b.ProviderName is Map
-                                                  ? ''
-                                                  : b.ProviderName,
-                                          items:
-                                              contactOptionProvider.providers,
-                                          onChanged: ((value) {
-                                            if (value == null) {
-                                              return;
-                                            }
-                                            contactOptionProvider
-                                                .currentProvider = value;
-                                          }),
-                                          selectedItem: contactOptionProvider
-                                              .currentProvider),
-                                    const SizedBox(height: 10),
                                     ConstrainedBox(
                                       constraints:
                                           const BoxConstraints(maxHeight: 40),
@@ -270,6 +245,41 @@ class _ContactOptionPageState extends State<ContactOptionPage> {
                                         ],
                                       ),
                                     ),
+                                    if (isSmsDelivery)
+                                      const SizedBox(height: 10),
+                                    if (isSmsDelivery)
+                                      const Text('Select Cell Provider'),
+                                    const SizedBox(height: 5),
+                                    if (isSmsDelivery)
+                                      DropdownSearch<ContactProvider>(
+                                          popupProps: PopupPropsMultiSelection.menu(
+                                              showSearchBox: true,
+                                              constraints: BoxConstraints(
+                                                  maxHeight: contactOptionProvider
+                                                              .providers
+                                                              .length <
+                                                          5
+                                                      ? ((contactOptionProvider
+                                                                  .providers
+                                                                  .length *
+                                                              55) +
+                                                          80)
+                                                      : 350)),
+                                          itemAsString: (ContactProvider b) =>
+                                              b.ProviderName is Map
+                                                  ? ''
+                                                  : b.ProviderName,
+                                          items:
+                                              contactOptionProvider.providers,
+                                          onChanged: ((value) {
+                                            if (value == null) {
+                                              return;
+                                            }
+                                            contactOptionProvider
+                                                .currentProvider = value;
+                                          }),
+                                          selectedItem: contactOptionProvider
+                                              .currentProvider),
                                     const SizedBox(height: 35),
                                     Row(
                                       mainAxisAlignment:
@@ -287,20 +297,20 @@ class _ContactOptionPageState extends State<ContactOptionPage> {
                                                 showToast('Customer is empty');
                                                 return;
                                               }
-
-                                              if (contactOptionProvider
-                                                          .currentProvider
-                                                          .ProviderID ==
-                                                      '' ||
-                                                  contactOptionProvider
-                                                              .currentProvider
-                                                              .ProviderName
-                                                          is Map &&
-                                                      isSmsDelivery) {
-                                                showToast(
-                                                    'Cell provider is empty');
-                                                return;
+                                              if (isSmsDelivery) {
+                                                if (contactOptionProvider
+                                                            .currentProvider
+                                                            .ProviderID ==
+                                                        '' ||
+                                                    contactOptionProvider
+                                                        .currentProvider
+                                                        .ProviderName is Map) {
+                                                  showToast(
+                                                      'Cell provider is empty');
+                                                  return;
+                                                }
                                               }
+
                                               setState(() {
                                                 isLoading = true;
                                               });
@@ -363,7 +373,7 @@ class _ContactOptionPageState extends State<ContactOptionPage> {
                                                           10.0),
                                                 )))),
                                       ],
-                                    )
+                                    ),
                                     //end
                                   ],
                                 );

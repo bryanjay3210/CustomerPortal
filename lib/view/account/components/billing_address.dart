@@ -90,7 +90,7 @@ class _BillingAddressState extends State<BillingAddress> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  textBoxField('* Address No.', addressNoCtrler, true),
+                  textBoxField('* Address No.', addressNoCtrler, false),
                   const SizedBox(
                     height: 10,
                   ),

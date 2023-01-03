@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'device_tv.dart';
 
@@ -27,6 +27,7 @@ mixin _$DeviceTv {
   dynamic get Volume => throw _privateConstructorUsedError;
   dynamic get CC => throw _privateConstructorUsedError;
   dynamic get ID => throw _privateConstructorUsedError;
+  dynamic get is_community => throw _privateConstructorUsedError;
   dynamic get Channel => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +39,8 @@ mixin _$DeviceTv {
 /// @nodoc
 abstract class $DeviceTvCopyWith<$Res> {
   factory $DeviceTvCopyWith(DeviceTv value, $Res Function(DeviceTv) then) =
-      _$DeviceTvCopyWithImpl<$Res>;
+      _$DeviceTvCopyWithImpl<$Res, DeviceTv>;
+  @useResult
   $Res call(
       {dynamic TVID,
       dynamic Location,
@@ -47,17 +49,21 @@ abstract class $DeviceTvCopyWith<$Res> {
       dynamic Volume,
       dynamic CC,
       dynamic ID,
+      dynamic is_community,
       dynamic Channel});
 }
 
 /// @nodoc
-class _$DeviceTvCopyWithImpl<$Res> implements $DeviceTvCopyWith<$Res> {
+class _$DeviceTvCopyWithImpl<$Res, $Val extends DeviceTv>
+    implements $DeviceTvCopyWith<$Res> {
   _$DeviceTvCopyWithImpl(this._value, this._then);
 
-  final DeviceTv _value;
   // ignore: unused_field
-  final $Res Function(DeviceTv) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? TVID = freezed,
@@ -67,42 +73,47 @@ class _$DeviceTvCopyWithImpl<$Res> implements $DeviceTvCopyWith<$Res> {
     Object? Volume = freezed,
     Object? CC = freezed,
     Object? ID = freezed,
+    Object? is_community = freezed,
     Object? Channel = freezed,
   }) {
     return _then(_value.copyWith(
-      TVID: TVID == freezed
+      TVID: freezed == TVID
           ? _value.TVID
           : TVID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Location: Location == freezed
+      Location: freezed == Location
           ? _value.Location
           : Location // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      MAC: MAC == freezed
+      MAC: freezed == MAC
           ? _value.MAC
           : MAC // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      OnOff: OnOff == freezed
+      OnOff: freezed == OnOff
           ? _value.OnOff
           : OnOff // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Volume: Volume == freezed
+      Volume: freezed == Volume
           ? _value.Volume
           : Volume // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CC: CC == freezed
+      CC: freezed == CC
           ? _value.CC
           : CC // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ID: ID == freezed
+      ID: freezed == ID
           ? _value.ID
           : ID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Channel: Channel == freezed
+      is_community: freezed == is_community
+          ? _value.is_community
+          : is_community // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      Channel: freezed == Channel
           ? _value.Channel
           : Channel // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -112,6 +123,7 @@ abstract class _$$_DeviceTvCopyWith<$Res> implements $DeviceTvCopyWith<$Res> {
           _$_DeviceTv value, $Res Function(_$_DeviceTv) then) =
       __$$_DeviceTvCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic TVID,
       dynamic Location,
@@ -120,19 +132,19 @@ abstract class _$$_DeviceTvCopyWith<$Res> implements $DeviceTvCopyWith<$Res> {
       dynamic Volume,
       dynamic CC,
       dynamic ID,
+      dynamic is_community,
       dynamic Channel});
 }
 
 /// @nodoc
-class __$$_DeviceTvCopyWithImpl<$Res> extends _$DeviceTvCopyWithImpl<$Res>
+class __$$_DeviceTvCopyWithImpl<$Res>
+    extends _$DeviceTvCopyWithImpl<$Res, _$_DeviceTv>
     implements _$$_DeviceTvCopyWith<$Res> {
   __$$_DeviceTvCopyWithImpl(
       _$_DeviceTv _value, $Res Function(_$_DeviceTv) _then)
-      : super(_value, (v) => _then(v as _$_DeviceTv));
+      : super(_value, _then);
 
-  @override
-  _$_DeviceTv get _value => super._value as _$_DeviceTv;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? TVID = freezed,
@@ -142,38 +154,43 @@ class __$$_DeviceTvCopyWithImpl<$Res> extends _$DeviceTvCopyWithImpl<$Res>
     Object? Volume = freezed,
     Object? CC = freezed,
     Object? ID = freezed,
+    Object? is_community = freezed,
     Object? Channel = freezed,
   }) {
     return _then(_$_DeviceTv(
-      TVID: TVID == freezed
+      TVID: freezed == TVID
           ? _value.TVID
           : TVID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Location: Location == freezed
+      Location: freezed == Location
           ? _value.Location
           : Location // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      MAC: MAC == freezed
+      MAC: freezed == MAC
           ? _value.MAC
           : MAC // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      OnOff: OnOff == freezed
+      OnOff: freezed == OnOff
           ? _value.OnOff
           : OnOff // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Volume: Volume == freezed
+      Volume: freezed == Volume
           ? _value.Volume
           : Volume // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CC: CC == freezed
+      CC: freezed == CC
           ? _value.CC
           : CC // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ID: ID == freezed
+      ID: freezed == ID
           ? _value.ID
           : ID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Channel: Channel == freezed
+      is_community: freezed == is_community
+          ? _value.is_community
+          : is_community // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      Channel: freezed == Channel
           ? _value.Channel
           : Channel // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -192,6 +209,7 @@ class _$_DeviceTv implements _DeviceTv {
       this.Volume = '',
       this.CC = '',
       this.ID = '',
+      this.is_community = '',
       this.Channel = ''});
 
   factory _$_DeviceTv.fromJson(Map<String, dynamic> json) =>
@@ -220,11 +238,14 @@ class _$_DeviceTv implements _DeviceTv {
   final dynamic ID;
   @override
   @JsonKey()
+  final dynamic is_community;
+  @override
+  @JsonKey()
   final dynamic Channel;
 
   @override
   String toString() {
-    return 'DeviceTv(TVID: $TVID, Location: $Location, MAC: $MAC, OnOff: $OnOff, Volume: $Volume, CC: $CC, ID: $ID, Channel: $Channel)';
+    return 'DeviceTv(TVID: $TVID, Location: $Location, MAC: $MAC, OnOff: $OnOff, Volume: $Volume, CC: $CC, ID: $ID, is_community: $is_community, Channel: $Channel)';
   }
 
   @override
@@ -239,6 +260,8 @@ class _$_DeviceTv implements _DeviceTv {
             const DeepCollectionEquality().equals(other.Volume, Volume) &&
             const DeepCollectionEquality().equals(other.CC, CC) &&
             const DeepCollectionEquality().equals(other.ID, ID) &&
+            const DeepCollectionEquality()
+                .equals(other.is_community, is_community) &&
             const DeepCollectionEquality().equals(other.Channel, Channel));
   }
 
@@ -253,10 +276,12 @@ class _$_DeviceTv implements _DeviceTv {
       const DeepCollectionEquality().hash(Volume),
       const DeepCollectionEquality().hash(CC),
       const DeepCollectionEquality().hash(ID),
+      const DeepCollectionEquality().hash(is_community),
       const DeepCollectionEquality().hash(Channel));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DeviceTvCopyWith<_$_DeviceTv> get copyWith =>
       __$$_DeviceTvCopyWithImpl<_$_DeviceTv>(this, _$identity);
 
@@ -277,6 +302,7 @@ abstract class _DeviceTv implements DeviceTv {
       final dynamic Volume,
       final dynamic CC,
       final dynamic ID,
+      final dynamic is_community,
       final dynamic Channel}) = _$_DeviceTv;
 
   factory _DeviceTv.fromJson(Map<String, dynamic> json) = _$_DeviceTv.fromJson;
@@ -295,6 +321,8 @@ abstract class _DeviceTv implements DeviceTv {
   dynamic get CC;
   @override
   dynamic get ID;
+  @override
+  dynamic get is_community;
   @override
   dynamic get Channel;
   @override

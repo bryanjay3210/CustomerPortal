@@ -8,7 +8,7 @@ import '../model/iot/iot.dart';
 import '../model/user/user.dart';
 
 class MainProvider {
-  var server = 0;
+  var server = 3;
   final bottomNavSelected$ = BehaviorSubject<int>.seeded(0);
   final isDark = BehaviorSubject<bool>.seeded(false);
   AppPreference appPreference = AppPreference();

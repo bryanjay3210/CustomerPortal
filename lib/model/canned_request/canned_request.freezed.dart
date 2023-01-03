@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'canned_request.dart';
 
@@ -35,7 +35,8 @@ mixin _$CannedRequest {
 abstract class $CannedRequestCopyWith<$Res> {
   factory $CannedRequestCopyWith(
           CannedRequest value, $Res Function(CannedRequest) then) =
-      _$CannedRequestCopyWithImpl<$Res>;
+      _$CannedRequestCopyWithImpl<$Res, CannedRequest>;
+  @useResult
   $Res call(
       {dynamic RequestID,
       dynamic BuildingID,
@@ -44,14 +45,16 @@ abstract class $CannedRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CannedRequestCopyWithImpl<$Res>
+class _$CannedRequestCopyWithImpl<$Res, $Val extends CannedRequest>
     implements $CannedRequestCopyWith<$Res> {
   _$CannedRequestCopyWithImpl(this._value, this._then);
 
-  final CannedRequest _value;
   // ignore: unused_field
-  final $Res Function(CannedRequest) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? RequestID = freezed,
@@ -60,23 +63,23 @@ class _$CannedRequestCopyWithImpl<$Res>
     Object? RequestTarget = freezed,
   }) {
     return _then(_value.copyWith(
-      RequestID: RequestID == freezed
+      RequestID: freezed == RequestID
           ? _value.RequestID
           : RequestID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      BuildingID: BuildingID == freezed
+      BuildingID: freezed == BuildingID
           ? _value.BuildingID
           : BuildingID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RequestTitle: RequestTitle == freezed
+      RequestTitle: freezed == RequestTitle
           ? _value.RequestTitle
           : RequestTitle // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RequestTarget: RequestTarget == freezed
+      RequestTarget: freezed == RequestTarget
           ? _value.RequestTarget
           : RequestTarget // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -87,6 +90,7 @@ abstract class _$$_CannedRequestCopyWith<$Res>
           _$_CannedRequest value, $Res Function(_$_CannedRequest) then) =
       __$$_CannedRequestCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic RequestID,
       dynamic BuildingID,
@@ -96,15 +100,13 @@ abstract class _$$_CannedRequestCopyWith<$Res>
 
 /// @nodoc
 class __$$_CannedRequestCopyWithImpl<$Res>
-    extends _$CannedRequestCopyWithImpl<$Res>
+    extends _$CannedRequestCopyWithImpl<$Res, _$_CannedRequest>
     implements _$$_CannedRequestCopyWith<$Res> {
   __$$_CannedRequestCopyWithImpl(
       _$_CannedRequest _value, $Res Function(_$_CannedRequest) _then)
-      : super(_value, (v) => _then(v as _$_CannedRequest));
+      : super(_value, _then);
 
-  @override
-  _$_CannedRequest get _value => super._value as _$_CannedRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? RequestID = freezed,
@@ -113,19 +115,19 @@ class __$$_CannedRequestCopyWithImpl<$Res>
     Object? RequestTarget = freezed,
   }) {
     return _then(_$_CannedRequest(
-      RequestID: RequestID == freezed
+      RequestID: freezed == RequestID
           ? _value.RequestID
           : RequestID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      BuildingID: BuildingID == freezed
+      BuildingID: freezed == BuildingID
           ? _value.BuildingID
           : BuildingID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RequestTitle: RequestTitle == freezed
+      RequestTitle: freezed == RequestTitle
           ? _value.RequestTitle
           : RequestTitle // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RequestTarget: RequestTarget == freezed
+      RequestTarget: freezed == RequestTarget
           ? _value.RequestTarget
           : RequestTarget // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -188,6 +190,7 @@ class _$_CannedRequest implements _CannedRequest {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CannedRequestCopyWith<_$_CannedRequest> get copyWith =>
       __$$_CannedRequestCopyWithImpl<_$_CannedRequest>(this, _$identity);
 

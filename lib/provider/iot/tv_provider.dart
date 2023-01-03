@@ -35,6 +35,9 @@ class TvProvider {
           if (element['Name'] is Map) {
             element['Name'] = '';
           }
+          if (element['device_name'] is Map) {
+            element['device_name'] = '';
+          }
           newItems.add(TvDevice.fromJson(element));
         });
       }

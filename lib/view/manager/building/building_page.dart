@@ -3,6 +3,7 @@ import 'package:cp/view/manager/building/thermostats_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../utils/utils/theme/global_colors.dart';
+import 'door_lock/door_lock_page.dart';
 
 class BuildingPage extends StatefulWidget {
   const BuildingPage({Key? key}) : super(key: key);
@@ -15,8 +16,12 @@ class _BuildingPageState extends State<BuildingPage>
     with TickerProviderStateMixin {
   late TabController _tabController;
   static const List<Tab> _tabs = [
-    Tab(icon: Icon(Icons.thermostat), child: Text('Thermostats')),
-    Tab(icon: Icon(Icons.public_sharp), text: 'Global Set Point')
+    Tab(
+      icon: Icon(Icons.thermostat),
+      text: 'Thermostats',
+    ),
+    Tab(icon: Icon(Icons.public_sharp), text: 'Global Set Point'),
+    // Tab(icon: Icon(Icons.door_sliding_sharp), text: 'Door Lock')
   ];
 
   @override
@@ -35,13 +40,14 @@ class _BuildingPageState extends State<BuildingPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         systemOverlayStyle:
             const SystemUiOverlayStyle(statusBarColor: cpGreyDarkColor),
         foregroundColor: cpWhiteColor,
         title: const Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            'Bulding IOT',
+            'Building IOT',
             style: TextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
           ),
@@ -51,7 +57,11 @@ class _BuildingPageState extends State<BuildingPage>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: const [ThermostatsPage(), GlobalSetpointPage()],
+        children: const [
+          ThermostatsPage(),
+          GlobalSetpointPage(),
+          // DoorLockPage()
+        ],
       ),
     );
   }

@@ -9,6 +9,7 @@ class Unit with _$Unit {
     @Default('') dynamic UnitID,
     @Default('') dynamic UnitType,
     @Default('') dynamic Occupied,
+    @Default('') dynamic Beds,
   }) = _Unit;
 
   factory Unit.fromJson(Map<String, dynamic> json) => _$UnitFromJson(json);

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'thermostat.dart';
 
@@ -43,7 +43,8 @@ mixin _$Thermostat {
 abstract class $ThermostatCopyWith<$Res> {
   factory $ThermostatCopyWith(
           Thermostat value, $Res Function(Thermostat) then) =
-      _$ThermostatCopyWithImpl<$Res>;
+      _$ThermostatCopyWithImpl<$Res, Thermostat>;
+  @useResult
   $Res call(
       {dynamic ThingID,
       dynamic UnitID,
@@ -60,13 +61,16 @@ abstract class $ThermostatCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ThermostatCopyWithImpl<$Res> implements $ThermostatCopyWith<$Res> {
+class _$ThermostatCopyWithImpl<$Res, $Val extends Thermostat>
+    implements $ThermostatCopyWith<$Res> {
   _$ThermostatCopyWithImpl(this._value, this._then);
 
-  final Thermostat _value;
   // ignore: unused_field
-  final $Res Function(Thermostat) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ThingID = freezed,
@@ -83,55 +87,55 @@ class _$ThermostatCopyWithImpl<$Res> implements $ThermostatCopyWith<$Res> {
     Object? AptStatus = freezed,
   }) {
     return _then(_value.copyWith(
-      ThingID: ThingID == freezed
+      ThingID: freezed == ThingID
           ? _value.ThingID
           : ThingID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitID: UnitID == freezed
+      UnitID: freezed == UnitID
           ? _value.UnitID
           : UnitID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitName: UnitName == freezed
+      UnitName: freezed == UnitName
           ? _value.UnitName
           : UnitName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Mode: Mode == freezed
+      Mode: freezed == Mode
           ? _value.Mode
           : Mode // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ModeLink: ModeLink == freezed
+      ModeLink: freezed == ModeLink
           ? _value.ModeLink
           : ModeLink // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RoomTemp: RoomTemp == freezed
+      RoomTemp: freezed == RoomTemp
           ? _value.RoomTemp
           : RoomTemp // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RoomTempLink: RoomTempLink == freezed
+      RoomTempLink: freezed == RoomTempLink
           ? _value.RoomTempLink
           : RoomTempLink // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Setpoint: Setpoint == freezed
+      Setpoint: freezed == Setpoint
           ? _value.Setpoint
           : Setpoint // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SetpointLink: SetpointLink == freezed
+      SetpointLink: freezed == SetpointLink
           ? _value.SetpointLink
           : SetpointLink // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SetpointCtrl: SetpointCtrl == freezed
+      SetpointCtrl: freezed == SetpointCtrl
           ? _value.SetpointCtrl
           : SetpointCtrl // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SetpointCtrlLink: SetpointCtrlLink == freezed
+      SetpointCtrlLink: freezed == SetpointCtrlLink
           ? _value.SetpointCtrlLink
           : SetpointCtrlLink // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      AptStatus: AptStatus == freezed
+      AptStatus: freezed == AptStatus
           ? _value.AptStatus
           : AptStatus // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -142,6 +146,7 @@ abstract class _$$_ThermostatCopyWith<$Res>
           _$_Thermostat value, $Res Function(_$_Thermostat) then) =
       __$$_ThermostatCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic ThingID,
       dynamic UnitID,
@@ -158,15 +163,14 @@ abstract class _$$_ThermostatCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ThermostatCopyWithImpl<$Res> extends _$ThermostatCopyWithImpl<$Res>
+class __$$_ThermostatCopyWithImpl<$Res>
+    extends _$ThermostatCopyWithImpl<$Res, _$_Thermostat>
     implements _$$_ThermostatCopyWith<$Res> {
   __$$_ThermostatCopyWithImpl(
       _$_Thermostat _value, $Res Function(_$_Thermostat) _then)
-      : super(_value, (v) => _then(v as _$_Thermostat));
+      : super(_value, _then);
 
-  @override
-  _$_Thermostat get _value => super._value as _$_Thermostat;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ThingID = freezed,
@@ -183,51 +187,51 @@ class __$$_ThermostatCopyWithImpl<$Res> extends _$ThermostatCopyWithImpl<$Res>
     Object? AptStatus = freezed,
   }) {
     return _then(_$_Thermostat(
-      ThingID: ThingID == freezed
+      ThingID: freezed == ThingID
           ? _value.ThingID
           : ThingID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitID: UnitID == freezed
+      UnitID: freezed == UnitID
           ? _value.UnitID
           : UnitID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitName: UnitName == freezed
+      UnitName: freezed == UnitName
           ? _value.UnitName
           : UnitName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Mode: Mode == freezed
+      Mode: freezed == Mode
           ? _value.Mode
           : Mode // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ModeLink: ModeLink == freezed
+      ModeLink: freezed == ModeLink
           ? _value.ModeLink
           : ModeLink // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RoomTemp: RoomTemp == freezed
+      RoomTemp: freezed == RoomTemp
           ? _value.RoomTemp
           : RoomTemp // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RoomTempLink: RoomTempLink == freezed
+      RoomTempLink: freezed == RoomTempLink
           ? _value.RoomTempLink
           : RoomTempLink // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Setpoint: Setpoint == freezed
+      Setpoint: freezed == Setpoint
           ? _value.Setpoint
           : Setpoint // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SetpointLink: SetpointLink == freezed
+      SetpointLink: freezed == SetpointLink
           ? _value.SetpointLink
           : SetpointLink // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SetpointCtrl: SetpointCtrl == freezed
+      SetpointCtrl: freezed == SetpointCtrl
           ? _value.SetpointCtrl
           : SetpointCtrl // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SetpointCtrlLink: SetpointCtrlLink == freezed
+      SetpointCtrlLink: freezed == SetpointCtrlLink
           ? _value.SetpointCtrlLink
           : SetpointCtrlLink // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      AptStatus: AptStatus == freezed
+      AptStatus: freezed == AptStatus
           ? _value.AptStatus
           : AptStatus // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -237,7 +241,7 @@ class __$$_ThermostatCopyWithImpl<$Res> extends _$ThermostatCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Thermostat implements _Thermostat {
+class _$_Thermostat with DiagnosticableTreeMixin implements _Thermostat {
   _$_Thermostat(
       {this.ThingID = '',
       this.UnitID = '',
@@ -293,8 +297,27 @@ class _$_Thermostat implements _Thermostat {
   final dynamic AptStatus;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Thermostat(ThingID: $ThingID, UnitID: $UnitID, UnitName: $UnitName, Mode: $Mode, ModeLink: $ModeLink, RoomTemp: $RoomTemp, RoomTempLink: $RoomTempLink, Setpoint: $Setpoint, SetpointLink: $SetpointLink, SetpointCtrl: $SetpointCtrl, SetpointCtrlLink: $SetpointCtrlLink, AptStatus: $AptStatus)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Thermostat'))
+      ..add(DiagnosticsProperty('ThingID', ThingID))
+      ..add(DiagnosticsProperty('UnitID', UnitID))
+      ..add(DiagnosticsProperty('UnitName', UnitName))
+      ..add(DiagnosticsProperty('Mode', Mode))
+      ..add(DiagnosticsProperty('ModeLink', ModeLink))
+      ..add(DiagnosticsProperty('RoomTemp', RoomTemp))
+      ..add(DiagnosticsProperty('RoomTempLink', RoomTempLink))
+      ..add(DiagnosticsProperty('Setpoint', Setpoint))
+      ..add(DiagnosticsProperty('SetpointLink', SetpointLink))
+      ..add(DiagnosticsProperty('SetpointCtrl', SetpointCtrl))
+      ..add(DiagnosticsProperty('SetpointCtrlLink', SetpointCtrlLink))
+      ..add(DiagnosticsProperty('AptStatus', AptStatus));
   }
 
   @override
@@ -339,6 +362,7 @@ class _$_Thermostat implements _Thermostat {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ThermostatCopyWith<_$_Thermostat> get copyWith =>
       __$$_ThermostatCopyWithImpl<_$_Thermostat>(this, _$identity);
 

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'invoice.dart';
 
@@ -42,7 +42,8 @@ mixin _$Invoices {
 /// @nodoc
 abstract class $InvoicesCopyWith<$Res> {
   factory $InvoicesCopyWith(Invoices value, $Res Function(Invoices) then) =
-      _$InvoicesCopyWithImpl<$Res>;
+      _$InvoicesCopyWithImpl<$Res, Invoices>;
+  @useResult
   $Res call(
       {dynamic InvoiceID,
       dynamic UserID,
@@ -59,13 +60,16 @@ abstract class $InvoicesCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$InvoicesCopyWithImpl<$Res> implements $InvoicesCopyWith<$Res> {
+class _$InvoicesCopyWithImpl<$Res, $Val extends Invoices>
+    implements $InvoicesCopyWith<$Res> {
   _$InvoicesCopyWithImpl(this._value, this._then);
 
-  final Invoices _value;
   // ignore: unused_field
-  final $Res Function(Invoices) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? InvoiceID = freezed,
@@ -82,55 +86,55 @@ class _$InvoicesCopyWithImpl<$Res> implements $InvoicesCopyWith<$Res> {
     Object? InvoiceShipEmail = freezed,
   }) {
     return _then(_value.copyWith(
-      InvoiceID: InvoiceID == freezed
+      InvoiceID: freezed == InvoiceID
           ? _value.InvoiceID
           : InvoiceID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserID: UserID == freezed
+      UserID: freezed == UserID
           ? _value.UserID
           : UserID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceShipName: InvoiceShipName == freezed
+      InvoiceShipName: freezed == InvoiceShipName
           ? _value.InvoiceShipName
           : InvoiceShipName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceStatus: InvoiceStatus == freezed
+      InvoiceStatus: freezed == InvoiceStatus
           ? _value.InvoiceStatus
           : InvoiceStatus // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceIssueDate: InvoiceIssueDate == freezed
+      InvoiceIssueDate: freezed == InvoiceIssueDate
           ? _value.InvoiceIssueDate
           : InvoiceIssueDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceDueDate: InvoiceDueDate == freezed
+      InvoiceDueDate: freezed == InvoiceDueDate
           ? _value.InvoiceDueDate
           : InvoiceDueDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceShippingStatus: InvoiceShippingStatus == freezed
+      InvoiceShippingStatus: freezed == InvoiceShippingStatus
           ? _value.InvoiceShippingStatus
           : InvoiceShippingStatus // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceMethod: InvoiceMethod == freezed
+      InvoiceMethod: freezed == InvoiceMethod
           ? _value.InvoiceMethod
           : InvoiceMethod // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoicePaid: InvoicePaid == freezed
+      InvoicePaid: freezed == InvoicePaid
           ? _value.InvoicePaid
           : InvoicePaid // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceDue: InvoiceDue == freezed
+      InvoiceDue: freezed == InvoiceDue
           ? _value.InvoiceDue
           : InvoiceDue // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceShipEmail: InvoiceShipEmail == freezed
+      InvoiceShipEmail: freezed == InvoiceShipEmail
           ? _value.InvoiceShipEmail
           : InvoiceShipEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -140,6 +144,7 @@ abstract class _$$_InvoicesCopyWith<$Res> implements $InvoicesCopyWith<$Res> {
           _$_Invoices value, $Res Function(_$_Invoices) then) =
       __$$_InvoicesCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic InvoiceID,
       dynamic UserID,
@@ -156,15 +161,14 @@ abstract class _$$_InvoicesCopyWith<$Res> implements $InvoicesCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InvoicesCopyWithImpl<$Res> extends _$InvoicesCopyWithImpl<$Res>
+class __$$_InvoicesCopyWithImpl<$Res>
+    extends _$InvoicesCopyWithImpl<$Res, _$_Invoices>
     implements _$$_InvoicesCopyWith<$Res> {
   __$$_InvoicesCopyWithImpl(
       _$_Invoices _value, $Res Function(_$_Invoices) _then)
-      : super(_value, (v) => _then(v as _$_Invoices));
+      : super(_value, _then);
 
-  @override
-  _$_Invoices get _value => super._value as _$_Invoices;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? InvoiceID = freezed,
@@ -181,51 +185,51 @@ class __$$_InvoicesCopyWithImpl<$Res> extends _$InvoicesCopyWithImpl<$Res>
     Object? InvoiceShipEmail = freezed,
   }) {
     return _then(_$_Invoices(
-      InvoiceID: InvoiceID == freezed
+      InvoiceID: freezed == InvoiceID
           ? _value.InvoiceID
           : InvoiceID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UserID: UserID == freezed
+      UserID: freezed == UserID
           ? _value.UserID
           : UserID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceShipName: InvoiceShipName == freezed
+      InvoiceShipName: freezed == InvoiceShipName
           ? _value.InvoiceShipName
           : InvoiceShipName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceStatus: InvoiceStatus == freezed
+      InvoiceStatus: freezed == InvoiceStatus
           ? _value.InvoiceStatus
           : InvoiceStatus // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceIssueDate: InvoiceIssueDate == freezed
+      InvoiceIssueDate: freezed == InvoiceIssueDate
           ? _value.InvoiceIssueDate
           : InvoiceIssueDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceDueDate: InvoiceDueDate == freezed
+      InvoiceDueDate: freezed == InvoiceDueDate
           ? _value.InvoiceDueDate
           : InvoiceDueDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceShippingStatus: InvoiceShippingStatus == freezed
+      InvoiceShippingStatus: freezed == InvoiceShippingStatus
           ? _value.InvoiceShippingStatus
           : InvoiceShippingStatus // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceMethod: InvoiceMethod == freezed
+      InvoiceMethod: freezed == InvoiceMethod
           ? _value.InvoiceMethod
           : InvoiceMethod // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoicePaid: InvoicePaid == freezed
+      InvoicePaid: freezed == InvoicePaid
           ? _value.InvoicePaid
           : InvoicePaid // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceDue: InvoiceDue == freezed
+      InvoiceDue: freezed == InvoiceDue
           ? _value.InvoiceDue
           : InvoiceDue // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      InvoiceShipEmail: InvoiceShipEmail == freezed
+      InvoiceShipEmail: freezed == InvoiceShipEmail
           ? _value.InvoiceShipEmail
           : InvoiceShipEmail // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -235,7 +239,7 @@ class __$$_InvoicesCopyWithImpl<$Res> extends _$InvoicesCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Invoices implements _Invoices {
+class _$_Invoices with DiagnosticableTreeMixin implements _Invoices {
   _$_Invoices(
       {this.InvoiceID = '',
       this.UserID = '',
@@ -291,8 +295,27 @@ class _$_Invoices implements _Invoices {
   final dynamic InvoiceShipEmail;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Invoices(InvoiceID: $InvoiceID, UserID: $UserID, CustomerID: $CustomerID, InvoiceShipName: $InvoiceShipName, InvoiceStatus: $InvoiceStatus, InvoiceIssueDate: $InvoiceIssueDate, InvoiceDueDate: $InvoiceDueDate, InvoiceShippingStatus: $InvoiceShippingStatus, InvoiceMethod: $InvoiceMethod, InvoicePaid: $InvoicePaid, InvoiceDue: $InvoiceDue, InvoiceShipEmail: $InvoiceShipEmail)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Invoices'))
+      ..add(DiagnosticsProperty('InvoiceID', InvoiceID))
+      ..add(DiagnosticsProperty('UserID', UserID))
+      ..add(DiagnosticsProperty('CustomerID', CustomerID))
+      ..add(DiagnosticsProperty('InvoiceShipName', InvoiceShipName))
+      ..add(DiagnosticsProperty('InvoiceStatus', InvoiceStatus))
+      ..add(DiagnosticsProperty('InvoiceIssueDate', InvoiceIssueDate))
+      ..add(DiagnosticsProperty('InvoiceDueDate', InvoiceDueDate))
+      ..add(DiagnosticsProperty('InvoiceShippingStatus', InvoiceShippingStatus))
+      ..add(DiagnosticsProperty('InvoiceMethod', InvoiceMethod))
+      ..add(DiagnosticsProperty('InvoicePaid', InvoicePaid))
+      ..add(DiagnosticsProperty('InvoiceDue', InvoiceDue))
+      ..add(DiagnosticsProperty('InvoiceShipEmail', InvoiceShipEmail));
   }
 
   @override
@@ -343,6 +366,7 @@ class _$_Invoices implements _Invoices {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_InvoicesCopyWith<_$_Invoices> get copyWith =>
       __$$_InvoicesCopyWithImpl<_$_Invoices>(this, _$identity);
 

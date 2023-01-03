@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'schedule.dart';
 
@@ -35,7 +35,8 @@ mixin _$Schedule {
 /// @nodoc
 abstract class $ScheduleCopyWith<$Res> {
   factory $ScheduleCopyWith(Schedule value, $Res Function(Schedule) then) =
-      _$ScheduleCopyWithImpl<$Res>;
+      _$ScheduleCopyWithImpl<$Res, Schedule>;
+  @useResult
   $Res call(
       {dynamic ScheduleID,
       dynamic UnitID,
@@ -45,13 +46,16 @@ abstract class $ScheduleCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ScheduleCopyWithImpl<$Res> implements $ScheduleCopyWith<$Res> {
+class _$ScheduleCopyWithImpl<$Res, $Val extends Schedule>
+    implements $ScheduleCopyWith<$Res> {
   _$ScheduleCopyWithImpl(this._value, this._then);
 
-  final Schedule _value;
   // ignore: unused_field
-  final $Res Function(Schedule) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ScheduleID = freezed,
@@ -61,27 +65,27 @@ class _$ScheduleCopyWithImpl<$Res> implements $ScheduleCopyWith<$Res> {
     Object? Time = freezed,
   }) {
     return _then(_value.copyWith(
-      ScheduleID: ScheduleID == freezed
+      ScheduleID: freezed == ScheduleID
           ? _value.ScheduleID
           : ScheduleID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitID: UnitID == freezed
+      UnitID: freezed == UnitID
           ? _value.UnitID
           : UnitID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SceneID: SceneID == freezed
+      SceneID: freezed == SceneID
           ? _value.SceneID
           : SceneID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DayList: DayList == freezed
+      DayList: freezed == DayList
           ? _value.DayList
           : DayList // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Time: Time == freezed
+      Time: freezed == Time
           ? _value.Time
           : Time // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -91,6 +95,7 @@ abstract class _$$_ScheduleCopyWith<$Res> implements $ScheduleCopyWith<$Res> {
           _$_Schedule value, $Res Function(_$_Schedule) then) =
       __$$_ScheduleCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic ScheduleID,
       dynamic UnitID,
@@ -100,15 +105,14 @@ abstract class _$$_ScheduleCopyWith<$Res> implements $ScheduleCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ScheduleCopyWithImpl<$Res> extends _$ScheduleCopyWithImpl<$Res>
+class __$$_ScheduleCopyWithImpl<$Res>
+    extends _$ScheduleCopyWithImpl<$Res, _$_Schedule>
     implements _$$_ScheduleCopyWith<$Res> {
   __$$_ScheduleCopyWithImpl(
       _$_Schedule _value, $Res Function(_$_Schedule) _then)
-      : super(_value, (v) => _then(v as _$_Schedule));
+      : super(_value, _then);
 
-  @override
-  _$_Schedule get _value => super._value as _$_Schedule;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ScheduleID = freezed,
@@ -118,23 +122,23 @@ class __$$_ScheduleCopyWithImpl<$Res> extends _$ScheduleCopyWithImpl<$Res>
     Object? Time = freezed,
   }) {
     return _then(_$_Schedule(
-      ScheduleID: ScheduleID == freezed
+      ScheduleID: freezed == ScheduleID
           ? _value.ScheduleID
           : ScheduleID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitID: UnitID == freezed
+      UnitID: freezed == UnitID
           ? _value.UnitID
           : UnitID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      SceneID: SceneID == freezed
+      SceneID: freezed == SceneID
           ? _value.SceneID
           : SceneID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DayList: DayList == freezed
+      DayList: freezed == DayList
           ? _value.DayList
           : DayList // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Time: Time == freezed
+      Time: freezed == Time
           ? _value.Time
           : Time // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -144,7 +148,7 @@ class __$$_ScheduleCopyWithImpl<$Res> extends _$ScheduleCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Schedule implements _Schedule {
+class _$_Schedule with DiagnosticableTreeMixin implements _Schedule {
   _$_Schedule(
       {this.ScheduleID = '',
       this.UnitID = '',
@@ -172,8 +176,20 @@ class _$_Schedule implements _Schedule {
   final dynamic Time;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Schedule(ScheduleID: $ScheduleID, UnitID: $UnitID, SceneID: $SceneID, DayList: $DayList, Time: $Time)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Schedule'))
+      ..add(DiagnosticsProperty('ScheduleID', ScheduleID))
+      ..add(DiagnosticsProperty('UnitID', UnitID))
+      ..add(DiagnosticsProperty('SceneID', SceneID))
+      ..add(DiagnosticsProperty('DayList', DayList))
+      ..add(DiagnosticsProperty('Time', Time));
   }
 
   @override
@@ -201,6 +217,7 @@ class _$_Schedule implements _Schedule {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ScheduleCopyWith<_$_Schedule> get copyWith =>
       __$$_ScheduleCopyWithImpl<_$_Schedule>(this, _$identity);
 

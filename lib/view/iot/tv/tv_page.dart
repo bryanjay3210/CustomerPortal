@@ -291,7 +291,7 @@ class _TvPageState extends State<TvPage> {
                                   {'deviceName': deviceNameCtrler.text},
                                   context, () {
                                 Navigator.of(context).pop();
-                                showToast('Device Successfull Updated');
+                                showToast('Device Successfully Updated');
                               });
                               return;
                             } else {

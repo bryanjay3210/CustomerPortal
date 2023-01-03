@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'customer_message_group.dart';
 
@@ -35,20 +35,24 @@ mixin _$CustomerMessageGroup {
 abstract class $CustomerMessageGroupCopyWith<$Res> {
   factory $CustomerMessageGroupCopyWith(CustomerMessageGroup value,
           $Res Function(CustomerMessageGroup) then) =
-      _$CustomerMessageGroupCopyWithImpl<$Res>;
+      _$CustomerMessageGroupCopyWithImpl<$Res, CustomerMessageGroup>;
+  @useResult
   $Res call(
       {dynamic CustomerID, dynamic Name, dynamic FirstName, dynamic LastName});
 }
 
 /// @nodoc
-class _$CustomerMessageGroupCopyWithImpl<$Res>
+class _$CustomerMessageGroupCopyWithImpl<$Res,
+        $Val extends CustomerMessageGroup>
     implements $CustomerMessageGroupCopyWith<$Res> {
   _$CustomerMessageGroupCopyWithImpl(this._value, this._then);
 
-  final CustomerMessageGroup _value;
   // ignore: unused_field
-  final $Res Function(CustomerMessageGroup) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? CustomerID = freezed,
@@ -57,23 +61,23 @@ class _$CustomerMessageGroupCopyWithImpl<$Res>
     Object? LastName = freezed,
   }) {
     return _then(_value.copyWith(
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Name: Name == freezed
+      Name: freezed == Name
           ? _value.Name
           : Name // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      FirstName: FirstName == freezed
+      FirstName: freezed == FirstName
           ? _value.FirstName
           : FirstName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      LastName: LastName == freezed
+      LastName: freezed == LastName
           ? _value.LastName
           : LastName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -84,21 +88,20 @@ abstract class _$$_CustomerMessageGroupCopyWith<$Res>
           $Res Function(_$_CustomerMessageGroup) then) =
       __$$_CustomerMessageGroupCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic CustomerID, dynamic Name, dynamic FirstName, dynamic LastName});
 }
 
 /// @nodoc
 class __$$_CustomerMessageGroupCopyWithImpl<$Res>
-    extends _$CustomerMessageGroupCopyWithImpl<$Res>
+    extends _$CustomerMessageGroupCopyWithImpl<$Res, _$_CustomerMessageGroup>
     implements _$$_CustomerMessageGroupCopyWith<$Res> {
   __$$_CustomerMessageGroupCopyWithImpl(_$_CustomerMessageGroup _value,
       $Res Function(_$_CustomerMessageGroup) _then)
-      : super(_value, (v) => _then(v as _$_CustomerMessageGroup));
+      : super(_value, _then);
 
-  @override
-  _$_CustomerMessageGroup get _value => super._value as _$_CustomerMessageGroup;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? CustomerID = freezed,
@@ -107,19 +110,19 @@ class __$$_CustomerMessageGroupCopyWithImpl<$Res>
     Object? LastName = freezed,
   }) {
     return _then(_$_CustomerMessageGroup(
-      CustomerID: CustomerID == freezed
+      CustomerID: freezed == CustomerID
           ? _value.CustomerID
           : CustomerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Name: Name == freezed
+      Name: freezed == Name
           ? _value.Name
           : Name // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      FirstName: FirstName == freezed
+      FirstName: freezed == FirstName
           ? _value.FirstName
           : FirstName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      LastName: LastName == freezed
+      LastName: freezed == LastName
           ? _value.LastName
           : LastName // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -180,6 +183,7 @@ class _$_CustomerMessageGroup implements _CustomerMessageGroup {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CustomerMessageGroupCopyWith<_$_CustomerMessageGroup> get copyWith =>
       __$$_CustomerMessageGroupCopyWithImpl<_$_CustomerMessageGroup>(
           this, _$identity);

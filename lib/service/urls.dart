@@ -7,6 +7,7 @@ var main_path = (int element) => servers.elementAt(element).values.elementAt(2);
 var server = (int el) => main_path(el) + 'api/api.php?';
 var serverIot = (int el) => main_path(el) + 'api/IOTapi.php?';
 var serverDvr = (int el) => main_path(el) + 'api/dvrapi.php?';
+var serverDoorLock = (int el) => main_path(el) + 'api/lockapi.php?';
 
 String formatAPI(
     {required String dataUrl, String? type, required int serverType}) {
@@ -18,6 +19,9 @@ String formatAPI(
     return serverIot(serverType) + dataUrl;
   } else if (type == 'dvr') {
     return serverDvr(serverType == 3 ? 5 : 4) + dataUrl;
+  } else if (type == 'lock') {
+    print('url: ${server(serverType) + dataUrl}');
+    return serverDoorLock(serverType == 3 ? 7 : 6) + dataUrl;
   } else {
     return server(serverType) + dataUrl;
   }

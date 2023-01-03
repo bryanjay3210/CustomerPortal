@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:multiselect/multiselect.dart';
 import 'package:provider/provider.dart';
+import 'package:rxdart/rxdart.dart';
 
 import '../../../../provider/account/address_book_provider.dart';
 import '../../../../provider/account/message_provider.dart';
@@ -20,6 +21,10 @@ class NewMessage extends StatefulWidget {
 class _NewMessageState extends State<NewMessage> {
   List<String> recipient = [];
   List<String> selectedRecipient = [];
+  final subjectCtrl = TextEditingController();
+  final messageCtrl = TextEditingController();
+  final dropDownLoadingState =
+  BehaviorSubject<bool>.seeded(false);
   @override
   void initState() {
     final addressBookProvider =
@@ -39,12 +44,19 @@ class _NewMessageState extends State<NewMessage> {
   }
 
   @override
+  void dispose() {
+    selectedRecipient = [];
+    subjectCtrl.dispose();
+    messageCtrl.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final mainProvider = Provider.of<MainProvider>(context, listen: false);
     final messageProvider =
         Provider.of<MessageProvider>(context, listen: false);
-    final subjectCtrl = TextEditingController();
-    final messageCtrl = TextEditingController();
+
     return Scaffold(
       backgroundColor: const Color(0xff30313A),
       body: Column(
@@ -87,24 +99,29 @@ class _NewMessageState extends State<NewMessage> {
                 child: Column(
                   children: [
                     textField('Subject', subjectCtrl),
-                    DropDownMultiSelect(
-                      options: recipient.toSet().toList(),
-                      selectedValues: selectedRecipient,
-                      onChanged: (List<String> x) {
-                        setState(() {
-                          selectedRecipient = x;
-                        });
-                      },
-                      hint: const Text('Recipient'),
-                      hintStyle: TextStyle(
-                          fontSize: 13,
-                          color: mainProvider.darkTheme
-                              ? cpWhiteColor
-                              : Colors.black),
-                      // whenEmpty: 'Recipient',
-                      decoration: const InputDecoration(
-                        enabledBorder: UnderlineInputBorder(),
-                      ),
+                    StreamBuilder<bool>(
+                      stream: dropDownLoadingState,
+                      builder: (context, snapshot) {
+                        return DropDownMultiSelect(
+                          options: recipient.toSet().toList(),
+                          selectedValues: selectedRecipient,
+                          onChanged: (List<String> x) {
+                            dropDownLoadingState.add(true);
+                            selectedRecipient = x;
+                            dropDownLoadingState.add(false);
+                          },
+                          hint: const Text('Recipient'),
+                          hintStyle: TextStyle(
+                              fontSize: 13,
+                              color: mainProvider.darkTheme
+                                  ? cpWhiteColor
+                                  : Colors.black),
+                          // whenEmpty: 'Recipient',
+                          decoration: const InputDecoration(
+                            enabledBorder: UnderlineInputBorder(),
+                          ),
+                        );
+                      }
                     ),
                     textField('Compose Message', messageCtrl),
                     const SizedBox(height: 10),
@@ -123,6 +140,8 @@ class _NewMessageState extends State<NewMessage> {
                                 showToast('Subject is empty!');
                               } else if(selectedRecipient.isEmpty){
                                 showToast('Recipient is empty!');
+                              } else if(messageCtrl.text.isEmpty){
+                                showToast('Message is empty!');
                               } else {
                                 messageProvider.sendMessage({
                                   'subject': subjectCtrl.text,
@@ -132,6 +151,8 @@ class _NewMessageState extends State<NewMessage> {
                                   'server': mainProvider.server,
                                   'userId': mainProvider.user.UserID,
                                 }, context).then((_) {
+                                  showToast('Message Sent!');
+                                  Navigator.pushReplacementNamed(context, 'messages');
                                   // showToast(
                                   //     messageProvider.messageStatus.toString());
                                 });

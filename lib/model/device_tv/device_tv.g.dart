@@ -14,6 +14,7 @@ _$_DeviceTv _$$_DeviceTvFromJson(Map<String, dynamic> json) => _$_DeviceTv(
       Volume: json['Volume'] ?? '',
       CC: json['CC'] ?? '',
       ID: json['ID'] ?? '',
+      is_community: json['is_community'] ?? '',
       Channel: json['Channel'] ?? '',
     );
 
@@ -26,5 +27,6 @@ Map<String, dynamic> _$$_DeviceTvToJson(_$_DeviceTv instance) =>
       'Volume': instance.Volume,
       'CC': instance.CC,
       'ID': instance.ID,
+      'is_community': instance.is_community,
       'Channel': instance.Channel,
     };

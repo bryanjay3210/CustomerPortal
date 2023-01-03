@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'message.dart';
 
@@ -37,7 +37,8 @@ mixin _$MessageModel {
 abstract class $MessageModelCopyWith<$Res> {
   factory $MessageModelCopyWith(
           MessageModel value, $Res Function(MessageModel) then) =
-      _$MessageModelCopyWithImpl<$Res>;
+      _$MessageModelCopyWithImpl<$Res, MessageModel>;
+  @useResult
   $Res call(
       {dynamic MessageID,
       dynamic MessageDate,
@@ -48,13 +49,16 @@ abstract class $MessageModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MessageModelCopyWithImpl<$Res> implements $MessageModelCopyWith<$Res> {
+class _$MessageModelCopyWithImpl<$Res, $Val extends MessageModel>
+    implements $MessageModelCopyWith<$Res> {
   _$MessageModelCopyWithImpl(this._value, this._then);
 
-  final MessageModel _value;
   // ignore: unused_field
-  final $Res Function(MessageModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? MessageID = freezed,
@@ -65,31 +69,31 @@ class _$MessageModelCopyWithImpl<$Res> implements $MessageModelCopyWith<$Res> {
     Object? Ack = freezed,
   }) {
     return _then(_value.copyWith(
-      MessageID: MessageID == freezed
+      MessageID: freezed == MessageID
           ? _value.MessageID
           : MessageID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      MessageDate: MessageDate == freezed
+      MessageDate: freezed == MessageDate
           ? _value.MessageDate
           : MessageDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CreatorID: CreatorID == freezed
+      CreatorID: freezed == CreatorID
           ? _value.CreatorID
           : CreatorID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Subject: Subject == freezed
+      Subject: freezed == Subject
           ? _value.Subject
           : Subject // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Message: Message == freezed
+      Message: freezed == Message
           ? _value.Message
           : Message // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Ack: Ack == freezed
+      Ack: freezed == Ack
           ? _value.Ack
           : Ack // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -100,6 +104,7 @@ abstract class _$$_MessageModelCopyWith<$Res>
           _$_MessageModel value, $Res Function(_$_MessageModel) then) =
       __$$_MessageModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic MessageID,
       dynamic MessageDate,
@@ -111,15 +116,13 @@ abstract class _$$_MessageModelCopyWith<$Res>
 
 /// @nodoc
 class __$$_MessageModelCopyWithImpl<$Res>
-    extends _$MessageModelCopyWithImpl<$Res>
+    extends _$MessageModelCopyWithImpl<$Res, _$_MessageModel>
     implements _$$_MessageModelCopyWith<$Res> {
   __$$_MessageModelCopyWithImpl(
       _$_MessageModel _value, $Res Function(_$_MessageModel) _then)
-      : super(_value, (v) => _then(v as _$_MessageModel));
+      : super(_value, _then);
 
-  @override
-  _$_MessageModel get _value => super._value as _$_MessageModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? MessageID = freezed,
@@ -130,27 +133,27 @@ class __$$_MessageModelCopyWithImpl<$Res>
     Object? Ack = freezed,
   }) {
     return _then(_$_MessageModel(
-      MessageID: MessageID == freezed
+      MessageID: freezed == MessageID
           ? _value.MessageID
           : MessageID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      MessageDate: MessageDate == freezed
+      MessageDate: freezed == MessageDate
           ? _value.MessageDate
           : MessageDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CreatorID: CreatorID == freezed
+      CreatorID: freezed == CreatorID
           ? _value.CreatorID
           : CreatorID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Subject: Subject == freezed
+      Subject: freezed == Subject
           ? _value.Subject
           : Subject // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Message: Message == freezed
+      Message: freezed == Message
           ? _value.Message
           : Message // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Ack: Ack == freezed
+      Ack: freezed == Ack
           ? _value.Ack
           : Ack // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -223,6 +226,7 @@ class _$_MessageModel implements _MessageModel {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_MessageModelCopyWith<_$_MessageModel> get copyWith =>
       __$$_MessageModelCopyWithImpl<_$_MessageModel>(this, _$identity);
 

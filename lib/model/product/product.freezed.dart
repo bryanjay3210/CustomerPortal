@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'product.dart';
 
@@ -35,7 +35,8 @@ mixin _$Product {
 /// @nodoc
 abstract class $ProductCopyWith<$Res> {
   factory $ProductCopyWith(Product value, $Res Function(Product) then) =
-      _$ProductCopyWithImpl<$Res>;
+      _$ProductCopyWithImpl<$Res, Product>;
+  @useResult
   $Res call(
       {dynamic PlanID,
       dynamic PlanPrice,
@@ -46,13 +47,16 @@ abstract class $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
+class _$ProductCopyWithImpl<$Res, $Val extends Product>
+    implements $ProductCopyWith<$Res> {
   _$ProductCopyWithImpl(this._value, this._then);
 
-  final Product _value;
   // ignore: unused_field
-  final $Res Function(Product) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? PlanID = freezed,
@@ -63,31 +67,31 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
     Object? PaymentProcessor = freezed,
   }) {
     return _then(_value.copyWith(
-      PlanID: PlanID == freezed
+      PlanID: freezed == PlanID
           ? _value.PlanID
           : PlanID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PlanPrice: PlanPrice == freezed
+      PlanPrice: freezed == PlanPrice
           ? _value.PlanPrice
           : PlanPrice // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PlanName: PlanName == freezed
+      PlanName: freezed == PlanName
           ? _value.PlanName
           : PlanName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PlanStartDate: PlanStartDate == freezed
+      PlanStartDate: freezed == PlanStartDate
           ? _value.PlanStartDate
           : PlanStartDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PlanEndDate: PlanEndDate == freezed
+      PlanEndDate: freezed == PlanEndDate
           ? _value.PlanEndDate
           : PlanEndDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PaymentProcessor: PaymentProcessor == freezed
+      PaymentProcessor: freezed == PaymentProcessor
           ? _value.PaymentProcessor
           : PaymentProcessor // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -97,6 +101,7 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
           _$_Product value, $Res Function(_$_Product) then) =
       __$$_ProductCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic PlanID,
       dynamic PlanPrice,
@@ -107,14 +112,13 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
+class __$$_ProductCopyWithImpl<$Res>
+    extends _$ProductCopyWithImpl<$Res, _$_Product>
     implements _$$_ProductCopyWith<$Res> {
   __$$_ProductCopyWithImpl(_$_Product _value, $Res Function(_$_Product) _then)
-      : super(_value, (v) => _then(v as _$_Product));
+      : super(_value, _then);
 
-  @override
-  _$_Product get _value => super._value as _$_Product;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? PlanID = freezed,
@@ -125,27 +129,27 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
     Object? PaymentProcessor = freezed,
   }) {
     return _then(_$_Product(
-      PlanID: PlanID == freezed
+      PlanID: freezed == PlanID
           ? _value.PlanID
           : PlanID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PlanPrice: PlanPrice == freezed
+      PlanPrice: freezed == PlanPrice
           ? _value.PlanPrice
           : PlanPrice // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PlanName: PlanName == freezed
+      PlanName: freezed == PlanName
           ? _value.PlanName
           : PlanName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PlanStartDate: PlanStartDate == freezed
+      PlanStartDate: freezed == PlanStartDate
           ? _value.PlanStartDate
           : PlanStartDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PlanEndDate: PlanEndDate == freezed
+      PlanEndDate: freezed == PlanEndDate
           ? _value.PlanEndDate
           : PlanEndDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      PaymentProcessor: PaymentProcessor == freezed
+      PaymentProcessor: freezed == PaymentProcessor
           ? _value.PaymentProcessor
           : PaymentProcessor // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -155,7 +159,7 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Product implements _Product {
+class _$_Product with DiagnosticableTreeMixin implements _Product {
   _$_Product(
       {this.PlanID = '',
       this.PlanPrice = '',
@@ -187,8 +191,21 @@ class _$_Product implements _Product {
   final dynamic PaymentProcessor;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Product(PlanID: $PlanID, PlanPrice: $PlanPrice, PlanName: $PlanName, PlanStartDate: $PlanStartDate, PlanEndDate: $PlanEndDate, PaymentProcessor: $PaymentProcessor)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Product'))
+      ..add(DiagnosticsProperty('PlanID', PlanID))
+      ..add(DiagnosticsProperty('PlanPrice', PlanPrice))
+      ..add(DiagnosticsProperty('PlanName', PlanName))
+      ..add(DiagnosticsProperty('PlanStartDate', PlanStartDate))
+      ..add(DiagnosticsProperty('PlanEndDate', PlanEndDate))
+      ..add(DiagnosticsProperty('PaymentProcessor', PaymentProcessor));
   }
 
   @override
@@ -220,6 +237,7 @@ class _$_Product implements _Product {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProductCopyWith<_$_Product> get copyWith =>
       __$$_ProductCopyWithImpl<_$_Product>(this, _$identity);
 

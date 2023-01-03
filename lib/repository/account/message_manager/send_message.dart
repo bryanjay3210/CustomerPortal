@@ -45,6 +45,7 @@ class SendMessageRepository extends RequestApi {
       "Template": map["template"],
       "SendList": map['sendList'],
       "SendText": map['sendText'],
+      "Subject": map['subject'],
       "LoggedUser": map['loggedUser']
     };
     return await getApi(dataUrl, context: context);

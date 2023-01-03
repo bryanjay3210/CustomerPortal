@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'thing.dart';
 
@@ -38,7 +38,8 @@ mixin _$Thing {
 /// @nodoc
 abstract class $ThingCopyWith<$Res> {
   factory $ThingCopyWith(Thing value, $Res Function(Thing) then) =
-      _$ThingCopyWithImpl<$Res>;
+      _$ThingCopyWithImpl<$Res, Thing>;
+  @useResult
   $Res call(
       {dynamic ItemLabel,
       dynamic ThingHumanName,
@@ -52,13 +53,16 @@ abstract class $ThingCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ThingCopyWithImpl<$Res> implements $ThingCopyWith<$Res> {
+class _$ThingCopyWithImpl<$Res, $Val extends Thing>
+    implements $ThingCopyWith<$Res> {
   _$ThingCopyWithImpl(this._value, this._then);
 
-  final Thing _value;
   // ignore: unused_field
-  final $Res Function(Thing) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ItemLabel = freezed,
@@ -72,43 +76,43 @@ class _$ThingCopyWithImpl<$Res> implements $ThingCopyWith<$Res> {
     Object? ChannelUUID = freezed,
   }) {
     return _then(_value.copyWith(
-      ItemLabel: ItemLabel == freezed
+      ItemLabel: freezed == ItemLabel
           ? _value.ItemLabel
           : ItemLabel // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ThingHumanName: ThingHumanName == freezed
+      ThingHumanName: freezed == ThingHumanName
           ? _value.ThingHumanName
           : ThingHumanName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ItemState: ItemState == freezed
+      ItemState: freezed == ItemState
           ? _value.ItemState
           : ItemState // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ItemCategory: ItemCategory == freezed
+      ItemCategory: freezed == ItemCategory
           ? _value.ItemCategory
           : ItemCategory // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ItemName: ItemName == freezed
+      ItemName: freezed == ItemName
           ? _value.ItemName
           : ItemName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ThingUUID: ThingUUID == freezed
+      ThingUUID: freezed == ThingUUID
           ? _value.ThingUUID
           : ThingUUID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ThingID: ThingID == freezed
+      ThingID: freezed == ThingID
           ? _value.ThingID
           : ThingID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ItemID: ItemID == freezed
+      ItemID: freezed == ItemID
           ? _value.ItemID
           : ItemID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ChannelUUID: ChannelUUID == freezed
+      ChannelUUID: freezed == ChannelUUID
           ? _value.ChannelUUID
           : ChannelUUID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -117,6 +121,7 @@ abstract class _$$_ThingCopyWith<$Res> implements $ThingCopyWith<$Res> {
   factory _$$_ThingCopyWith(_$_Thing value, $Res Function(_$_Thing) then) =
       __$$_ThingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic ItemLabel,
       dynamic ThingHumanName,
@@ -130,14 +135,12 @@ abstract class _$$_ThingCopyWith<$Res> implements $ThingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ThingCopyWithImpl<$Res> extends _$ThingCopyWithImpl<$Res>
+class __$$_ThingCopyWithImpl<$Res> extends _$ThingCopyWithImpl<$Res, _$_Thing>
     implements _$$_ThingCopyWith<$Res> {
   __$$_ThingCopyWithImpl(_$_Thing _value, $Res Function(_$_Thing) _then)
-      : super(_value, (v) => _then(v as _$_Thing));
+      : super(_value, _then);
 
-  @override
-  _$_Thing get _value => super._value as _$_Thing;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ItemLabel = freezed,
@@ -151,39 +154,39 @@ class __$$_ThingCopyWithImpl<$Res> extends _$ThingCopyWithImpl<$Res>
     Object? ChannelUUID = freezed,
   }) {
     return _then(_$_Thing(
-      ItemLabel: ItemLabel == freezed
+      ItemLabel: freezed == ItemLabel
           ? _value.ItemLabel
           : ItemLabel // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ThingHumanName: ThingHumanName == freezed
+      ThingHumanName: freezed == ThingHumanName
           ? _value.ThingHumanName
           : ThingHumanName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ItemState: ItemState == freezed
+      ItemState: freezed == ItemState
           ? _value.ItemState
           : ItemState // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ItemCategory: ItemCategory == freezed
+      ItemCategory: freezed == ItemCategory
           ? _value.ItemCategory
           : ItemCategory // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ItemName: ItemName == freezed
+      ItemName: freezed == ItemName
           ? _value.ItemName
           : ItemName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ThingUUID: ThingUUID == freezed
+      ThingUUID: freezed == ThingUUID
           ? _value.ThingUUID
           : ThingUUID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ThingID: ThingID == freezed
+      ThingID: freezed == ThingID
           ? _value.ThingID
           : ThingID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ItemID: ItemID == freezed
+      ItemID: freezed == ItemID
           ? _value.ItemID
           : ItemID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ChannelUUID: ChannelUUID == freezed
+      ChannelUUID: freezed == ChannelUUID
           ? _value.ChannelUUID
           : ChannelUUID // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -193,7 +196,7 @@ class __$$_ThingCopyWithImpl<$Res> extends _$ThingCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Thing implements _Thing {
+class _$_Thing with DiagnosticableTreeMixin implements _Thing {
   _$_Thing(
       {this.ItemLabel = '',
       this.ThingHumanName = '',
@@ -237,8 +240,24 @@ class _$_Thing implements _Thing {
   final dynamic ChannelUUID;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Thing(ItemLabel: $ItemLabel, ThingHumanName: $ThingHumanName, ItemState: $ItemState, ItemCategory: $ItemCategory, ItemName: $ItemName, ThingUUID: $ThingUUID, ThingID: $ThingID, ItemID: $ItemID, ChannelUUID: $ChannelUUID)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Thing'))
+      ..add(DiagnosticsProperty('ItemLabel', ItemLabel))
+      ..add(DiagnosticsProperty('ThingHumanName', ThingHumanName))
+      ..add(DiagnosticsProperty('ItemState', ItemState))
+      ..add(DiagnosticsProperty('ItemCategory', ItemCategory))
+      ..add(DiagnosticsProperty('ItemName', ItemName))
+      ..add(DiagnosticsProperty('ThingUUID', ThingUUID))
+      ..add(DiagnosticsProperty('ThingID', ThingID))
+      ..add(DiagnosticsProperty('ItemID', ItemID))
+      ..add(DiagnosticsProperty('ChannelUUID', ChannelUUID));
   }
 
   @override
@@ -276,6 +295,7 @@ class _$_Thing implements _Thing {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ThingCopyWith<_$_Thing> get copyWith =>
       __$$_ThingCopyWithImpl<_$_Thing>(this, _$identity);
 

@@ -26,6 +26,7 @@ class SendMessagePage extends StatefulWidget {
 class _SendMessagePageState extends State<SendMessagePage> {
   var isLoading = true;
   final messageCtrler = TextEditingController();
+  final subjectCtrler = TextEditingController();
 
   @override
   void initState() {
@@ -303,6 +304,10 @@ class _SendMessagePageState extends State<SendMessagePage> {
                                     selectedItems:
                                         sendMessageProvider.currentCustomers);
                               }),
+                          const SizedBox(height: 15),
+                          const Text('Subject'),
+                          const SizedBox(height: 5),
+                          textFieldShared2(context, ctrler: subjectCtrler),
                           const SizedBox(height: 35),
                           StreamBuilder<MessageTemplateWidget>(
                               stream: sendMessageProvider.currentTemplate$,
@@ -330,6 +335,7 @@ class _SendMessagePageState extends State<SendMessagePage> {
                                         if (await showConfirmDialog(context,
                                             'Are you sure you want to send this message?')) {
                                           sendMessageProvider.sendMessage({
+                                            'subject': subjectCtrler.text,
                                             'sendText': messageCtrler.text,
                                             'template':
                                                 snapshot.data!.TemplateID

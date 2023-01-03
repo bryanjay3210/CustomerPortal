@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'scene_item.dart';
 
@@ -32,33 +32,37 @@ mixin _$SceneItem {
 /// @nodoc
 abstract class $SceneItemCopyWith<$Res> {
   factory $SceneItemCopyWith(SceneItem value, $Res Function(SceneItem) then) =
-      _$SceneItemCopyWithImpl<$Res>;
+      _$SceneItemCopyWithImpl<$Res, SceneItem>;
+  @useResult
   $Res call({dynamic ItemName, dynamic ItemValue});
 }
 
 /// @nodoc
-class _$SceneItemCopyWithImpl<$Res> implements $SceneItemCopyWith<$Res> {
+class _$SceneItemCopyWithImpl<$Res, $Val extends SceneItem>
+    implements $SceneItemCopyWith<$Res> {
   _$SceneItemCopyWithImpl(this._value, this._then);
 
-  final SceneItem _value;
   // ignore: unused_field
-  final $Res Function(SceneItem) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ItemName = freezed,
     Object? ItemValue = freezed,
   }) {
     return _then(_value.copyWith(
-      ItemName: ItemName == freezed
+      ItemName: freezed == ItemName
           ? _value.ItemName
           : ItemName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ItemValue: ItemValue == freezed
+      ItemValue: freezed == ItemValue
           ? _value.ItemValue
           : ItemValue // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -68,30 +72,30 @@ abstract class _$$_SceneItemCopyWith<$Res> implements $SceneItemCopyWith<$Res> {
           _$_SceneItem value, $Res Function(_$_SceneItem) then) =
       __$$_SceneItemCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({dynamic ItemName, dynamic ItemValue});
 }
 
 /// @nodoc
-class __$$_SceneItemCopyWithImpl<$Res> extends _$SceneItemCopyWithImpl<$Res>
+class __$$_SceneItemCopyWithImpl<$Res>
+    extends _$SceneItemCopyWithImpl<$Res, _$_SceneItem>
     implements _$$_SceneItemCopyWith<$Res> {
   __$$_SceneItemCopyWithImpl(
       _$_SceneItem _value, $Res Function(_$_SceneItem) _then)
-      : super(_value, (v) => _then(v as _$_SceneItem));
+      : super(_value, _then);
 
-  @override
-  _$_SceneItem get _value => super._value as _$_SceneItem;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ItemName = freezed,
     Object? ItemValue = freezed,
   }) {
     return _then(_$_SceneItem(
-      ItemName: ItemName == freezed
+      ItemName: freezed == ItemName
           ? _value.ItemName
           : ItemName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ItemValue: ItemValue == freezed
+      ItemValue: freezed == ItemValue
           ? _value.ItemValue
           : ItemValue // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -101,7 +105,7 @@ class __$$_SceneItemCopyWithImpl<$Res> extends _$SceneItemCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SceneItem implements _SceneItem {
+class _$_SceneItem with DiagnosticableTreeMixin implements _SceneItem {
   _$_SceneItem({this.ItemName = '', this.ItemValue = ''});
 
   factory _$_SceneItem.fromJson(Map<String, dynamic> json) =>
@@ -115,8 +119,17 @@ class _$_SceneItem implements _SceneItem {
   final dynamic ItemValue;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SceneItem(ItemName: $ItemName, ItemValue: $ItemValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SceneItem'))
+      ..add(DiagnosticsProperty('ItemName', ItemName))
+      ..add(DiagnosticsProperty('ItemValue', ItemValue));
   }
 
   @override
@@ -137,6 +150,7 @@ class _$_SceneItem implements _SceneItem {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SceneItemCopyWith<_$_SceneItem> get copyWith =>
       __$$_SceneItemCopyWithImpl<_$_SceneItem>(this, _$identity);
 

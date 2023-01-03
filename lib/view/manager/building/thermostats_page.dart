@@ -88,117 +88,82 @@ class _ThermostatsPageState extends State<ThermostatsPage> {
                         final data = buildingProvider.thermostats;
                         var i = -1;
                         return Container(
-                            height: (data.length * 90) + 20,
-                            margin: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              color:
-                                  Provider.of<MainProvider>(context).darkTheme
-                                      ? cpDarkContainerColor
-                                      : cpGreyLightColor,
-                            ),
-                            child: ListView.separated(
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemCount:
-                                  buildingProvider.thermostats.length + 1,
-                              itemBuilder: (context, ctx) {
-                                if (ctx ==
-                                    buildingProvider.thermostats.length) {
-                                  return const SizedBox(height: 50);
-                                }
-                                final thermo =
-                                    buildingProvider.thermostats[ctx];
-                                i = i + 1;
-                                return ListTile(
-                                  title: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Row(
-                                                    children: [
-                                                      const Text('Unit: '),
-                                                      const SizedBox(width: 17),
-                                                      Text(thermo.UnitName),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      const Text('Mode:'),
-                                                      const SizedBox(width: 10),
-                                                      Text(thermo.Mode),
-                                                    ],
-                                                  )
-                                                ],
-                                              ),
-                                              const SizedBox(width: 20),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Row(
-                                                        children: const [
-                                                          Text('Room:'),
-                                                        ],
-                                                      ),
-                                                      const SizedBox(width: 25),
-                                                      Text(celciusToFahr(
-                                                          thermo.RoomTemp)),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      const Text('Setpoint:'),
-                                                      const SizedBox(width: 5),
-                                                      Text(celciusToFahr(
-                                                          thermo.Setpoint)),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                          const SizedBox(height: 5),
-                                          Row(
-                                            children: [
-                                              const Text('Status:'),
-                                              const SizedBox(width: 5),
-                                              dropDownServerWidget(
-                                                  thermo,
-                                                  buildingProvider,
-                                                  mainProvider,
-                                                  i),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
-                              separatorBuilder:
-                                  (BuildContext context, int index) =>
-                                      const Divider(),
-                            ));
+                          margin: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            color: Provider.of<MainProvider>(context).darkTheme
+                                ? cpDarkContainerColor
+                                : cpGreyLightColor,
+                          ),
+                          child: ListView.separated(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: buildingProvider.thermostats.length + 1,
+                            itemBuilder: (context, ctx) {
+                              if (ctx == buildingProvider.thermostats.length) {
+                                return const SizedBox(height: 50);
+                              }
+                              final thermo = buildingProvider.thermostats[ctx];
+                              i = i + 1;
+                              return ListTile(
+                                title: Wrap(
+                                  alignment: WrapAlignment.spaceBetween,
+                                  direction: Axis.horizontal,
+                                  spacing: 100,
+                                  runSpacing: 10,
+                                  // mainAxisAlignment:
+                                  // MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Text('Unit: '),
+                                        const SizedBox(width: 17),
+                                        Text(thermo.UnitName),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Text('Mode:'),
+                                        const SizedBox(width: 10),
+                                        Text(thermo.Mode),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Text('Room:'),
+                                        const SizedBox(width: 10),
+                                        Text(celciusToFahr(thermo.RoomTemp)),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Text('Setpoint:'),
+                                        const SizedBox(width: 10),
+                                        Text(celciusToFahr(thermo.Setpoint)),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Text('Status:'),
+                                        const SizedBox(width: 10),
+                                        dropDownServerWidget(thermo,
+                                            buildingProvider, mainProvider, i),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                            separatorBuilder:
+                                (BuildContext context, int index) =>
+                                    const Divider(),
+                          ),
+                        );
                       }),
                 ],
               ),

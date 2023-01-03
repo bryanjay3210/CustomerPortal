@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'iot.dart';
 
@@ -38,7 +38,8 @@ mixin _$Iot {
 /// @nodoc
 abstract class $IotCopyWith<$Res> {
   factory $IotCopyWith(Iot value, $Res Function(Iot) then) =
-      _$IotCopyWithImpl<$Res>;
+      _$IotCopyWithImpl<$Res, Iot>;
+  @useResult
   $Res call(
       {dynamic Command,
       dynamic Subcommand1,
@@ -52,13 +53,15 @@ abstract class $IotCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$IotCopyWithImpl<$Res> implements $IotCopyWith<$Res> {
+class _$IotCopyWithImpl<$Res, $Val extends Iot> implements $IotCopyWith<$Res> {
   _$IotCopyWithImpl(this._value, this._then);
 
-  final Iot _value;
   // ignore: unused_field
-  final $Res Function(Iot) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? Command = freezed,
@@ -72,43 +75,43 @@ class _$IotCopyWithImpl<$Res> implements $IotCopyWith<$Res> {
     Object? Status = freezed,
   }) {
     return _then(_value.copyWith(
-      Command: Command == freezed
+      Command: freezed == Command
           ? _value.Command
           : Command // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Subcommand1: Subcommand1 == freezed
+      Subcommand1: freezed == Subcommand1
           ? _value.Subcommand1
           : Subcommand1 // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ControllerID: ControllerID == freezed
+      ControllerID: freezed == ControllerID
           ? _value.ControllerID
           : ControllerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ControllerIP: ControllerIP == freezed
+      ControllerIP: freezed == ControllerIP
           ? _value.ControllerIP
           : ControllerIP // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ControllerUUID: ControllerUUID == freezed
+      ControllerUUID: freezed == ControllerUUID
           ? _value.ControllerUUID
           : ControllerUUID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ControllerBuildingID: ControllerBuildingID == freezed
+      ControllerBuildingID: freezed == ControllerBuildingID
           ? _value.ControllerBuildingID
           : ControllerBuildingID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ControllerBuildingUnitID: ControllerBuildingUnitID == freezed
+      ControllerBuildingUnitID: freezed == ControllerBuildingUnitID
           ? _value.ControllerBuildingUnitID
           : ControllerBuildingUnitID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      IOTUserType: IOTUserType == freezed
+      IOTUserType: freezed == IOTUserType
           ? _value.IOTUserType
           : IOTUserType // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Status: Status == freezed
+      Status: freezed == Status
           ? _value.Status
           : Status // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -117,6 +120,7 @@ abstract class _$$_IotCopyWith<$Res> implements $IotCopyWith<$Res> {
   factory _$$_IotCopyWith(_$_Iot value, $Res Function(_$_Iot) then) =
       __$$_IotCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic Command,
       dynamic Subcommand1,
@@ -130,14 +134,12 @@ abstract class _$$_IotCopyWith<$Res> implements $IotCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_IotCopyWithImpl<$Res> extends _$IotCopyWithImpl<$Res>
+class __$$_IotCopyWithImpl<$Res> extends _$IotCopyWithImpl<$Res, _$_Iot>
     implements _$$_IotCopyWith<$Res> {
   __$$_IotCopyWithImpl(_$_Iot _value, $Res Function(_$_Iot) _then)
-      : super(_value, (v) => _then(v as _$_Iot));
+      : super(_value, _then);
 
-  @override
-  _$_Iot get _value => super._value as _$_Iot;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? Command = freezed,
@@ -151,39 +153,39 @@ class __$$_IotCopyWithImpl<$Res> extends _$IotCopyWithImpl<$Res>
     Object? Status = freezed,
   }) {
     return _then(_$_Iot(
-      Command: Command == freezed
+      Command: freezed == Command
           ? _value.Command
           : Command // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Subcommand1: Subcommand1 == freezed
+      Subcommand1: freezed == Subcommand1
           ? _value.Subcommand1
           : Subcommand1 // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ControllerID: ControllerID == freezed
+      ControllerID: freezed == ControllerID
           ? _value.ControllerID
           : ControllerID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ControllerIP: ControllerIP == freezed
+      ControllerIP: freezed == ControllerIP
           ? _value.ControllerIP
           : ControllerIP // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ControllerUUID: ControllerUUID == freezed
+      ControllerUUID: freezed == ControllerUUID
           ? _value.ControllerUUID
           : ControllerUUID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ControllerBuildingID: ControllerBuildingID == freezed
+      ControllerBuildingID: freezed == ControllerBuildingID
           ? _value.ControllerBuildingID
           : ControllerBuildingID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ControllerBuildingUnitID: ControllerBuildingUnitID == freezed
+      ControllerBuildingUnitID: freezed == ControllerBuildingUnitID
           ? _value.ControllerBuildingUnitID
           : ControllerBuildingUnitID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      IOTUserType: IOTUserType == freezed
+      IOTUserType: freezed == IOTUserType
           ? _value.IOTUserType
           : IOTUserType // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Status: Status == freezed
+      Status: freezed == Status
           ? _value.Status
           : Status // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -193,7 +195,7 @@ class __$$_IotCopyWithImpl<$Res> extends _$IotCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Iot implements _Iot {
+class _$_Iot with DiagnosticableTreeMixin implements _Iot {
   _$_Iot(
       {this.Command = '',
       this.Subcommand1 = '',
@@ -236,8 +238,25 @@ class _$_Iot implements _Iot {
   final dynamic Status;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Iot(Command: $Command, Subcommand1: $Subcommand1, ControllerID: $ControllerID, ControllerIP: $ControllerIP, ControllerUUID: $ControllerUUID, ControllerBuildingID: $ControllerBuildingID, ControllerBuildingUnitID: $ControllerBuildingUnitID, IOTUserType: $IOTUserType, Status: $Status)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Iot'))
+      ..add(DiagnosticsProperty('Command', Command))
+      ..add(DiagnosticsProperty('Subcommand1', Subcommand1))
+      ..add(DiagnosticsProperty('ControllerID', ControllerID))
+      ..add(DiagnosticsProperty('ControllerIP', ControllerIP))
+      ..add(DiagnosticsProperty('ControllerUUID', ControllerUUID))
+      ..add(DiagnosticsProperty('ControllerBuildingID', ControllerBuildingID))
+      ..add(DiagnosticsProperty(
+          'ControllerBuildingUnitID', ControllerBuildingUnitID))
+      ..add(DiagnosticsProperty('IOTUserType', IOTUserType))
+      ..add(DiagnosticsProperty('Status', Status));
   }
 
   @override
@@ -279,6 +298,7 @@ class _$_Iot implements _Iot {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_IotCopyWith<_$_Iot> get copyWith =>
       __$$_IotCopyWithImpl<_$_Iot>(this, _$identity);
 

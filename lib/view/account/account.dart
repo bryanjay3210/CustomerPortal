@@ -1,4 +1,6 @@
+import 'package:badges/badges.dart';
 import 'package:cp/enum.dart';
+import 'package:cp/provider/account/message_provider.dart';
 import 'package:cp/provider/main_provider.dart';
 import 'package:cp/utils/utils/theme/global_colors.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +35,14 @@ class _AccountScreenState extends State<AccountScreen> {
       ccProvider.getCreditCardInfo(
           {'userId': mainProvider.user.UserID, 'server': mainProvider.server},
           context);
+      final messageProvider =
+          Provider.of<MessageProvider>(context, listen: false);
+      messageProvider.getMessage({
+        'pollType': 'A',
+        'customerID': mainProvider.user.CustomerID,
+        'server': mainProvider.server,
+        'userId': mainProvider.user.UserID,
+      }, context);
     });
   }
 
@@ -41,6 +51,8 @@ class _AccountScreenState extends State<AccountScreen> {
     final profileProvider =
         Provider.of<ProfileProvider>(context, listen: false);
     final mainProvider = Provider.of<MainProvider>(context, listen: false);
+    final messageProvider =
+        Provider.of<MessageProvider>(context, listen: false);
     return Scaffold(
         backgroundColor: const Color(0xff30313A),
         body: SafeArea(
@@ -55,20 +67,14 @@ class _AccountScreenState extends State<AccountScreen> {
                       padding: const EdgeInsets.fromLTRB(20, 30, 0, 0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
+                        children: const [
+                          Text(
                             'Account',
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: cpWhiteColor),
                           ),
-                          Row(
-                            children: [
-                              dropMessageScreen(mainProvider),
-                              const SizedBox(width: 20)
-                            ],
-                          )
                         ],
                       ),
                     ),
@@ -330,6 +336,102 @@ class _AccountScreenState extends State<AccountScreen> {
                                     ),
                                   ),
                                 ),
+                                const Divider(thickness: 2),
+                                Column(
+                                  children: [
+                                    if (!mainProvider.isManager())
+                                      GestureDetector(
+                                        onTap: () => Navigator.of(context)
+                                            .pushNamed('address_book'),
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 13),
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                height: 20,
+                                                width: 20,
+                                                child: SvgPicture.asset(
+                                                    'assets/images/account/address_book_logo.svg'),
+                                              ),
+                                              const SizedBox(
+                                                width: 10,
+                                              ),
+                                              const Text(
+                                                'Address Book',
+                                                style: TextStyle(fontSize: 15),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    if (!mainProvider.isManager())
+                                      const Divider(thickness: 2),
+                                    mainProvider.isManager()
+                                        ? dropMessageScreen(mainProvider)
+                                        : GestureDetector(
+                                            onTap: () => Navigator.of(context)
+                                                .pushNamed('message_container'),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 13),
+                                              child: Row(
+                                                children: [
+                                                  SizedBox(
+                                                    height: 20,
+                                                    width: 20,
+                                                    child: SvgPicture.asset(
+                                                        'assets/images/account/messages_logo.svg'),
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Row(
+                                                    children: const [
+                                                       Text(
+                                                        'Messages',
+                                                        style: TextStyle(
+                                                            fontSize: 15),
+                                                      ),
+                                                      // StreamBuilder<DataState>(
+                                                      //   stream: messageProvider
+                                                      //       .messageListState,
+                                                      //   builder: (context,
+                                                      //       snapshot) {
+                                                      //     int unreadMsgCount =
+                                                      //         messageProvider
+                                                      //             .messageList
+                                                      //             .where((element) =>
+                                                      //                 element
+                                                      //                     .Ack ==
+                                                      //                 'N')
+                                                      //             .length;
+                                                      //     return unreadMsgCount ==
+                                                      //             0
+                                                      //         ? const SizedBox()
+                                                      //         : Badge(
+                                                      //             badgeContent: Text(
+                                                      //                 unreadMsgCount
+                                                      //                     .toString()),
+                                                      //             animationType:
+                                                      //                 BadgeAnimationType
+                                                      //                     .scale,
+                                                      //             child:
+                                                      //                 const SizedBox(
+                                                      //               width: 20,
+                                                      //               height: 20,
+                                                      //             ));
+                                                      //   },
+                                                      // )
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                  ],
+                                )
                               ],
                             ),
                           ),
@@ -352,94 +454,85 @@ class _AccountScreenState extends State<AccountScreen> {
   }
 
   Widget dropMessageScreen(MainProvider mainProvider) {
-    final isManager = mainProvider.isManager();
     return PopupMenuButton(
-      child: const IconButton(
-        splashRadius: 25,
-        icon: Icon(
-          Icons.message,
-          color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 13.0),
+        child: Row(
+          children: [
+            SizedBox(
+              height: 20,
+              width: 20,
+              child:
+                  SvgPicture.asset('assets/images/account/messages_logo.svg'),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            const Text(
+              'Messages',
+              style: TextStyle(fontSize: 15),
+            ),
+          ],
         ),
-        onPressed: null,
       ),
       onSelected: (_) {},
       itemBuilder: (context) {
         return [
           ...[
-            if (!isManager)
-              MessageScreenWidget('Messages', const Icon(Icons.message_sharp),
-                  () {
-                Navigator.of(context).pushNamed('messages');
-              }),
-            if (!isManager)
-              MessageScreenWidget(
-                  'Address Book', const Icon(Icons.menu_book_outlined), () {
-                Navigator.of(context).pushNamed('address_book');
-              }),
-            if (!isManager)
-              MessageScreenWidget(
-                  'Contact Option', const Icon(Icons.contacts_rounded), () {
-                Navigator.of(context).pushNamed('contact_option');
-              }),
-            if (isManager)
-              MessageScreenWidget(
-                  'Message Groups',
-                  CircleAvatar(
+            MessageScreenWidget(
+                'Message Groups',
+                CircleAvatar(
+                  backgroundColor: messageIconColor,
+                  child: SvgPicture.asset(
+                    'assets/images/message/message_groups.svg',
+                    width: 20,
+                  ),
+                ), () {
+              Navigator.of(context).pushNamed('message_group');
+            }),
+            MessageScreenWidget(
+                'Send Message',
+                CircleAvatar(
+                  backgroundColor: messageIconColor,
+                  child: SvgPicture.asset(
+                    'assets/images/message/send_message.svg',
+                    width: 20,
+                  ),
+                ), () {
+              Navigator.of(context).pushNamed('send_message');
+            }),
+            MessageScreenWidget(
+                'Contact Options',
+                const CircleAvatar(
                     backgroundColor: messageIconColor,
-                    child: SvgPicture.asset(
-                      'assets/images/message/message_groups.svg',
-                      width: 20,
-                    ),
-                  ), () {
-                Navigator.of(context).pushNamed('message_group');
-              }),
-            if (isManager)
-              MessageScreenWidget(
-                  'Send Message',
-                  CircleAvatar(
-                    backgroundColor: messageIconColor,
-                    child: SvgPicture.asset(
-                      'assets/images/message/send_message.svg',
-                      width: 20,
-                    ),
-                  ), () {
-                Navigator.of(context).pushNamed('send_message');
-              }),
-            if (isManager)
-              MessageScreenWidget(
-                  'Contact Options',
-                  const CircleAvatar(
-                      backgroundColor: messageIconColor,
-                      child: Icon(
-                        Icons.contacts_rounded,
-                        color: cpPrimaryColorActive,
-                      )), () {
-                Navigator.of(context).pushNamed('contact_option');
-              }),
-            if (isManager)
-              MessageScreenWidget(
-                  'Message Templates',
-                  CircleAvatar(
-                    backgroundColor: messageIconColor,
-                    child: SvgPicture.asset(
-                      'assets/images/message/message_templates.svg',
-                      width: 20,
-                    ),
-                  ), () {
-                Navigator.of(context).pushNamed('message_template');
-              }),
-            if (isManager)
-              MessageScreenWidget(
-                  'Canned Messages',
-                  CircleAvatar(
-                    backgroundColor: messageIconColor,
-                    child: SvgPicture.asset(
-                      'assets/images/message/canned_message_icon.svg',
-                      width: 20,
-                    ),
-                  ), () {
-                Navigator.of(context).pushNamed('canned_message');
-              }),
+                    child: Icon(
+                      Icons.contacts_rounded,
+                      color: cpPrimaryColorActive,
+                    )), () {
+              Navigator.of(context).pushNamed('contact_option');
+            }),
+            MessageScreenWidget(
+                'Message Templates',
+                CircleAvatar(
+                  backgroundColor: messageIconColor,
+                  child: SvgPicture.asset(
+                    'assets/images/message/message_templates.svg',
+                    width: 20,
+                  ),
+                ), () {
+              Navigator.of(context).pushNamed('message_template');
+            }),
+            MessageScreenWidget(
+                'Canned Messages',
+                CircleAvatar(
+                  backgroundColor: messageIconColor,
+                  child: SvgPicture.asset(
+                    'assets/images/message/canned_message_icon.svg',
+                    width: 20,
+                  ),
+                ), () {
+              Navigator.of(context).pushNamed('canned_message');
+            }),
           ]
               .map((e) => PopupMenuItem(
                     onTap: () async {

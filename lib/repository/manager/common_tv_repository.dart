@@ -63,13 +63,24 @@ class CommonTvRepository extends RequestApi {
       "cmd": "Function",
       "Subcommand1": "Manage",
       "Subcommand2": "U",
-      // "TVID": "${this.tvId}",
-      // "Location": "${encodeURIComponent(encodeURIComponent(this.location))}",
-      // "MAC": "${encodeURIComponent(encodeURIComponent(this.mac))}"
       "TVID": map['tvId'],
       "Location": map['location'],
       "MAC": map['mac']
     };
+    return await getApi(dataUrl, type: 'dvr', context: context);
+  }
+
+  dynamic onCommunityChanged(
+      Map<String, dynamic> map, BuildContext context) async {
+    dynamic dataUrl = {
+      "cmd": "STBResidenceUpdate",
+      "id": map['id'],
+      "Device": map['device'],
+      "community": map['community'],
+      "from_community_list": 'Y',
+      "LoggedUser": map['loggedUser']
+    };
+
     return await getApi(dataUrl, type: 'dvr', context: context);
   }
 
@@ -104,32 +115,10 @@ class CommonTvRepository extends RequestApi {
       "cmd": "Function",
       "Subcommand1": "Manage",
       "Subcommand2": "R",
-      // "CustomerID": "${this.userInfo.CustomerID}",
-      // "MAC": "${encodeURIComponent(encodeURIComponent(data.MAC))}"
       "CustomerID": map['customerId'],
       "MAC": map['mac'],
       'LoggedUser': map['loggedUser']
     };
     return await getApi(dataUrl, type: 'dvr', context: context);
   }
-
-  // dynamic onCommunityStatusChanged(
-  //     Map<String, dynamic> map, BuildContext context) async {
-  //   dynamic dataUrl = {
-  //     "cmd": "STBBind",
-  //     "MAC": map['mac'],
-  //     "4-4": "",
-  //     // "cid": "321820",
-  //     // "operation": "A",
-  //     // "community": "N",
-  //     // "Device": "211111111dd12112",
-  //     // "LoggedUser": "1"
-  //     "cid": map['customerId'],
-  //     "operation": "A",
-  //     "community": "N",
-  //     "Device": map["deviceId"],
-  //     "LoggedUser": map['loggedUser']
-  //   };
-  //   return await getApi(dataUrl, type: 'dvr', context: context);
-  // }
 }

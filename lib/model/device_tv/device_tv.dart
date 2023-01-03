@@ -12,6 +12,7 @@ class DeviceTv with _$DeviceTv {
     @Default('') dynamic Volume,
     @Default('') dynamic CC,
     @Default('') dynamic ID,
+    @Default('') dynamic is_community,
     @Default('') dynamic Channel,
   }) = _DeviceTv;
 

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'room.dart';
 
@@ -34,7 +34,8 @@ mixin _$Room {
 /// @nodoc
 abstract class $RoomCopyWith<$Res> {
   factory $RoomCopyWith(Room value, $Res Function(Room) then) =
-      _$RoomCopyWithImpl<$Res>;
+      _$RoomCopyWithImpl<$Res, Room>;
+  @useResult
   $Res call(
       {dynamic RoomID,
       dynamic CustomerId,
@@ -44,43 +45,46 @@ abstract class $RoomCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RoomCopyWithImpl<$Res> implements $RoomCopyWith<$Res> {
+class _$RoomCopyWithImpl<$Res, $Val extends Room>
+    implements $RoomCopyWith<$Res> {
   _$RoomCopyWithImpl(this._value, this._then);
 
-  final Room _value;
   // ignore: unused_field
-  final $Res Function(Room) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? RoomID = freezed,
     Object? CustomerId = freezed,
     Object? UnitId = freezed,
     Object? RoomName = freezed,
-    Object? Items = freezed,
+    Object? Items = null,
   }) {
     return _then(_value.copyWith(
-      RoomID: RoomID == freezed
+      RoomID: freezed == RoomID
           ? _value.RoomID
           : RoomID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerId: CustomerId == freezed
+      CustomerId: freezed == CustomerId
           ? _value.CustomerId
           : CustomerId // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitId: UnitId == freezed
+      UnitId: freezed == UnitId
           ? _value.UnitId
           : UnitId // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RoomName: RoomName == freezed
+      RoomName: freezed == RoomName
           ? _value.RoomName
           : RoomName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Items: Items == freezed
+      Items: null == Items
           ? _value.Items
           : Items // ignore: cast_nullable_to_non_nullable
               as List<Thing>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -89,6 +93,7 @@ abstract class _$$_RoomCopyWith<$Res> implements $RoomCopyWith<$Res> {
   factory _$$_RoomCopyWith(_$_Room value, $Res Function(_$_Room) then) =
       __$$_RoomCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic RoomID,
       dynamic CustomerId,
@@ -98,40 +103,38 @@ abstract class _$$_RoomCopyWith<$Res> implements $RoomCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_RoomCopyWithImpl<$Res> extends _$RoomCopyWithImpl<$Res>
+class __$$_RoomCopyWithImpl<$Res> extends _$RoomCopyWithImpl<$Res, _$_Room>
     implements _$$_RoomCopyWith<$Res> {
   __$$_RoomCopyWithImpl(_$_Room _value, $Res Function(_$_Room) _then)
-      : super(_value, (v) => _then(v as _$_Room));
+      : super(_value, _then);
 
-  @override
-  _$_Room get _value => super._value as _$_Room;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? RoomID = freezed,
     Object? CustomerId = freezed,
     Object? UnitId = freezed,
     Object? RoomName = freezed,
-    Object? Items = freezed,
+    Object? Items = null,
   }) {
     return _then(_$_Room(
-      RoomID: RoomID == freezed
+      RoomID: freezed == RoomID
           ? _value.RoomID
           : RoomID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CustomerId: CustomerId == freezed
+      CustomerId: freezed == CustomerId
           ? _value.CustomerId
           : CustomerId // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      UnitId: UnitId == freezed
+      UnitId: freezed == UnitId
           ? _value.UnitId
           : UnitId // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      RoomName: RoomName == freezed
+      RoomName: freezed == RoomName
           ? _value.RoomName
           : RoomName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Items: Items == freezed
+      Items: null == Items
           ? _value._Items
           : Items // ignore: cast_nullable_to_non_nullable
               as List<Thing>,
@@ -141,7 +144,7 @@ class __$$_RoomCopyWithImpl<$Res> extends _$RoomCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Room implements _Room {
+class _$_Room with DiagnosticableTreeMixin implements _Room {
   _$_Room(
       {this.RoomID = '',
       this.CustomerId = '',
@@ -168,13 +171,26 @@ class _$_Room implements _Room {
   @override
   @JsonKey()
   List<Thing> get Items {
+    if (_Items is EqualUnmodifiableListView) return _Items;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_Items);
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Room(RoomID: $RoomID, CustomerId: $CustomerId, UnitId: $UnitId, RoomName: $RoomName, Items: $Items)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Room'))
+      ..add(DiagnosticsProperty('RoomID', RoomID))
+      ..add(DiagnosticsProperty('CustomerId', CustomerId))
+      ..add(DiagnosticsProperty('UnitId', UnitId))
+      ..add(DiagnosticsProperty('RoomName', RoomName))
+      ..add(DiagnosticsProperty('Items', Items));
   }
 
   @override
@@ -202,6 +218,7 @@ class _$_Room implements _Room {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RoomCopyWith<_$_Room> get copyWith =>
       __$$_RoomCopyWithImpl<_$_Room>(this, _$identity);
 

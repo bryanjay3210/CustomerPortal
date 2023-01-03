@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'invoice_detail.dart';
 
@@ -40,7 +40,8 @@ mixin _$InvoicesDetail {
 abstract class $InvoicesDetailCopyWith<$Res> {
   factory $InvoicesDetailCopyWith(
           InvoicesDetail value, $Res Function(InvoicesDetail) then) =
-      _$InvoicesDetailCopyWithImpl<$Res>;
+      _$InvoicesDetailCopyWithImpl<$Res, InvoicesDetail>;
+  @useResult
   $Res call(
       {dynamic DetailID,
       dynamic DetailItem,
@@ -54,14 +55,16 @@ abstract class $InvoicesDetailCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$InvoicesDetailCopyWithImpl<$Res>
+class _$InvoicesDetailCopyWithImpl<$Res, $Val extends InvoicesDetail>
     implements $InvoicesDetailCopyWith<$Res> {
   _$InvoicesDetailCopyWithImpl(this._value, this._then);
 
-  final InvoicesDetail _value;
   // ignore: unused_field
-  final $Res Function(InvoicesDetail) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? DetailID = freezed,
@@ -75,43 +78,43 @@ class _$InvoicesDetailCopyWithImpl<$Res>
     Object? DetailItemTaxed = freezed,
   }) {
     return _then(_value.copyWith(
-      DetailID: DetailID == freezed
+      DetailID: freezed == DetailID
           ? _value.DetailID
           : DetailID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItem: DetailItem == freezed
+      DetailItem: freezed == DetailItem
           ? _value.DetailItem
           : DetailItem // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemDescription: DetailItemDescription == freezed
+      DetailItemDescription: freezed == DetailItemDescription
           ? _value.DetailItemDescription
           : DetailItemDescription // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemQuantity: DetailItemQuantity == freezed
+      DetailItemQuantity: freezed == DetailItemQuantity
           ? _value.DetailItemQuantity
           : DetailItemQuantity // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemPrice: DetailItemPrice == freezed
+      DetailItemPrice: freezed == DetailItemPrice
           ? _value.DetailItemPrice
           : DetailItemPrice // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemDate: DetailItemDate == freezed
+      DetailItemDate: freezed == DetailItemDate
           ? _value.DetailItemDate
           : DetailItemDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemSDate: DetailItemSDate == freezed
+      DetailItemSDate: freezed == DetailItemSDate
           ? _value.DetailItemSDate
           : DetailItemSDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemEDate: DetailItemEDate == freezed
+      DetailItemEDate: freezed == DetailItemEDate
           ? _value.DetailItemEDate
           : DetailItemEDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemTaxed: DetailItemTaxed == freezed
+      DetailItemTaxed: freezed == DetailItemTaxed
           ? _value.DetailItemTaxed
           : DetailItemTaxed // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -122,6 +125,7 @@ abstract class _$$_InvoicesDetailCopyWith<$Res>
           _$_InvoicesDetail value, $Res Function(_$_InvoicesDetail) then) =
       __$$_InvoicesDetailCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic DetailID,
       dynamic DetailItem,
@@ -136,15 +140,13 @@ abstract class _$$_InvoicesDetailCopyWith<$Res>
 
 /// @nodoc
 class __$$_InvoicesDetailCopyWithImpl<$Res>
-    extends _$InvoicesDetailCopyWithImpl<$Res>
+    extends _$InvoicesDetailCopyWithImpl<$Res, _$_InvoicesDetail>
     implements _$$_InvoicesDetailCopyWith<$Res> {
   __$$_InvoicesDetailCopyWithImpl(
       _$_InvoicesDetail _value, $Res Function(_$_InvoicesDetail) _then)
-      : super(_value, (v) => _then(v as _$_InvoicesDetail));
+      : super(_value, _then);
 
-  @override
-  _$_InvoicesDetail get _value => super._value as _$_InvoicesDetail;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? DetailID = freezed,
@@ -158,39 +160,39 @@ class __$$_InvoicesDetailCopyWithImpl<$Res>
     Object? DetailItemTaxed = freezed,
   }) {
     return _then(_$_InvoicesDetail(
-      DetailID: DetailID == freezed
+      DetailID: freezed == DetailID
           ? _value.DetailID
           : DetailID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItem: DetailItem == freezed
+      DetailItem: freezed == DetailItem
           ? _value.DetailItem
           : DetailItem // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemDescription: DetailItemDescription == freezed
+      DetailItemDescription: freezed == DetailItemDescription
           ? _value.DetailItemDescription
           : DetailItemDescription // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemQuantity: DetailItemQuantity == freezed
+      DetailItemQuantity: freezed == DetailItemQuantity
           ? _value.DetailItemQuantity
           : DetailItemQuantity // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemPrice: DetailItemPrice == freezed
+      DetailItemPrice: freezed == DetailItemPrice
           ? _value.DetailItemPrice
           : DetailItemPrice // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemDate: DetailItemDate == freezed
+      DetailItemDate: freezed == DetailItemDate
           ? _value.DetailItemDate
           : DetailItemDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemSDate: DetailItemSDate == freezed
+      DetailItemSDate: freezed == DetailItemSDate
           ? _value.DetailItemSDate
           : DetailItemSDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemEDate: DetailItemEDate == freezed
+      DetailItemEDate: freezed == DetailItemEDate
           ? _value.DetailItemEDate
           : DetailItemEDate // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      DetailItemTaxed: DetailItemTaxed == freezed
+      DetailItemTaxed: freezed == DetailItemTaxed
           ? _value.DetailItemTaxed
           : DetailItemTaxed // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -200,7 +202,9 @@ class __$$_InvoicesDetailCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_InvoicesDetail implements _InvoicesDetail {
+class _$_InvoicesDetail
+    with DiagnosticableTreeMixin
+    implements _InvoicesDetail {
   _$_InvoicesDetail(
       {this.DetailID = '',
       this.DetailItem = '',
@@ -244,8 +248,24 @@ class _$_InvoicesDetail implements _InvoicesDetail {
   final dynamic DetailItemTaxed;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'InvoicesDetail(DetailID: $DetailID, DetailItem: $DetailItem, DetailItemDescription: $DetailItemDescription, DetailItemQuantity: $DetailItemQuantity, DetailItemPrice: $DetailItemPrice, DetailItemDate: $DetailItemDate, DetailItemSDate: $DetailItemSDate, DetailItemEDate: $DetailItemEDate, DetailItemTaxed: $DetailItemTaxed)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'InvoicesDetail'))
+      ..add(DiagnosticsProperty('DetailID', DetailID))
+      ..add(DiagnosticsProperty('DetailItem', DetailItem))
+      ..add(DiagnosticsProperty('DetailItemDescription', DetailItemDescription))
+      ..add(DiagnosticsProperty('DetailItemQuantity', DetailItemQuantity))
+      ..add(DiagnosticsProperty('DetailItemPrice', DetailItemPrice))
+      ..add(DiagnosticsProperty('DetailItemDate', DetailItemDate))
+      ..add(DiagnosticsProperty('DetailItemSDate', DetailItemSDate))
+      ..add(DiagnosticsProperty('DetailItemEDate', DetailItemEDate))
+      ..add(DiagnosticsProperty('DetailItemTaxed', DetailItemTaxed));
   }
 
   @override
@@ -288,6 +308,7 @@ class _$_InvoicesDetail implements _InvoicesDetail {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_InvoicesDetailCopyWith<_$_InvoicesDetail> get copyWith =>
       __$$_InvoicesDetailCopyWithImpl<_$_InvoicesDetail>(this, _$identity);
 

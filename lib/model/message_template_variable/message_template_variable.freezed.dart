@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'message_template_variable.dart';
 
@@ -34,34 +34,38 @@ mixin _$MessageTemplateVariable {
 abstract class $MessageTemplateVariableCopyWith<$Res> {
   factory $MessageTemplateVariableCopyWith(MessageTemplateVariable value,
           $Res Function(MessageTemplateVariable) then) =
-      _$MessageTemplateVariableCopyWithImpl<$Res>;
+      _$MessageTemplateVariableCopyWithImpl<$Res, MessageTemplateVariable>;
+  @useResult
   $Res call({dynamic VariableName, dynamic VariableSub});
 }
 
 /// @nodoc
-class _$MessageTemplateVariableCopyWithImpl<$Res>
+class _$MessageTemplateVariableCopyWithImpl<$Res,
+        $Val extends MessageTemplateVariable>
     implements $MessageTemplateVariableCopyWith<$Res> {
   _$MessageTemplateVariableCopyWithImpl(this._value, this._then);
 
-  final MessageTemplateVariable _value;
   // ignore: unused_field
-  final $Res Function(MessageTemplateVariable) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? VariableName = freezed,
     Object? VariableSub = freezed,
   }) {
     return _then(_value.copyWith(
-      VariableName: VariableName == freezed
+      VariableName: freezed == VariableName
           ? _value.VariableName
           : VariableName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      VariableSub: VariableSub == freezed
+      VariableSub: freezed == VariableSub
           ? _value.VariableSub
           : VariableSub // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -72,32 +76,31 @@ abstract class _$$_MessageTemplateVariableCopyWith<$Res>
           $Res Function(_$_MessageTemplateVariable) then) =
       __$$_MessageTemplateVariableCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({dynamic VariableName, dynamic VariableSub});
 }
 
 /// @nodoc
 class __$$_MessageTemplateVariableCopyWithImpl<$Res>
-    extends _$MessageTemplateVariableCopyWithImpl<$Res>
+    extends _$MessageTemplateVariableCopyWithImpl<$Res,
+        _$_MessageTemplateVariable>
     implements _$$_MessageTemplateVariableCopyWith<$Res> {
   __$$_MessageTemplateVariableCopyWithImpl(_$_MessageTemplateVariable _value,
       $Res Function(_$_MessageTemplateVariable) _then)
-      : super(_value, (v) => _then(v as _$_MessageTemplateVariable));
+      : super(_value, _then);
 
-  @override
-  _$_MessageTemplateVariable get _value =>
-      super._value as _$_MessageTemplateVariable;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? VariableName = freezed,
     Object? VariableSub = freezed,
   }) {
     return _then(_$_MessageTemplateVariable(
-      VariableName: VariableName == freezed
+      VariableName: freezed == VariableName
           ? _value.VariableName
           : VariableName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      VariableSub: VariableSub == freezed
+      VariableSub: freezed == VariableSub
           ? _value.VariableSub
           : VariableSub // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -145,6 +148,7 @@ class _$_MessageTemplateVariable implements _MessageTemplateVariable {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_MessageTemplateVariableCopyWith<_$_MessageTemplateVariable>
       get copyWith =>
           __$$_MessageTemplateVariableCopyWithImpl<_$_MessageTemplateVariable>(

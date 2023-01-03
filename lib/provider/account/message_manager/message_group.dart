@@ -44,6 +44,21 @@ class MessageGroupProvider {
   var isLoading = true;
   var targets = <Target>[];
 
+  bool isResidentHall() {
+    final hall = currentBuilding.ResidenceHall;
+    if (hall is Map || hall.toString().toLowerCase() == 'n') {
+      return false;
+    }
+    return true;
+  }
+
+  bool isManagerIot() {
+    if (currentBuilding.IOTBuilding is Map) {
+      return false;
+    }
+    return currentBuilding.IOTBuilding == 'Y';
+  }
+
   getBuildings(Map<String, dynamic> map, BuildContext context) async {
     final mainProvider = Provider.of<MainProvider>(context, listen: false);
     map['server'] = mainProvider.server;
@@ -66,8 +81,12 @@ class MessageGroupProvider {
           newItems.add(Building.fromJson(element));
         });
       }
-      currentBuilding = newItems
-          .firstWhere((element) => element.BuildingID == map['buildingId']);
+      try {
+        currentBuilding = newItems
+            .firstWhere((element) => element.BuildingID == map['buildingId']);
+      } catch (ex) {
+        currentBuilding = Building();
+      }
     } else {}
   }
 

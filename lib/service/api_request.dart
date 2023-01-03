@@ -28,6 +28,8 @@ class RequestApi {
     request = json.encode(request);
     print('📋API REQUEST📋:');
     print(request);
+    request = Uri.encodeComponent(request);
+
     final connection = await Connectivity().checkConnectivity();
     if (connection.index == 4) {
       showError(context, 'Error', 'You are currently Offline');
@@ -43,7 +45,7 @@ class RequestApi {
               formatAPI(dataUrl: request, type: type, serverType: server),
               data: formData);
       Map<String, dynamic> result = res.data;
-
+      print('result:::    $result');
       if (result['Status'].toString().toLowerCase() == 'success' ||
           result['Status'] == 'HTML Code-200' ||
           result['Status'] == 'Valid' ||
@@ -76,9 +78,11 @@ class RequestApi {
       }
     } catch (e) {
       print('❌API RESULT FAILED:❌');
+      print(e);
       showError(context, 'Error', 'Error: Error Message Unreadable');
       data = {'status': 'failed'};
     }
+
     return data;
   }
 

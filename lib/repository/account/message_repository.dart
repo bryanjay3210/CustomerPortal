@@ -26,6 +26,27 @@ class MessageRepository extends RequestApi {
     return await getApi(dataUrl, type: 'iot');
   }
 
+  dynamic getSentMessages(Map<String, dynamic> map) async {
+    dynamic dataUrl = {
+      "Command": "Message",
+      "Subcommand1": "PollMessage",
+      "Subcommand2": "Sent",
+      "CustomerID": map['customerID'],
+      'LoggedUser': map['userId'],
+    };
+    return await getApi(dataUrl, type: 'iot');
+  }
+
+  dynamic getMessagesUnreadCount(Map<String, dynamic> map) async {
+    dynamic dataUrl = {
+      "Command": "Message",
+      "Subcommand1": "UnreadCount",
+      "CustomerID": map['customerID'],
+      'LoggedUser': map['userId'],
+    };
+    return await getApi(dataUrl);
+  }
+
   dynamic changeMessageStatus(Map<String, dynamic> map) async {
     dynamic dataUrl = {
       "Command": "Message",

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'channel.dart';
 
@@ -34,19 +34,23 @@ mixin _$Channel {
 /// @nodoc
 abstract class $ChannelCopyWith<$Res> {
   factory $ChannelCopyWith(Channel value, $Res Function(Channel) then) =
-      _$ChannelCopyWithImpl<$Res>;
+      _$ChannelCopyWithImpl<$Res, Channel>;
+  @useResult
   $Res call(
       {dynamic Name, dynamic Number, dynamic ID, dynamic Icon, dynamic Stream});
 }
 
 /// @nodoc
-class _$ChannelCopyWithImpl<$Res> implements $ChannelCopyWith<$Res> {
+class _$ChannelCopyWithImpl<$Res, $Val extends Channel>
+    implements $ChannelCopyWith<$Res> {
   _$ChannelCopyWithImpl(this._value, this._then);
 
-  final Channel _value;
   // ignore: unused_field
-  final $Res Function(Channel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? Name = freezed,
@@ -56,27 +60,27 @@ class _$ChannelCopyWithImpl<$Res> implements $ChannelCopyWith<$Res> {
     Object? Stream = freezed,
   }) {
     return _then(_value.copyWith(
-      Name: Name == freezed
+      Name: freezed == Name
           ? _value.Name
           : Name // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Number: Number == freezed
+      Number: freezed == Number
           ? _value.Number
           : Number // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ID: ID == freezed
+      ID: freezed == ID
           ? _value.ID
           : ID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Icon: Icon == freezed
+      Icon: freezed == Icon
           ? _value.Icon
           : Icon // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Stream: Stream == freezed
+      Stream: freezed == Stream
           ? _value.Stream
           : Stream // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -86,19 +90,19 @@ abstract class _$$_ChannelCopyWith<$Res> implements $ChannelCopyWith<$Res> {
           _$_Channel value, $Res Function(_$_Channel) then) =
       __$$_ChannelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic Name, dynamic Number, dynamic ID, dynamic Icon, dynamic Stream});
 }
 
 /// @nodoc
-class __$$_ChannelCopyWithImpl<$Res> extends _$ChannelCopyWithImpl<$Res>
+class __$$_ChannelCopyWithImpl<$Res>
+    extends _$ChannelCopyWithImpl<$Res, _$_Channel>
     implements _$$_ChannelCopyWith<$Res> {
   __$$_ChannelCopyWithImpl(_$_Channel _value, $Res Function(_$_Channel) _then)
-      : super(_value, (v) => _then(v as _$_Channel));
+      : super(_value, _then);
 
-  @override
-  _$_Channel get _value => super._value as _$_Channel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? Name = freezed,
@@ -108,23 +112,23 @@ class __$$_ChannelCopyWithImpl<$Res> extends _$ChannelCopyWithImpl<$Res>
     Object? Stream = freezed,
   }) {
     return _then(_$_Channel(
-      Name: Name == freezed
+      Name: freezed == Name
           ? _value.Name
           : Name // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Number: Number == freezed
+      Number: freezed == Number
           ? _value.Number
           : Number // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      ID: ID == freezed
+      ID: freezed == ID
           ? _value.ID
           : ID // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Icon: Icon == freezed
+      Icon: freezed == Icon
           ? _value.Icon
           : Icon // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      Stream: Stream == freezed
+      Stream: freezed == Stream
           ? _value.Stream
           : Stream // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -134,7 +138,7 @@ class __$$_ChannelCopyWithImpl<$Res> extends _$ChannelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Channel implements _Channel {
+class _$_Channel with DiagnosticableTreeMixin implements _Channel {
   _$_Channel(
       {this.Name = '',
       this.Number = '',
@@ -162,8 +166,20 @@ class _$_Channel implements _Channel {
   final dynamic Stream;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Channel(Name: $Name, Number: $Number, ID: $ID, Icon: $Icon, Stream: $Stream)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Channel'))
+      ..add(DiagnosticsProperty('Name', Name))
+      ..add(DiagnosticsProperty('Number', Number))
+      ..add(DiagnosticsProperty('ID', ID))
+      ..add(DiagnosticsProperty('Icon', Icon))
+      ..add(DiagnosticsProperty('Stream', Stream));
   }
 
   @override
@@ -190,6 +206,7 @@ class _$_Channel implements _Channel {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ChannelCopyWith<_$_Channel> get copyWith =>
       __$$_ChannelCopyWithImpl<_$_Channel>(this, _$identity);
 

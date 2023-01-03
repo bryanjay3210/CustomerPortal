@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'credit_card.dart';
 
@@ -38,7 +38,8 @@ mixin _$CreditCard {
 abstract class $CreditCardCopyWith<$Res> {
   factory $CreditCardCopyWith(
           CreditCard value, $Res Function(CreditCard) then) =
-      _$CreditCardCopyWithImpl<$Res>;
+      _$CreditCardCopyWithImpl<$Res, CreditCard>;
+  @useResult
   $Res call(
       {dynamic CardNum,
       dynamic CardholderName,
@@ -50,13 +51,16 @@ abstract class $CreditCardCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreditCardCopyWithImpl<$Res> implements $CreditCardCopyWith<$Res> {
+class _$CreditCardCopyWithImpl<$Res, $Val extends CreditCard>
+    implements $CreditCardCopyWith<$Res> {
   _$CreditCardCopyWithImpl(this._value, this._then);
 
-  final CreditCard _value;
   // ignore: unused_field
-  final $Res Function(CreditCard) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? CardNum = freezed,
@@ -68,35 +72,35 @@ class _$CreditCardCopyWithImpl<$Res> implements $CreditCardCopyWith<$Res> {
     Object? CardAutobill = freezed,
   }) {
     return _then(_value.copyWith(
-      CardNum: CardNum == freezed
+      CardNum: freezed == CardNum
           ? _value.CardNum
           : CardNum // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardholderName: CardholderName == freezed
+      CardholderName: freezed == CardholderName
           ? _value.CardholderName
           : CardholderName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardType: CardType == freezed
+      CardType: freezed == CardType
           ? _value.CardType
           : CardType // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardExpMonth: CardExpMonth == freezed
+      CardExpMonth: freezed == CardExpMonth
           ? _value.CardExpMonth
           : CardExpMonth // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardExpYear: CardExpYear == freezed
+      CardExpYear: freezed == CardExpYear
           ? _value.CardExpYear
           : CardExpYear // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardCVV: CardCVV == freezed
+      CardCVV: freezed == CardCVV
           ? _value.CardCVV
           : CardCVV // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardAutobill: CardAutobill == freezed
+      CardAutobill: freezed == CardAutobill
           ? _value.CardAutobill
           : CardAutobill // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
@@ -107,6 +111,7 @@ abstract class _$$_CreditCardCopyWith<$Res>
           _$_CreditCard value, $Res Function(_$_CreditCard) then) =
       __$$_CreditCardCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic CardNum,
       dynamic CardholderName,
@@ -118,15 +123,14 @@ abstract class _$$_CreditCardCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CreditCardCopyWithImpl<$Res> extends _$CreditCardCopyWithImpl<$Res>
+class __$$_CreditCardCopyWithImpl<$Res>
+    extends _$CreditCardCopyWithImpl<$Res, _$_CreditCard>
     implements _$$_CreditCardCopyWith<$Res> {
   __$$_CreditCardCopyWithImpl(
       _$_CreditCard _value, $Res Function(_$_CreditCard) _then)
-      : super(_value, (v) => _then(v as _$_CreditCard));
+      : super(_value, _then);
 
-  @override
-  _$_CreditCard get _value => super._value as _$_CreditCard;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? CardNum = freezed,
@@ -138,31 +142,31 @@ class __$$_CreditCardCopyWithImpl<$Res> extends _$CreditCardCopyWithImpl<$Res>
     Object? CardAutobill = freezed,
   }) {
     return _then(_$_CreditCard(
-      CardNum: CardNum == freezed
+      CardNum: freezed == CardNum
           ? _value.CardNum
           : CardNum // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardholderName: CardholderName == freezed
+      CardholderName: freezed == CardholderName
           ? _value.CardholderName
           : CardholderName // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardType: CardType == freezed
+      CardType: freezed == CardType
           ? _value.CardType
           : CardType // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardExpMonth: CardExpMonth == freezed
+      CardExpMonth: freezed == CardExpMonth
           ? _value.CardExpMonth
           : CardExpMonth // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardExpYear: CardExpYear == freezed
+      CardExpYear: freezed == CardExpYear
           ? _value.CardExpYear
           : CardExpYear // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardCVV: CardCVV == freezed
+      CardCVV: freezed == CardCVV
           ? _value.CardCVV
           : CardCVV // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      CardAutobill: CardAutobill == freezed
+      CardAutobill: freezed == CardAutobill
           ? _value.CardAutobill
           : CardAutobill // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -172,7 +176,7 @@ class __$$_CreditCardCopyWithImpl<$Res> extends _$CreditCardCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CreditCard implements _CreditCard {
+class _$_CreditCard with DiagnosticableTreeMixin implements _CreditCard {
   _$_CreditCard(
       {this.CardNum = '',
       this.CardholderName = '',
@@ -208,8 +212,22 @@ class _$_CreditCard implements _CreditCard {
   final dynamic CardAutobill;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'CreditCard(CardNum: $CardNum, CardholderName: $CardholderName, CardType: $CardType, CardExpMonth: $CardExpMonth, CardExpYear: $CardExpYear, CardCVV: $CardCVV, CardAutobill: $CardAutobill)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'CreditCard'))
+      ..add(DiagnosticsProperty('CardNum', CardNum))
+      ..add(DiagnosticsProperty('CardholderName', CardholderName))
+      ..add(DiagnosticsProperty('CardType', CardType))
+      ..add(DiagnosticsProperty('CardExpMonth', CardExpMonth))
+      ..add(DiagnosticsProperty('CardExpYear', CardExpYear))
+      ..add(DiagnosticsProperty('CardCVV', CardCVV))
+      ..add(DiagnosticsProperty('CardAutobill', CardAutobill));
   }
 
   @override
@@ -244,6 +262,7 @@ class _$_CreditCard implements _CreditCard {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CreditCardCopyWith<_$_CreditCard> get copyWith =>
       __$$_CreditCardCopyWithImpl<_$_CreditCard>(this, _$identity);
 

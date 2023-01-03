@@ -49,7 +49,7 @@ class HomeProvider {
 
   refreshHome(BuildContext context) async {
     final mainProvider = Provider.of<MainProvider>(context, listen: false);
-    if (mainProvider.iot.Status == 'Success') {
+    if (mainProvider.iot.Status == 'Success' && !mainProvider.isManager()) {
       things$.add(false);
       await getScenes({
         'customerId': mainProvider.user.CustomerID,
